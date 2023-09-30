@@ -2,13 +2,14 @@ package com.example.logika;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import androidx.fragment.app.Fragment;
+import android.view.MenuItem;
 
+import com.example.logika.mainMenuFragments.HomeFragment;
+import com.example.logika.mainMenuFragments.SettingsFragment;
+import com.example.logika.mainMenuFragments.StatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -32,7 +33,23 @@ public class MainMenu extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainMenuContainer,homeFragment).commit();
 
-
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.home) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainMenuContainer, homeFragment).commit();
+                    return true;
+                } else if (itemId == R.id.stats) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainMenuContainer, statsFragment).commit();
+                    return true;
+                } else if (itemId == R.id.settings) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainMenuContainer, settingsFragment).commit();
+                    return true;
+                }
+                return false;
+            }
+        });
 
     }
 }
