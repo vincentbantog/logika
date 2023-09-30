@@ -1,12 +1,10 @@
-package com.example.logika.startPortion;
+package com.example.logika;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
-import com.example.logika.R;
 
 public class StartingLoadingScreen extends AppCompatActivity {
 

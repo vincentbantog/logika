@@ -16,13 +16,13 @@
             android:name=".MainMenu"
             android:exported="false" />
         <activity
-            android:name=".startPortion.SecondLoadingScreen"
+            android:name=".SecondLoadingScreen"
             android:exported="false" />
         <activity
-            android:name=".startPortion.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".startPortion.StartingLoadingScreen"
+            android:name=".StartingLoadingScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
