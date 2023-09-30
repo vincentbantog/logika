@@ -14,17 +14,6 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        configureBackButton();
-    }
-    public void configureBackButton(){
-        Button btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mainIntent = new Intent(MainMenu.this, MainActivity.class);
-                startActivity(mainIntent);
-                finish();
-            }
-        });
+
     }
 }
