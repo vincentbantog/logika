@@ -1,10 +1,13 @@
-package com.example.logika;
+package com.example.logika.startPortion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.logika.MainMenu;
+import com.example.logika.R;
 
 public class SecondLoadingScreen extends AppCompatActivity {
 
