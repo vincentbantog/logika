@@ -7,21 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_menu);
 
-        configureStartButton();
+        configureBackButton();
     }
-    public void configureStartButton() {
-        Button btnStart = findViewById(R.id.btnStart);
-        btnStart.setOnClickListener(new View.OnClickListener() {
+    public void configureBackButton(){
+        Button btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(MainActivity.this, SecondLoadingScreen.class);
+                Intent mainIntent = new Intent(MainMenu.this, MainActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
