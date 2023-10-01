@@ -1,4 +1,4 @@
-package com.example.logika.logicSim;
+package com.example.logika.gameActivities.logicSim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.logika.MainMenu;
 import com.example.logika.R;
 
 public class RadioButtonChoices extends AppCompatActivity {

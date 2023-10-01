@@ -13,10 +13,13 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
-            android:name=".logicSim.RadioButtonChoices"
+            android:name=".gameActivities.logicSim.Question"
             android:exported="false" />
         <activity
-            android:name=".logicSim.LogicGate"
+            android:name=".gameActivities.logicSim.RadioButtonChoices"
+            android:exported="false" />
+        <activity
+            android:name=".gameActivities.logicSim.LogicGate"
             android:exported="false" />
         <activity
             android:name=".gameActivities.TrueOrFalse"

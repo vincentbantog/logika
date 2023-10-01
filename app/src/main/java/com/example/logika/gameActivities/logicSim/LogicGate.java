@@ -1,4 +1,4 @@
-package com.example.logika.logicSim;
+package com.example.logika.gameActivities.logicSim;
 
 import androidx.appcompat.app.AppCompatActivity;
 

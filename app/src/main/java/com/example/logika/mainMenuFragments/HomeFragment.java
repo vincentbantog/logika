@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.logika.R;
-import com.example.logika.logicSim.LogicGate;
+import com.example.logika.gameActivities.logicSim.LogicGate;
 import com.example.logika.gameActivities.MultipleChoice;
 import com.example.logika.gameActivities.TrueOrFalse;
 
