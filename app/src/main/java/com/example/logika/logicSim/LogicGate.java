@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities;
+package com.example.logika.logicSim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,7 @@ import com.example.logika.R;
 public class LogicGate extends AppCompatActivity {
 
     private Button btnBack;
+    private Button btnLogicGateStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class LogicGate extends AppCompatActivity {
         setContentView(R.layout.activity_logic_gate);
 
         configureBackButton();
+        startQuiz();
 
     }
 
@@ -29,6 +31,18 @@ public class LogicGate extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mainIntent = new Intent(LogicGate.this, MainMenu.class);
+                startActivity(mainIntent);
+                finish();
+            }
+        });
+    }
+
+    public void startQuiz() {
+        btnLogicGateStart = findViewById(R.id.btnLogicGateStart);
+        btnLogicGateStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(LogicGate.this, RadioButtonChoices.class);
                 startActivity(mainIntent);
                 finish();
             }
