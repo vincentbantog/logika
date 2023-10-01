@@ -16,6 +16,8 @@ import com.example.logika.gameActivities.LogicGate;
 import com.example.logika.gameActivities.MultipleChoice;
 import com.example.logika.gameActivities.TrueOrFalse;
 
+import java.util.Random;
+
 
 public class HomeFragment extends Fragment {
 
@@ -23,6 +25,7 @@ public class HomeFragment extends Fragment {
     private Button btnMultipleChoice;
     private Button btnTrueOrFalse;
     private Button btnLogicGate;
+    private Button btnQuickStart;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +36,7 @@ public class HomeFragment extends Fragment {
         configureBtnMultipleChoice(view);
         configureBtnTrueOrFalse(view);
         configureBtnLogicGate(view);
+        configureBtnQuickStart(view);
 
 
         return view;
@@ -67,6 +71,20 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
                 startActivity(intentTrueOrFalse);
+            }
+        });
+    }
+
+    public void configureBtnQuickStart(View view){
+        Class<?>[] gameActivities = {MultipleChoice.class, TrueOrFalse.class, LogicGate.class};
+        int randomIndex = new Random().nextInt(gameActivities.length);
+
+        btnQuickStart = view.findViewById(R.id.btnQuickStart);
+        btnQuickStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentQuickStart = new Intent(getActivity(), gameActivities[randomIndex]);
+                startActivity(intentQuickStart);
             }
         });
     }
