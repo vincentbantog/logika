@@ -49,5 +49,14 @@
         android:layout_marginTop="15dp"
         android:text="Logic Gate" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Greetings, Ka-Avio!"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textSize="28dp"
+        android:textColor="@color/paleYellow"/>
+
 
 </RelativeLayout>
