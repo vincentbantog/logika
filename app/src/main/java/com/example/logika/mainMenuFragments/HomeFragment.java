@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.LogicGate;
 import com.example.logika.gameActivities.MultipleChoice;
 import com.example.logika.gameActivities.TrueOrFalse;
 
@@ -21,6 +22,7 @@ public class HomeFragment extends Fragment {
 
     private Button btnMultipleChoice;
     private Button btnTrueOrFalse;
+    private Button btnLogicGate;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +32,7 @@ public class HomeFragment extends Fragment {
 
         configureBtnMultipleChoice(view);
         configureBtnTrueOrFalse(view);
+        configureBtnLogicGate(view);
 
 
         return view;
@@ -52,6 +55,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intentTrueOrFalse = new Intent(getActivity(), TrueOrFalse.class);
+                startActivity(intentTrueOrFalse);
+            }
+        });
+    }
+
+    public void configureBtnLogicGate(View view){
+        btnTrueOrFalse = view.findViewById(R.id.btnLogicSim);
+        btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
                 startActivity(intentTrueOrFalse);
             }
         });
