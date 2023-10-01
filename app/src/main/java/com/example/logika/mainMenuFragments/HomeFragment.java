@@ -13,17 +13,14 @@ import android.widget.Toast;
 
 import com.example.logika.R;
 import com.example.logika.gameActivities.MultipleChoice;
+import com.example.logika.gameActivities.TrueOrFalse;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class HomeFragment extends Fragment {
 
 
     private Button btnMultipleChoice;
-
+    private Button btnTrueOrFalse;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +29,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         configureBtnMultipleChoice(view);
+        configureBtnTrueOrFalse(view);
 
 
         return view;
@@ -42,8 +40,19 @@ public class HomeFragment extends Fragment {
         btnMultipleChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(getActivity(), MultipleChoice.class);
-                startActivity(mainIntent);
+                Intent intentMultipleChoice = new Intent(getActivity(), MultipleChoice.class);
+                startActivity(intentMultipleChoice);
+            }
+        });
+    }
+
+    public void configureBtnTrueOrFalse(View view){
+        btnTrueOrFalse = view.findViewById(R.id.btnTrueOrFalse);
+        btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentTrueOrFalse = new Intent(getActivity(), TrueOrFalse.class);
+                startActivity(intentTrueOrFalse);
             }
         });
     }
