@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
+            android:name=".gameActivities.TrueOrFalse"
+            android:exported="false" />
+        <activity
             android:name=".gameActivities.MultipleChoice"
             android:exported="false" />
         <activity
