@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class RadioButtonChoices extends AppCompatActivity {
+    public static final String EXTRA_SCORE = "extraScore";
 
     private Button btnBack;
     private TextView textViewQuestion;
@@ -142,8 +143,10 @@ public class RadioButtonChoices extends AppCompatActivity {
     }
 
     private void finishQuiz() {
-        Intent mainIntent = new Intent(RadioButtonChoices.this, LogicGate.class);
-        startActivity(mainIntent);
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(EXTRA_SCORE, score);
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 
     public void configureBackButton () {
