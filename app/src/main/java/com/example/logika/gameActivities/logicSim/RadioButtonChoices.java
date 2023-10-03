@@ -43,6 +43,8 @@ public class RadioButtonChoices extends AppCompatActivity {
     private int score;
     private boolean answered;
 
+    private long backPressedTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -173,4 +175,13 @@ public class RadioButtonChoices extends AppCompatActivity {
         buttonConfirmNext = findViewById(R.id.btnConfirmNext);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            finishQuiz();
+        } else {
+            Toast.makeText(this, "Press back again to finish", Toast.LENGTH_SHORT).show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
 }
