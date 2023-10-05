@@ -74,7 +74,7 @@ public class RadioButtonChoices extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = new QuizDbHelper(this);
-            questionList = dbHelper.getAllQuestion();
+            questionList = dbHelper.getQuestions("Medium");
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
 
