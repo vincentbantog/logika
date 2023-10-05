@@ -5,8 +5,8 @@ import android.os.Parcelable;
 
 public class Question implements Parcelable {
     public static final String DIFFICULTY_EASY = "Easy";
-    public static final String DIFFICULTY_MEDIUM = "MEDIUM";
-    public static final String DIFFICULTY_HARD = "HARD";
+    public static final String DIFFICULTY_MEDIUM = "Medium";
+    public static final String DIFFICULTY_HARD = "Hard";
 
     private String question;
     private String option1;

@@ -11,7 +11,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.logika.MainMenu;
@@ -23,11 +25,13 @@ public class LogicGate extends AppCompatActivity {
     private Button btnLogicGateStart;
 
     private static final int REQUEST_CODE_QUIZ = 1;
+    public static final String EXTRA_DIFFICULTY = "extraDifficulty";
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String KEY_HIGHSCORE = "keyHighscore";
 
     private TextView textViewHighscore;
+    private Spinner spinnerDifficulty;
     private int highscore;
 
 
@@ -40,6 +44,15 @@ public class LogicGate extends AppCompatActivity {
         startQuiz();
 
         textViewHighscore = findViewById(R.id.txtHighScore);
+        spinnerDifficulty = findViewById(R.id.spinner_difficulty);
+
+        String[] difficultyLevels = Question.getAllDifficultyLevels();
+
+        ArrayAdapter<String> adapterDifficulty = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, difficultyLevels);
+        adapterDifficulty.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDifficulty.setAdapter(adapterDifficulty);
+
         loadHighscore();
 
 
@@ -62,7 +75,10 @@ public class LogicGate extends AppCompatActivity {
         btnLogicGateStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String difficulty = spinnerDifficulty.getSelectedItem().toString();
+
                 Intent mainIntent = new Intent(LogicGate.this, RadioButtonChoices.class);
+                mainIntent.putExtra(EXTRA_DIFFICULTY, difficulty);
                 startActivityForResult(mainIntent, REQUEST_CODE_QUIZ);
 
             }

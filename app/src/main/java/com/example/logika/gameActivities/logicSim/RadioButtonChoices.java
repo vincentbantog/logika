@@ -38,6 +38,7 @@ public class RadioButtonChoices extends AppCompatActivity {
     private TextView textViewQuestion;
     private TextView textViewScore;
     private TextView textViewQuestionCount;
+    private TextView textViewDifficulty;
     private TextView textViewCountDown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -72,9 +73,14 @@ public class RadioButtonChoices extends AppCompatActivity {
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
 
+        Intent intent = getIntent();
+        String difficulty = intent.getStringExtra(LogicGate.EXTRA_DIFFICULTY);
+
+        textViewDifficulty.setText("Difficulty: " + difficulty);
+
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = new QuizDbHelper(this);
-            questionList = dbHelper.getQuestions("Medium");
+            questionList = dbHelper.getQuestions(difficulty);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
 
@@ -240,6 +246,7 @@ public class RadioButtonChoices extends AppCompatActivity {
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtQuestionNumber);
         textViewCountDown = findViewById(R.id.txtTimer);
+        textViewDifficulty = findViewById(R.id.txtDifficulty);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button_1);
         rb2 = findViewById(R.id.radio_button_2);

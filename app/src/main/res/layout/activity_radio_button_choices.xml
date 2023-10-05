@@ -24,6 +24,16 @@
         android:freezesText="true"/>
 
     <TextView
+        android:id="@+id/txtDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTimer"
+        android:layout_marginTop="15dp"
+        android:text="Difficulty: "
+        android:textSize="14dp"
+        android:freezesText="true"/>
+
+    <TextView
         android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
