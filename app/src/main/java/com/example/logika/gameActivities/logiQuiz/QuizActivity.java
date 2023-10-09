@@ -1,6 +1,8 @@
 package com.example.logika.gameActivities.logiQuiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
 
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +37,9 @@ public class QuizActivity extends AppCompatActivity {
 
     private int score;
     private boolean answered;
+
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    private Fragment fragment;
 
 
     @Override
@@ -62,7 +69,38 @@ public class QuizActivity extends AppCompatActivity {
         buttonConfirmNext = findViewById(R.id.btnConfirmAnswer);
     }
 
+    private void showNextQuestion() {
+        currentQuestion = questionList.get(questionCounter);
+        fragment = createFragmentBasedOnType(currentQuestion.getCircuitFragment());
 
+        fragmentManager.beginTransaction()
+                .replace(R.id.questionFragmentContainer, fragment.getClass(), null)
+                .setReorderingAllowed(true)
+                .addToBackStack("name")
+                .commit();
+
+        rb1.setText(currentQuestion.getOption1());
+        rb2.setText(currentQuestion.getOption2());
+        rb3.setText(currentQuestion.getOption3());
+    }
+
+    public Fragment createFragmentBasedOnType(int circuitFragment){
+        Fragment fragment = null;
+
+        switch (circuitFragment) {
+            case 1:
+                fragment = new QuestionFragment1();
+                break;
+            case 2:
+                fragment = new QuestionFragment2();
+                break;
+            default:
+                break;
+        }
+
+    return fragment;
+
+    }
 
 
 }

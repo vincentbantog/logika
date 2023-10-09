@@ -43,11 +43,10 @@
         android:layout_height="300dp"
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@color/paleYellow" >
+        android:layout_marginTop="20dp">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
+            android:id="@+id/questionFragmentContainer"
             android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
