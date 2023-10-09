@@ -12,7 +12,21 @@
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:background="@color/black"></RelativeLayout>
+        android:background="@color/lightBlue">
+
+        <TextView
+            android:id="@+id/txtQuestionNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question 1/x" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Score: " />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutTimer"
@@ -30,7 +44,14 @@
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@color/paleYellow" />
+        android:background="@color/paleYellow" >
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView2"
+            android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
     <RadioGroup
         android:id="@+id/radioGroup"
