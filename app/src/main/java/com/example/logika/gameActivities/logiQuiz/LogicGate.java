@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities;
+package com.example.logika.gameActivities.logiQuiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +14,15 @@ public class LogicGate extends AppCompatActivity {
 
     private Button btnBack;
 
+    private Button btnBegin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logic_gate);
 
         configureBackButton();
+        configureBeginButton();
 
     }
 
@@ -34,4 +37,18 @@ public class LogicGate extends AppCompatActivity {
             }
         });
     }
+
+    public void configureBeginButton() {
+        btnBegin = findViewById(R.id.btnBegin);
+        btnBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(LogicGate.this, QuizActivity.class);
+                startActivity(mainIntent);
+                finish();
+            }
+        });
+    }
+
+
 }

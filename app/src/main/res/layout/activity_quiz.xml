@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameActivities.logiQuiz.QuizActivity">
+
+    <RelativeLayout
+        android:id="@+id/relLayoutProgressBar"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@color/black"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutTimer"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/relLayoutProgressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/black"></RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/questionFrameContainer"
+        android:layout_width="360dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/relLayoutTimer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/paleYellow" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questionFrameContainer">
+
+        <RadioButton
+            android:id="@+id/radioButtonOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="34dp"
+            android:text="Option 1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="Option 2" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOption3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="Option 3" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConfirmAnswer"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Confirm" />
+
+
+</RelativeLayout>
