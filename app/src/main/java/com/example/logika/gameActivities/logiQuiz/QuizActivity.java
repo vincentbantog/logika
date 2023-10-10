@@ -45,6 +45,8 @@ public class QuizActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
     private Fragment fragment;
 
+    private long backPressedTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,7 +181,13 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(QuizActivity.this, LogicGate.class);
-        startActivity(intent);
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            Intent intent = new Intent(QuizActivity.this, LogicGate.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Press back again to confirm", Toast.LENGTH_SHORT).show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }
