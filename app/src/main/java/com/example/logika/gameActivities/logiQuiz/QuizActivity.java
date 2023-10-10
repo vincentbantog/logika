@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
@@ -57,6 +60,21 @@ public class QuizActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
 
         showNextQuestion();
+
+        buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!answered) {
+                    if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
+                        checkAnswer();
+                    } else {
+                        Toast.makeText(QuizActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    showNextQuestion();
+                }
+            }
+        });
     }
 
     private void initializeViewElements(){
@@ -70,18 +88,31 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showNextQuestion() {
-        currentQuestion = questionList.get(questionCounter);
-        fragment = createFragmentBasedOnType(currentQuestion.getCircuitFragment());
+        rb1.setTextColor(textColorDefaultRb);
+        rb2.setTextColor(textColorDefaultRb);
+        rb3.setTextColor(textColorDefaultRb);
+        rbGroup.clearCheck();
 
-        fragmentManager.beginTransaction()
-                .replace(R.id.questionFragmentContainer, fragment.getClass(), null)
-                .setReorderingAllowed(true)
-                .addToBackStack("name")
-                .commit();
+        if (questionCounter < questionCountTotal) {
+            currentQuestion = questionList.get(questionCounter);
+            fragment = createFragmentBasedOnType(currentQuestion.getCircuitFragment());
 
-        rb1.setText(currentQuestion.getOption1());
-        rb2.setText(currentQuestion.getOption2());
-        rb3.setText(currentQuestion.getOption3());
+            fragmentManager.beginTransaction()
+                    .replace(R.id.questionFragmentContainer, fragment.getClass(), null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name")
+                    .commit();
+            rb1.setText(currentQuestion.getOption1());
+            rb2.setText(currentQuestion.getOption2());
+            rb3.setText(currentQuestion.getOption3());
+
+            questionCounter++;
+            textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
+            answered = false;
+            buttonConfirmNext.setText("Confirm");
+        } else {
+            finishQuiz();
+        }
     }
 
     public Fragment createFragmentBasedOnType(int circuitFragment){
@@ -98,9 +129,53 @@ public class QuizActivity extends AppCompatActivity {
                 break;
         }
 
-    return fragment;
+        return fragment;
 
     }
+
+    private void checkAnswer() {
+        answered = true;
+
+        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
+
+        if (answerNr == currentQuestion.getAnswerNr()) {
+            score++;
+            textViewScore.setText("Score: " + score);
+        }
+
+        showSolution();
+
+    }
+
+    private void showSolution() {
+        rb1.setTextColor(Color.RED);
+        rb2.setTextColor(Color.RED);
+        rb3.setTextColor(Color.RED);
+
+        switch (currentQuestion.getAnswerNr()) {
+            case 1:
+                rb1.setTextColor(Color.GREEN);
+                break;
+            case 2:
+                rb2.setTextColor(Color.GREEN);
+                break;
+            case 3:
+                rb3.setTextColor(Color.GREEN);
+                break;
+        }
+
+        if (questionCounter < questionCountTotal) {
+            buttonConfirmNext.setText("Next");
+        } else {
+            buttonConfirmNext.setText("Finish");
+        }
+    }
+
+    private void finishQuiz() {
+        finish();
+    }
+
 
 
 }
