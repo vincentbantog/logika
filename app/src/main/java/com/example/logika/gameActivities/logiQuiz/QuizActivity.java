@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -21,11 +22,14 @@ import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragm
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
+    private static final long COUNTDOWN_IN_MILLIS = 30000;
 
     private TextView textViewScore;
     private TextView textViewQuestionCount;
+    private TextView textViewTimer;
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -33,6 +37,11 @@ public class QuizActivity extends AppCompatActivity {
     private Button buttonConfirmNext;
 
     private ColorStateList textColorDefaultRb;
+    private ColorStateList textColorDefaultCd;
+
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
+
 
     private List<Question> questionList;
     private int questionCounter;
@@ -56,6 +65,8 @@ public class QuizActivity extends AppCompatActivity {
         initializeViewElements();
 
         textColorDefaultRb = rb1.getTextColors();
+        textColorDefaultCd = textViewTimer.getTextColors();
+
 
         QuizDbHelper dbHelper = new QuizDbHelper(this);
         questionList = dbHelper.getAllQuestion();
@@ -83,6 +94,7 @@ public class QuizActivity extends AppCompatActivity {
     private void initializeViewElements(){
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtQuestionNumber);
+        textViewTimer = findViewById(R.id.txtTimer);
         rbGroup = findViewById(R.id.radioGroup);
         rb1 = findViewById(R.id.radioButtonOption1);
         rb2 = findViewById(R.id.radioButtonOption2);
@@ -113,8 +125,44 @@ public class QuizActivity extends AppCompatActivity {
             textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
             buttonConfirmNext.setText("Confirm");
+
+            timeLeftInMillis = COUNTDOWN_IN_MILLIS;
+            startCountDown();
+
         } else {
             finishQuiz();
+        }
+    }
+
+    private void startCountDown() {
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                 timeLeftInMillis = 0;
+                 updateCountDownText();
+                 checkAnswer();
+            }
+        }.start();
+    }
+
+    private void updateCountDownText(){
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+
+        textViewTimer.setText(timeFormatted);
+
+        if (timeLeftInMillis < 10000) {
+            textViewTimer.setTextColor(Color.RED);
+        } else {
+            textViewTimer.setTextColor(textColorDefaultCd);
         }
     }
 
@@ -138,6 +186,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private void checkAnswer() {
         answered = true;
+
+        countDownTimer.cancel();
 
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
@@ -189,5 +239,13 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         backPressedTime = System.currentTimeMillis();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (countDownTimer != null){
+            countDownTimer.cancel();
+        }
     }
 }
