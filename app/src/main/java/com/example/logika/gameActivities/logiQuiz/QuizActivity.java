@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment2;
 
 import java.util.Collections;
 import java.util.List;
@@ -53,6 +55,7 @@ public class QuizActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager = getSupportFragmentManager();
     private Fragment fragment;
+    private Fragment simulationFragment;
 
     private long backPressedTime;
 
@@ -111,6 +114,7 @@ public class QuizActivity extends AppCompatActivity {
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
             fragment = createFragmentBasedOnType(currentQuestion.getCircuitFragment());
+            simulationFragment = createSimulationFragment(currentQuestion.getCircuitFragment());
 
             fragmentManager.beginTransaction()
                     .replace(R.id.questionFragmentContainer, fragment.getClass(), null)
@@ -184,6 +188,28 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    public Fragment createSimulationFragment(int circuitFragment){
+        Fragment fragment = null;
+
+        switch (circuitFragment) {
+            case 1:
+                fragment = new SimulationFragment1();
+                break;
+            case 2:
+                fragment = new SimulationFragment2();
+                break;
+            default:
+                break;
+        }
+
+        return fragment;
+
+    }
+
+
+
+
+
     private void checkAnswer() {
         answered = true;
 
@@ -206,6 +232,12 @@ public class QuizActivity extends AppCompatActivity {
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
 
+        fragmentManager.beginTransaction()
+                .replace(R.id.questionFragmentContainer, simulationFragment.getClass(), null)
+                .setReorderingAllowed(true)
+                .addToBackStack("name")
+                .commit();
+
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
@@ -223,6 +255,8 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             buttonConfirmNext.setText("Finish");
         }
+
+
     }
 
     private void finishQuiz() {
