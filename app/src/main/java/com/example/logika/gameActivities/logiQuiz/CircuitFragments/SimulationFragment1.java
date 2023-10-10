@@ -28,7 +28,6 @@ public class SimulationFragment1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_simulation1, container, false);
 
         configureToggleInputButtons(view);
-        updateOutputDisplay();
 
         return view;
     }
@@ -60,13 +59,13 @@ public class SimulationFragment1 extends Fragment {
                 } else {
                     toggleInputButton2.setImageResource(R.drawable.simulation_button_off_state_b);
                 }
+
                 isButton2Pressed = !isButton2Pressed;
                 updateOutputDisplay();
             }
         });
 
         updateOutputDisplay();
-
     }
 
     private void updateOutputDisplay() {
@@ -76,6 +75,5 @@ public class SimulationFragment1 extends Fragment {
             outputDisplay.setImageResource(R.drawable.simulation_output_display_on);
         }
     }
-
 
 }

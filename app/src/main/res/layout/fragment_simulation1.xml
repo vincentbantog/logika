@@ -44,4 +44,12 @@
         android:layout_marginTop="110dp"
         android:id="@+id/outputDisplay"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:text="Press any Button to Begin the Simulation!"/>
+
+
 </RelativeLayout>
