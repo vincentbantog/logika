@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -176,6 +177,9 @@ public class QuizActivity extends AppCompatActivity {
         finish();
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(QuizActivity.this, LogicGate.class);
+        startActivity(intent);
+    }
 }
