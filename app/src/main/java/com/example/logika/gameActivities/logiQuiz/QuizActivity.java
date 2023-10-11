@@ -19,8 +19,10 @@ import android.widget.Toast;
 import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment3;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment2;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment3;
 
 import java.util.Collections;
 import java.util.List;
@@ -180,6 +182,8 @@ public class QuizActivity extends AppCompatActivity {
             case 2:
                 fragment = new QuestionFragment2();
                 break;
+            case 3:
+                fragment = new QuestionFragment3();
             default:
                 break;
         }
@@ -198,6 +202,8 @@ public class QuizActivity extends AppCompatActivity {
             case 2:
                 fragment = new SimulationFragment2();
                 break;
+            case 3:
+                fragment = new SimulationFragment3();
             default:
                 break;
         }

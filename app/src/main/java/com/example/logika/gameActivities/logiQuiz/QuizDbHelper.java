@@ -54,8 +54,10 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     private void fillQuestionsTable() {
         Question q1 = new Question(1,  "X = 0, Y = 0", "X = 1, Y = 1", "X = 1, Y = 0", 2);
         addQuestion(q1);
-        Question q2 = new Question(2,  "B and D", "C and D", "A and B", 1);
+        Question q2 = new Question(2,  "AND gate", "OR gate", "NOR gate", 2);
         addQuestion(q2);
+        Question q3 = new Question(3,  "0", "1", "2", 1);
+        addQuestion(q3);
     }
 
     private void addQuestion(Question question) {
