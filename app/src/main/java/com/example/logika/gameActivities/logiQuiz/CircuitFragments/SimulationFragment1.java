@@ -10,17 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.logika.R;
 
 public class SimulationFragment1 extends Fragment {
 
-    private ImageButton toggleInputButton1;
-    private ImageButton toggleInputButton2;
+    private ImageView toggleImageButton1;
+    private ImageView toggleImageButton2;
+    private ToggleButton toggleButton1;
+    private ToggleButton toggleButton2;
     private ImageView outputDisplay;
 
-    private boolean isButton1Pressed = false;
-    private boolean isButton2Pressed = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,48 +35,46 @@ public class SimulationFragment1 extends Fragment {
         return view;
     }
 
-    public void configureToggleInputButtons(View view){
-        toggleInputButton1 = view.findViewById(R.id.toggleInputButton1);
-        toggleInputButton2 = view.findViewById(R.id.toggleInputButton2);
+    public void configureToggleInputButtons(View view) {
+        toggleImageButton1 = view.findViewById(R.id.toggleImageButton1);
+        toggleImageButton2 = view.findViewById(R.id.toggleImageButton2);
+        toggleButton1 = view.findViewById(R.id.toggleButton1);
+        toggleButton2 = view.findViewById(R.id.toggleButton2);
         outputDisplay = view.findViewById(R.id.outputDisplay);
 
-        toggleInputButton1.setOnClickListener(new View.OnClickListener() {
+        toggleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (isButton1Pressed) {
-                    toggleInputButton1.setImageResource(R.drawable.simulation_button_on_state_a);
+                if (toggleButton1.isChecked()){
+                    toggleImageButton1.setImageResource(R.drawable.simulation_button_on_state_a);
                 } else {
-                    toggleInputButton1.setImageResource(R.drawable.simulation_button_off_state_a);
+                    toggleImageButton1.setImageResource(R.drawable.simulation_button_off_state_a);
                 }
-
-                isButton1Pressed = !isButton1Pressed;
-                updateOutputDisplay();
-            }
-        });
-        toggleInputButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isButton2Pressed) {
-                    toggleInputButton2.setImageResource(R.drawable.simulation_button_on_state_b);
-                } else {
-                    toggleInputButton2.setImageResource(R.drawable.simulation_button_off_state_b);
-                }
-
-                isButton2Pressed = !isButton2Pressed;
                 updateOutputDisplay();
             }
         });
 
-        updateOutputDisplay();
+        toggleButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (toggleButton2.isChecked()){
+                    toggleImageButton2.setImageResource(R.drawable.simulation_button_on_state_b);
+                } else {
+                    toggleImageButton2.setImageResource(R.drawable.simulation_button_off_state_b);
+                }
+                updateOutputDisplay();
+            }
+        });
     }
 
-    private void updateOutputDisplay() {
-        if (!isButton1Pressed && !isButton2Pressed) {
+    private void updateOutputDisplay(){
+        boolean isToggleButton1Checked = toggleButton1.isChecked();
+        boolean isToggleButton2Checked = toggleButton2.isChecked();
+
+        if (isToggleButton1Checked && isToggleButton2Checked) {
             outputDisplay.setImageResource(R.drawable.simulation_output_display_off);
         } else {
             outputDisplay.setImageResource(R.drawable.simulation_output_display_on);
         }
     }
-
 }
