@@ -20,9 +20,11 @@ import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment3;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment4;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment3;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment4;
 
 import java.util.Collections;
 import java.util.List;
@@ -184,6 +186,10 @@ public class QuizActivity extends AppCompatActivity {
                 break;
             case 3:
                 fragment = new QuestionFragment3();
+                break;
+            case 4:
+                fragment = new QuestionFragment4();
+                break;
             default:
                 break;
         }
@@ -204,6 +210,10 @@ public class QuizActivity extends AppCompatActivity {
                 break;
             case 3:
                 fragment = new SimulationFragment3();
+                break;
+            case 4:
+                fragment = new SimulationFragment4();
+                break;
             default:
                 break;
         }
