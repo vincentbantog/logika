@@ -21,10 +21,12 @@ import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragm
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment3;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment4;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment5;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment3;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment4;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment5;
 
 import java.util.Collections;
 import java.util.List;
@@ -190,6 +192,9 @@ public class QuizActivity extends AppCompatActivity {
             case 4:
                 fragment = new QuestionFragment4();
                 break;
+            case 5:
+                fragment = new QuestionFragment5();
+                break;
             default:
                 break;
         }
@@ -213,6 +218,9 @@ public class QuizActivity extends AppCompatActivity {
                 break;
             case 4:
                 fragment = new SimulationFragment4();
+                break;
+            case 5:
+                fragment = new SimulationFragment5();
                 break;
             default:
                 break;
