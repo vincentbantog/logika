@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".gameActivities.logiQuiz.QuizActivity">
 
+    <TextView
+        android:id="@+id/txtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="Score: " />
+
+    <TextView
+        android:id="@+id/txtQuestionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question 1/x" />
+
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
         android:layout_width="320dp"
@@ -14,18 +27,31 @@
         android:layout_marginTop="40dp"
         android:background="@color/lightBlue">
 
-        <TextView
-            android:id="@+id/txtQuestionNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Question 1/x" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/progress_tracker_neutral_circle"
+        android:id="@+id/circle1"
+        android:layout_toStartOf="@+id/circle2"/>
 
-        <TextView
-            android:id="@+id/txtScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="Score: " />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/progress_tracker_neutral_circle"
+            android:id="@+id/circle2"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/progress_tracker_neutral_circle"
+            android:id="@+id/circle3"
+            android:layout_toEndOf="@id/circle2"/>
+
+
+
     </RelativeLayout>
 
     <RelativeLayout
