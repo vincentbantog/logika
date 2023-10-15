@@ -12,6 +12,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -47,6 +48,7 @@ public class QuizActivity extends AppCompatActivity {
     private ImageView circleDisplay5;
 
     private TextView textViewTimer;
+    private ProgressBar timerBar;
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -118,6 +120,7 @@ public class QuizActivity extends AppCompatActivity {
         circleDisplay4 = findViewById(R.id.circle4);
         circleDisplay5 = findViewById(R.id.circle5);
         textViewTimer = findViewById(R.id.txtTimer);
+        timerBar = findViewById(R.id.timerBar);
         rbGroup = findViewById(R.id.radioGroup);
         rb1 = findViewById(R.id.radioButtonOption1);
         rb2 = findViewById(R.id.radioButtonOption2);

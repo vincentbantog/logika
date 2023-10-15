@@ -72,6 +72,14 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:30"
+        android:textSize="26dp"
+        android:id="@+id/txtTimer"/>
+
+
     <RelativeLayout
         android:id="@+id/relLayoutTimer"
         android:layout_width="320dp"
@@ -81,12 +89,12 @@
         android:layout_marginTop="15dp"
         android:background="@color/lightBlue">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:30"
-            android:textSize="26dp"
-            android:id="@+id/txtTimer"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/timerBar"
+            android:progressDrawable="@drawable/timer_bar_design"/>
 
     </RelativeLayout>
 
