@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFra
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment4;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment5;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -37,6 +39,13 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView textViewScore;
     private TextView textViewQuestionCount;
+    private List<ImageView> circleDisplayList;
+    private ImageView circleDisplay1;
+    private ImageView circleDisplay2;
+    private ImageView circleDisplay3;
+    private ImageView circleDisplay4;
+    private ImageView circleDisplay5;
+
     private TextView textViewTimer;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -103,6 +112,11 @@ public class QuizActivity extends AppCompatActivity {
     private void initializeViewElements(){
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtQuestionNumber);
+        circleDisplay1 = findViewById(R.id.circle1);
+        circleDisplay2 = findViewById(R.id.circle2);
+        circleDisplay3 = findViewById(R.id.circle3);
+        circleDisplay4 = findViewById(R.id.circle4);
+        circleDisplay5 = findViewById(R.id.circle5);
         textViewTimer = findViewById(R.id.txtTimer);
         rbGroup = findViewById(R.id.radioGroup);
         rb1 = findViewById(R.id.radioButtonOption1);
@@ -115,6 +129,9 @@ public class QuizActivity extends AppCompatActivity {
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
         rb3.setTextColor(textColorDefaultRb);
+        rb1.setEnabled(true);
+        rb2.setEnabled(true);
+        rb3.setEnabled(true);
         rbGroup.clearCheck();
 
         if (questionCounter < questionCountTotal) {
@@ -231,13 +248,16 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-
-
-
     private void checkAnswer() {
         answered = true;
 
         countDownTimer.cancel();
+        circleDisplayList = new ArrayList<>();
+        circleDisplayList.add(circleDisplay1);
+        circleDisplayList.add(circleDisplay2);
+        circleDisplayList.add(circleDisplay3);
+        circleDisplayList.add(circleDisplay4);
+        circleDisplayList.add(circleDisplay5);
 
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
@@ -245,6 +265,10 @@ public class QuizActivity extends AppCompatActivity {
         if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
             textViewScore.setText("Score: " + score);
+
+            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_small);
+        } else {
+            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_wrong);
         }
 
         showSolution();
@@ -273,6 +297,10 @@ public class QuizActivity extends AppCompatActivity {
                 rb3.setTextColor(Color.GREEN);
                 break;
         }
+
+        rb1.setEnabled(false);
+        rb2.setEnabled(false);
+        rb3.setEnabled(false);
 
         if (questionCounter < questionCountTotal) {
             buttonConfirmNext.setText("Next");

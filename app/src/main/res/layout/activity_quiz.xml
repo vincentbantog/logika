@@ -11,13 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="Score: " />
+        android:text="Score: "
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/txtQuestionNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question 1/x" />
+        android:text="Question 1/x"
+        android:visibility="gone"/>
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
@@ -40,15 +42,31 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:src="@drawable/progress_tracker_neutral_circle"
-            android:id="@+id/circle2"/>
+            android:id="@+id/circle2"
+            android:layout_toStartOf="@id/circle3"/>
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:src="@drawable/progress_tracker_neutral_circle"
-            android:id="@+id/circle3"
-            android:layout_toEndOf="@id/circle2"/>
+            android:id="@+id/circle3" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/progress_tracker_neutral_circle"
+            android:id="@+id/circle4"
+            android:layout_toEndOf="@id/circle3"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/progress_tracker_neutral_circle"
+            android:id="@+id/circle5"
+            android:layout_toEndOf="@id/circle4"/>
 
 
 
