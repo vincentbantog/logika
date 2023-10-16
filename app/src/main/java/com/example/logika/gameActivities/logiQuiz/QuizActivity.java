@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -49,6 +50,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView textViewTimer;
     private ProgressBar timerBar;
+
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -170,15 +172,23 @@ public class QuizActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
+                updateProgressBar();
             }
 
             @Override
             public void onFinish() {
                  timeLeftInMillis = 0;
                  updateCountDownText();
+                 timerBar.setProgress(0);
                  checkAnswer();
+
             }
         }.start();
+    }
+
+    private void updateProgressBar(){
+        int progress = (int) (timeLeftInMillis * 100 / COUNTDOWN_IN_MILLIS);
+        timerBar.setProgress(progress);
     }
 
     private void updateCountDownText(){

@@ -77,21 +77,24 @@
         android:layout_height="wrap_content"
         android:text="00:30"
         android:textSize="26dp"
-        android:id="@+id/txtTimer"/>
+        android:id="@+id/txtTimer"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
 
 
     <RelativeLayout
         android:id="@+id/relLayoutTimer"
         android:layout_width="320dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/relLayoutProgressBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@color/lightBlue">
+        android:layout_marginTop="17dp"
+        android:background="@color/black">
 
         <ProgressBar
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="12dp"
+            android:layout_centerVertical="true"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:id="@+id/timerBar"
             android:progressDrawable="@drawable/timer_bar_design"/>
@@ -104,7 +107,7 @@
         android:layout_height="300dp"
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="17dp">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/questionFragmentContainer"
