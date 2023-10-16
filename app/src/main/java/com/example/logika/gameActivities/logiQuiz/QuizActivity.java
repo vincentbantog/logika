@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
+    public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
     private TextView textViewScore;
@@ -325,6 +326,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void finishQuiz() {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(EXTRA_SCORE, score);
+        setResult(RESULT_OK, resultIntent);
         finish();
     }
 
