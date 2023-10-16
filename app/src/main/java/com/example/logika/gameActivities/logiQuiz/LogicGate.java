@@ -80,7 +80,7 @@ public class LogicGate extends AppCompatActivity {
     private void loadHighScore(){
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         highScore = prefs.getInt(KEY_HIGHSCORE, 0);
-        textViewHighScore.setText("Highscore " + highScore);
+        textViewHighScore.setText("Highscore: " + highScore);
     }
     private void updateHighScore(int highScoreNew) {
         highScore = highScoreNew;
