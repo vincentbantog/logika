@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".gameActivities.basiQuiz.BQQuizActivity">
 
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Question Count: "
+    android:id="@+id/txtQuestionNumber"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: "
+        android:id="@+id/txtScore"
+        android:layout_alignParentEnd="true"/>
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
@@ -28,16 +40,23 @@
 
     </RelativeLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/frameLayoutQuestions"
         android:layout_width="330dp"
-        android:layout_height="230dp"
+        android:layout_height="200dp"
         android:layout_below="@id/relLayoutScoreBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@color/lightBlue">
+        >
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Question will be displayed here" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutAnswerChoices"
@@ -45,39 +64,40 @@
         android:layout_height="250dp"
         android:layout_below="@id/frameLayoutQuestions"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        >
+        android:layout_marginTop="25dp">
 
         <Button
+            android:id="@+id/btnChoice1"
             android:layout_width="180dp"
             android:layout_height="117dp"
             android:text="Option 1"
-            android:id="@+id/btnChoice1" />
-
-        <Button
-            android:layout_width="180dp"
-            android:layout_height="117dp"
-            android:text="Option 2"
-            android:id="@+id/btnChoice2"
-            android:layout_alignParentEnd="true"
             />
 
         <Button
+            android:id="@+id/btnChoice2"
             android:layout_width="180dp"
             android:layout_height="117dp"
-            android:text="Option 3"
-            android:id="@+id/btnChoice3"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentEnd="true"
+            android:text="Option 2" />
 
         <Button
+            android:id="@+id/btnChoice3"
             android:layout_width="180dp"
             android:layout_height="117dp"
-            android:text="Option 4"
+            android:layout_alignParentBottom="true"
+            android:text="Option 3" />
+
+        <Button
             android:id="@+id/btnChoice4"
+            android:layout_width="180dp"
+            android:layout_height="117dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true"
+            android:text="Option 4" />
 
     </RelativeLayout>
+
+
 
 
 </RelativeLayout>
