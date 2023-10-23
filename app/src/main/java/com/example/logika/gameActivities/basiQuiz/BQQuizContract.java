@@ -2,7 +2,6 @@ package com.example.logika.gameActivities.basiQuiz;
 
 import android.provider.BaseColumns;
 
-import com.example.logika.gameActivities.logiQuiz.QuizContract;
 
 public final class BQQuizContract {
 
