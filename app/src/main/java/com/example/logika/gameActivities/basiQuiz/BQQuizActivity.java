@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.logika.R;
@@ -18,12 +20,10 @@ public class BQQuizActivity extends AppCompatActivity {
     private TextView txtQuestionNumber;
     private TextView txtQuestion;
 
-    private Button btnChoice1;
-    private Button btnChoice2;
-    private Button btnChoice3;
-    private Button btnChoice4;
-
-
+    private RadioGroup rbGroup;
+    private RadioButton radioBtnChoice1;
+    private RadioButton radioBtnChoice2;
+    private RadioButton radioBtnChoice3;
     private List<BQQuestion> questionList;
 
     private int questionCounter;
@@ -50,10 +50,7 @@ public class BQQuizActivity extends AppCompatActivity {
     private void initializeViewElements() {
         txtQuestionNumber = findViewById(R.id.txtQuestionNumber);
         txtQuestion = findViewById(R.id.txtQuestion);
-        btnChoice1 = findViewById(R.id.btnChoice1);
-        btnChoice2 = findViewById(R.id.btnChoice2);
-        btnChoice3 = findViewById(R.id.btnChoice3);
-        btnChoice4 = findViewById(R.id.btnChoice4);
+
     }
 
     private void showNextQuestion() {
@@ -63,10 +60,6 @@ public class BQQuizActivity extends AppCompatActivity {
 
             txtQuestion.setText(currentQuestion.getQuestion());
 
-            btnChoice1.setText(currentQuestion.getOption1());
-            btnChoice2.setText(currentQuestion.getOption2());
-            btnChoice3.setText(currentQuestion.getOption3());
-            btnChoice4.setText(currentQuestion.getOption4());
 
             questionCounter++;
             txtQuestionNumber.setText("Question: " + questionCounter + "/" + questionCountTotal);
@@ -76,9 +69,6 @@ public class BQQuizActivity extends AppCompatActivity {
         }
 
     }
-
-
-
 
     private void finishQuiz() {
         Intent intent = new Intent(BQQuizActivity.this, MultipleChoice.class);
