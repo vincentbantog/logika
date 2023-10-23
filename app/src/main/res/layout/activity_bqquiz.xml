@@ -13,10 +13,11 @@
         android:text="Question Count: " />
 
     <TextView
-        android:id="@+id/txtScore"
+        android:id="@+id/txtBQScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
         android:text="Score: " />
 
     <RelativeLayout
