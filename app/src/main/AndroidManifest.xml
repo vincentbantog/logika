@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
+            android:name=".gameActivities.basiQuiz.BQQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".gameActivities.logiQuiz.QuizActivity"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:name=".gameActivities.TrueOrFalse"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.MultipleChoice"
+            android:name=".gameActivities.basiQuiz.MultipleChoice"
             android:exported="false" />
         <activity
             android:name=".MainMenu"
