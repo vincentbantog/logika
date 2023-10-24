@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,9 +31,13 @@ public class BQQuizActivity extends AppCompatActivity {
     private ColorStateList textColorDefaultRb;
     private RadioGroup rbGroup;
     private RadioButton radioBtnChoice1;
+    private ImageView imageViewChoice1;
     private RadioButton radioBtnChoice2;
+    private ImageView imageViewChoice2;
     private RadioButton radioBtnChoice3;
+    private ImageView imageViewChoice3;
     private RadioButton radioBtnChoice4;
+    private ImageView imageViewChoice4;
     private Button btnConfirm;
 
     private List<BQQuestion> questionList;
@@ -56,6 +62,7 @@ public class BQQuizActivity extends AppCompatActivity {
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
 
+        configureRadioButtonState();
         showNextQuestion();
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +86,19 @@ public class BQQuizActivity extends AppCompatActivity {
         txtQuestion = findViewById(R.id.txtQuestion);
         txtScore = findViewById(R.id.txtBQScore);
         rbGroup = findViewById(R.id.radioGroupChoices);
+
         radioBtnChoice1 = findViewById(R.id.radioBtnOption1);
+        imageViewChoice1 = findViewById(R.id.imageViewOption1);
+
         radioBtnChoice2 = findViewById(R.id.radioBtnOption2);
+        imageViewChoice2 = findViewById(R.id.imageViewOption2);
+
         radioBtnChoice3 = findViewById(R.id.radioBtnOption3);
+        imageViewChoice3 = findViewById(R.id.imageViewOption3);
+
         radioBtnChoice4 = findViewById(R.id.radioBtnOption4);
+        imageViewChoice4 = findViewById(R.id.imageViewOption4);
+
         btnConfirm = findViewById(R.id.btnConfirm);
     }
 
@@ -95,7 +111,6 @@ public class BQQuizActivity extends AppCompatActivity {
         radioBtnChoice3.setChecked(false);
         radioBtnChoice4.setTextColor(textColorDefaultRb);
         radioBtnChoice4.setChecked(false);
-
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
@@ -112,10 +127,26 @@ public class BQQuizActivity extends AppCompatActivity {
             answered = false;
             btnConfirm.setText("Confirm");
 
+
         } else {
             finishQuiz();
         }
 
+    }
+
+    public void configureRadioButtonState(){
+        radioBtnChoice1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
     }
 
     private void checkAnswer() {

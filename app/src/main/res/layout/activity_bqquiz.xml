@@ -78,13 +78,13 @@
                 <ImageView
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:src="@drawable/simulation_button_off_state_a" />
+                    android:src="@drawable/basiquiz_radio_button_default_state"
+                    android:id="@+id/imageViewOption1"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption1"
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:button="@android:color/transparent"
                     android:text="Option 1"
                     android:textAlignment="center" />
 
@@ -97,13 +97,13 @@
                 <ImageView
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:src="@drawable/simulation_button_off_state_a" />
+                    android:src="@drawable/basiquiz_radio_button_default_state"
+                    android:id="@+id/imageViewOption2"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption2"
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:button="@android:color/transparent"
                     android:text="Option 2"
                     android:textAlignment="center" />
 
@@ -123,13 +123,13 @@
                 <ImageView
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:src="@drawable/simulation_button_off_state_a" />
+                    android:src="@drawable/basiquiz_radio_button_default_state"
+                    android:id="@+id/imageViewOption3"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption3"
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:button="@android:color/transparent"
                     android:text="Option 3"
                     android:textAlignment="center" />
 
@@ -142,13 +142,13 @@
                 <ImageView
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:src="@drawable/simulation_button_off_state_a" />
+                    android:src="@drawable/basiquiz_radio_button_default_state"
+                    android:id="@+id/imageViewOption4"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption4"
                     android:layout_width="175dp"
                     android:layout_height="125dp"
-                    android:button="@android:color/transparent"
                     android:text="Option 4"
                     android:textAlignment="center" />
 
