@@ -121,15 +121,30 @@ public class BQQuizActivity extends AppCompatActivity {
     private void checkAnswer() {
         answered = true;
 
-        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
-        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
+        getCheckedRadioButton();
 
-        if (answerNr == currentQuestion.getAnswerNr()) {
+        if (getCheckedRadioButton() == currentQuestion.getAnswerNr()) {
             score++;
             txtScore.setText("Score: " + score);
         }
 
         showSolution();
+    }
+
+    private int getCheckedRadioButton() {
+        int selectedOption = -1;
+
+        if (radioBtnChoice1.isChecked()){
+            selectedOption = 1;
+        } else if (radioBtnChoice2.isChecked()){
+            selectedOption = 2;
+        } else if (radioBtnChoice3.isChecked()){
+            selectedOption = 3;
+        } else if (radioBtnChoice4.isChecked()){
+            selectedOption = 4;
+        }
+
+        return selectedOption;
     }
 
     private void showSolution() {
