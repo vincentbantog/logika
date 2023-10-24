@@ -62,7 +62,6 @@ public class BQQuizActivity extends AppCompatActivity {
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
 
-        configureRadioButtonState();
         showNextQuestion();
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
@@ -88,29 +87,27 @@ public class BQQuizActivity extends AppCompatActivity {
         rbGroup = findViewById(R.id.radioGroupChoices);
 
         radioBtnChoice1 = findViewById(R.id.radioBtnOption1);
-        imageViewChoice1 = findViewById(R.id.imageViewOption1);
+        imageViewChoice1 = findViewById(R.id.imageViewChoice1);
 
         radioBtnChoice2 = findViewById(R.id.radioBtnOption2);
-        imageViewChoice2 = findViewById(R.id.imageViewOption2);
+        imageViewChoice2 = findViewById(R.id.imageViewChoice2);
 
         radioBtnChoice3 = findViewById(R.id.radioBtnOption3);
-        imageViewChoice3 = findViewById(R.id.imageViewOption3);
+        imageViewChoice3 = findViewById(R.id.imageViewChoice3);
 
         radioBtnChoice4 = findViewById(R.id.radioBtnOption4);
-        imageViewChoice4 = findViewById(R.id.imageViewOption4);
+        imageViewChoice4 = findViewById(R.id.imageViewChoice4);
 
         btnConfirm = findViewById(R.id.btnConfirm);
     }
 
     private void showNextQuestion() {
         radioBtnChoice1.setTextColor(textColorDefaultRb);
-        radioBtnChoice1.setChecked(false);
         radioBtnChoice2.setTextColor(textColorDefaultRb);
-        radioBtnChoice2.setChecked(false);
         radioBtnChoice3.setTextColor(textColorDefaultRb);
-        radioBtnChoice3.setChecked(false);
         radioBtnChoice4.setTextColor(textColorDefaultRb);
-        radioBtnChoice4.setChecked(false);
+
+        configureRadioButtonState();
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
@@ -144,6 +141,45 @@ public class BQQuizActivity extends AppCompatActivity {
                     // Add logic for Option 2
                 } else {
                     imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
+
+        radioBtnChoice2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
+
+        radioBtnChoice3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
+
+        radioBtnChoice4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice4.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice4.setImageResource(R.drawable.basiquiz_radio_button_default_state);
                 }
             }
         });

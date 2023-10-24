@@ -58,112 +58,93 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:id="@+id/relLayoutRadioGroupChoices"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/frameLayoutQuestions"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:src="@drawable/basiquiz_radio_button_default_state"
+            android:id="@+id/imageViewChoice1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:src="@drawable/basiquiz_radio_button_default_state"
+            android:layout_marginTop="62.5dp"
+            android:id="@+id/imageViewChoice2"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:src="@drawable/basiquiz_radio_button_default_state"
+            android:layout_marginTop="125dp"
+            android:id="@+id/imageViewChoice3"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:src="@drawable/basiquiz_radio_button_default_state"
+            android:layout_marginTop="187.5dp"
+            android:id="@+id/imageViewChoice4"/>
+
     <RadioGroup
         android:id="@+id/radioGroupChoices"
         android:layout_width="350dp"
         android:layout_height="250dp"
-        android:layout_below="@+id/frameLayoutQuestions"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
-                    android:src="@drawable/basiquiz_radio_button_default_state"
-                    android:id="@+id/imageViewOption1"/>
+        android:layout_centerHorizontal="true">
 
                 <RadioButton
                     android:id="@+id/radioBtnOption1"
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="62.5dp"
                     android:text="Option 1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:button="@android:color/transparent"/>
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
-                    android:src="@drawable/basiquiz_radio_button_default_state"
-                    android:id="@+id/imageViewOption2"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption2"
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="62.5dp"
                     android:text="Option 2"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:button="@android:color/transparent"/>
 
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
-                    android:src="@drawable/basiquiz_radio_button_default_state"
-                    android:id="@+id/imageViewOption3"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption3"
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="62.5dp"
                     android:text="Option 3"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:button="@android:color/transparent"/>
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
-                    android:src="@drawable/basiquiz_radio_button_default_state"
-                    android:id="@+id/imageViewOption4"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOption4"
-                    android:layout_width="175dp"
-                    android:layout_height="125dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="62.5dp"
                     android:text="Option 4"
-                    android:textAlignment="center" />
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
+                    android:textAlignment="center"
+                    android:button="@android:color/transparent"/>
 
     </RadioGroup>
+
+
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroupChoices"
+        android:layout_below="@+id/relLayoutRadioGroupChoices"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
