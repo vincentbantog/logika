@@ -88,10 +88,14 @@ public class BQQuizActivity extends AppCompatActivity {
 
     private void showNextQuestion() {
         radioBtnChoice1.setTextColor(textColorDefaultRb);
+        radioBtnChoice1.setChecked(false);
         radioBtnChoice2.setTextColor(textColorDefaultRb);
+        radioBtnChoice2.setChecked(false);
         radioBtnChoice3.setTextColor(textColorDefaultRb);
+        radioBtnChoice3.setChecked(false);
         radioBtnChoice4.setTextColor(textColorDefaultRb);
-        rbGroup.clearCheck();
+        radioBtnChoice4.setChecked(false);
+
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
