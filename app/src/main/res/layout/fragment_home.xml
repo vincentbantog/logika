@@ -3,16 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainMenuFragments.HomeFragment">
+    tools:context=".mainMenuFragments.HomeFragment"
+    android:background="@drawable/spiderman">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="Home Screen"
-        android:textSize="26dp" />
 
     <Button
         android:id="@+id/btnQuickStart"
@@ -52,11 +46,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Greetings, Ka-Avio!"
+        android:text="With great power, \ncomes great responsibility"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:textSize="28dp"
-        android:textColor="@color/paleYellow"/>
+        android:layout_marginTop="48dp"
+        android:textSize="26dp"
+        android:textColor="@color/black"/>
+
+
 
 
 </RelativeLayout>
