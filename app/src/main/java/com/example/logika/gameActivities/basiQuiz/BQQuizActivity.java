@@ -106,6 +106,8 @@ public class BQQuizActivity extends AppCompatActivity {
         radioBtnChoice2.setTextColor(textColorDefaultRb);
         radioBtnChoice3.setTextColor(textColorDefaultRb);
         radioBtnChoice4.setTextColor(textColorDefaultRb);
+        rbGroup.clearCheck();
+
 
         configureRadioButtonState();
 
@@ -188,9 +190,10 @@ public class BQQuizActivity extends AppCompatActivity {
     private void checkAnswer() {
         answered = true;
 
-        getCheckedRadioButton();
+        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
-        if (getCheckedRadioButton() == currentQuestion.getAnswerNr()) {
+        if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
             txtScore.setText("Score: " + score);
         }
