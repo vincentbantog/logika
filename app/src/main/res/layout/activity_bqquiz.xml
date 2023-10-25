@@ -10,7 +10,8 @@
         android:id="@+id/txtQuestionNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question Count: " />
+        android:text="Question Count: "
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/txtBQScore"
@@ -18,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
-        android:text="Score: " />
+        android:text="Score: "
+        android:visibility="gone"/>
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
@@ -27,6 +29,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@color/lightBlue">
+
+        <ProgressBar
+            android:id="@+id/scoreBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:progressDrawable="@drawable/timer_bar_design_basiquiz" />
 
     </RelativeLayout>
 
@@ -38,6 +48,77 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:background="@color/lightBlue">
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar1"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral" />
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar2"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar1"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar3"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar2"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar4"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar3"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar5"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar4"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar6"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar5"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar7"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar6"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar8"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar7"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar9"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar8"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
+        <ImageView
+            android:id="@+id/imageViewProgressBar10"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/imageViewProgressBar9"
+            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+
 
     </RelativeLayout>
 
@@ -59,86 +140,86 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutRadioGroupChoices"
         android:layout_width="350dp"
         android:layout_height="250dp"
-        android:id="@+id/relLayoutRadioGroupChoices"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/frameLayoutQuestions"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp">
 
         <ImageView
+            android:id="@+id/imageViewChoice1"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state"
-            android:id="@+id/imageViewChoice1"/>
+            android:src="@drawable/basiquiz_radio_button_default_state" />
 
         <ImageView
+            android:id="@+id/imageViewChoice2"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state"
             android:layout_marginTop="62.5dp"
-            android:id="@+id/imageViewChoice2"/>
+            android:src="@drawable/basiquiz_radio_button_default_state" />
 
         <ImageView
+            android:id="@+id/imageViewChoice3"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state"
             android:layout_marginTop="125dp"
-            android:id="@+id/imageViewChoice3"/>
+            android:src="@drawable/basiquiz_radio_button_default_state" />
 
         <ImageView
+            android:id="@+id/imageViewChoice4"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state"
             android:layout_marginTop="187.5dp"
-            android:id="@+id/imageViewChoice4"/>
+            android:src="@drawable/basiquiz_radio_button_default_state" />
 
-    <RadioGroup
-        android:id="@+id/radioGroupChoices"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true">
+        <RadioGroup
+            android:id="@+id/radioGroupChoices"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true">
 
-                <RadioButton
-                    android:id="@+id/radioBtnOption1"
-                    android:layout_width="match_parent"
-                    android:layout_height="62.5dp"
-                    android:text="Option 1"
-                    android:textAlignment="center"
-                    android:button="@android:color/transparent"
-                    android:background="@drawable/radio_selector_basiquiz"/>
-
-
-                <RadioButton
-                    android:id="@+id/radioBtnOption2"
-                    android:layout_width="match_parent"
-                    android:layout_height="62.5dp"
-                    android:text="Option 2"
-                    android:textAlignment="center"
-                    android:button="@android:color/transparent"
-                    android:background="@drawable/radio_selector_basiquiz"/>
+            <RadioButton
+                android:id="@+id/radioBtnOption1"
+                android:layout_width="match_parent"
+                android:layout_height="62.5dp"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"
+                android:text="Option 1"
+                android:textAlignment="center" />
 
 
-                <RadioButton
-                    android:id="@+id/radioBtnOption3"
-                    android:layout_width="match_parent"
-                    android:layout_height="62.5dp"
-                    android:text="Option 3"
-                    android:textAlignment="center"
-                    android:button="@android:color/transparent"
-                    android:background="@drawable/radio_selector_basiquiz"/>
+            <RadioButton
+                android:id="@+id/radioBtnOption2"
+                android:layout_width="match_parent"
+                android:layout_height="62.5dp"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"
+                android:text="Option 2"
+                android:textAlignment="center" />
 
 
-                <RadioButton
-                    android:id="@+id/radioBtnOption4"
-                    android:layout_width="match_parent"
-                    android:layout_height="62.5dp"
-                    android:text="Option 4"
-                    android:textAlignment="center"
-                    android:button="@android:color/transparent"
-                    android:background="@drawable/radio_selector_basiquiz"/>
+            <RadioButton
+                android:id="@+id/radioBtnOption3"
+                android:layout_width="match_parent"
+                android:layout_height="62.5dp"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"
+                android:text="Option 3"
+                android:textAlignment="center" />
 
-    </RadioGroup>
+
+            <RadioButton
+                android:id="@+id/radioBtnOption4"
+                android:layout_width="match_parent"
+                android:layout_height="62.5dp"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"
+                android:text="Option 4"
+                android:textAlignment="center" />
+
+        </RadioGroup>
 
 
     </RelativeLayout>

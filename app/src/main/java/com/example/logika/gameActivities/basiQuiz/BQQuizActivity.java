@@ -1,15 +1,27 @@
 package com.example.logika.gameActivities.basiQuiz;
 
+import static android.graphics.PorterDuff.Mode.SRC_IN;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -18,6 +30,7 @@ import android.widget.Toast;
 import com.example.logika.R;
 
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -26,6 +39,19 @@ public class BQQuizActivity extends AppCompatActivity {
     private TextView txtQuestionNumber;
     private TextView txtQuestion;
     private TextView txtScore;
+
+    private ProgressBar scoreBar;
+    private List<ImageView> progressBarImageList;
+    private ImageView imageViewProgressBar1;
+    private ImageView imageViewProgressBar2;
+    private ImageView imageViewProgressBar3;
+    private ImageView imageViewProgressBar4;
+    private ImageView imageViewProgressBar5;
+    private ImageView imageViewProgressBar6;
+    private ImageView imageViewProgressBar7;
+    private ImageView imageViewProgressBar8;
+    private ImageView imageViewProgressBar9;
+    private ImageView imageViewProgressBar10;
 
 
     private ColorStateList textColorDefaultRb;
@@ -39,6 +65,8 @@ public class BQQuizActivity extends AppCompatActivity {
     private RadioButton radioBtnChoice4;
     private ImageView imageViewChoice4;
     private Button btnConfirm;
+
+    private int answerNr;
 
     private List<BQQuestion> questionList;
 
@@ -84,17 +112,26 @@ public class BQQuizActivity extends AppCompatActivity {
         txtQuestionNumber = findViewById(R.id.txtQuestionNumber);
         txtQuestion = findViewById(R.id.txtQuestion);
         txtScore = findViewById(R.id.txtBQScore);
-        rbGroup = findViewById(R.id.radioGroupChoices);
 
+        scoreBar = findViewById(R.id.scoreBar);
+        imageViewProgressBar1 = findViewById(R.id.imageViewProgressBar1);
+        imageViewProgressBar2 = findViewById(R.id.imageViewProgressBar2);
+        imageViewProgressBar3 = findViewById(R.id.imageViewProgressBar3);
+        imageViewProgressBar4 = findViewById(R.id.imageViewProgressBar4);
+        imageViewProgressBar5 = findViewById(R.id.imageViewProgressBar5);
+        imageViewProgressBar6 = findViewById(R.id.imageViewProgressBar6);
+        imageViewProgressBar7 = findViewById(R.id.imageViewProgressBar7);
+        imageViewProgressBar8 = findViewById(R.id.imageViewProgressBar8);
+        imageViewProgressBar9 = findViewById(R.id.imageViewProgressBar9);
+        imageViewProgressBar10 = findViewById(R.id.imageViewProgressBar10);
+
+        rbGroup = findViewById(R.id.radioGroupChoices);
         radioBtnChoice1 = findViewById(R.id.radioBtnOption1);
         imageViewChoice1 = findViewById(R.id.imageViewChoice1);
-
         radioBtnChoice2 = findViewById(R.id.radioBtnOption2);
         imageViewChoice2 = findViewById(R.id.imageViewChoice2);
-
         radioBtnChoice3 = findViewById(R.id.radioBtnOption3);
         imageViewChoice3 = findViewById(R.id.imageViewChoice3);
-
         radioBtnChoice4 = findViewById(R.id.radioBtnOption4);
         imageViewChoice4 = findViewById(R.id.imageViewChoice4);
 
@@ -189,14 +226,36 @@ public class BQQuizActivity extends AppCompatActivity {
         answered = true;
 
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
-        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
+        answerNr = rbGroup.indexOfChild(rbSelected) + 1;
+
+        progressBarImageList = new ArrayList<>();
+        progressBarImageList.add(imageViewProgressBar1);
+        progressBarImageList.add(imageViewProgressBar2);
+        progressBarImageList.add(imageViewProgressBar3);
+        progressBarImageList.add(imageViewProgressBar4);
+        progressBarImageList.add(imageViewProgressBar5);
+        progressBarImageList.add(imageViewProgressBar6);
+        progressBarImageList.add(imageViewProgressBar7);
+        progressBarImageList.add(imageViewProgressBar8);
+        progressBarImageList.add(imageViewProgressBar9);
+        progressBarImageList.add(imageViewProgressBar10);
 
         if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
             txtScore.setText("Score: " + score);
+            updateScoreBar();
+
+            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_correct);
+        } else {
+            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_wrong);
         }
 
         showSolution();
+    }
+
+    private void updateScoreBar() {
+        int progress = (int) (score * 10);
+        scoreBar.setProgress(progress);
     }
     private void showSolution() {
         radioBtnChoice1.setTextColor(Color.RED);
