@@ -105,7 +105,8 @@
                     android:layout_height="62.5dp"
                     android:text="Option 1"
                     android:textAlignment="center"
-                    android:button="@android:color/transparent"/>
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector_basiquiz"/>
 
 
                 <RadioButton
@@ -114,7 +115,8 @@
                     android:layout_height="62.5dp"
                     android:text="Option 2"
                     android:textAlignment="center"
-                    android:button="@android:color/transparent"/>
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector_basiquiz"/>
 
 
                 <RadioButton
@@ -123,7 +125,8 @@
                     android:layout_height="62.5dp"
                     android:text="Option 3"
                     android:textAlignment="center"
-                    android:button="@android:color/transparent"/>
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector_basiquiz"/>
 
 
                 <RadioButton
@@ -132,7 +135,8 @@
                     android:layout_height="62.5dp"
                     android:text="Option 4"
                     android:textAlignment="center"
-                    android:button="@android:color/transparent"/>
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector_basiquiz"/>
 
     </RadioGroup>
 

@@ -108,7 +108,6 @@ public class BQQuizActivity extends AppCompatActivity {
         radioBtnChoice4.setTextColor(textColorDefaultRb);
         rbGroup.clearCheck();
 
-
         configureRadioButtonState();
 
         if (questionCounter < questionCountTotal) {
@@ -186,7 +185,6 @@ public class BQQuizActivity extends AppCompatActivity {
             }
         });
     }
-
     private void checkAnswer() {
         answered = true;
 
@@ -200,23 +198,6 @@ public class BQQuizActivity extends AppCompatActivity {
 
         showSolution();
     }
-
-    private int getCheckedRadioButton() {
-        int selectedOption = -1;
-
-        if (radioBtnChoice1.isChecked()){
-            selectedOption = 1;
-        } else if (radioBtnChoice2.isChecked()){
-            selectedOption = 2;
-        } else if (radioBtnChoice3.isChecked()){
-            selectedOption = 3;
-        } else if (radioBtnChoice4.isChecked()){
-            selectedOption = 4;
-        }
-
-        return selectedOption;
-    }
-
     private void showSolution() {
         radioBtnChoice1.setTextColor(Color.RED);
         radioBtnChoice2.setTextColor(Color.RED);
