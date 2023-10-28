@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -54,8 +55,11 @@ public class QuizActivity extends AppCompatActivity {
 
     private RadioGroup rbGroup;
     private RadioButton rb1;
+    private ImageView imageViewChoice1;
     private RadioButton rb2;
+    private ImageView imageViewChoice2;
     private RadioButton rb3;
+    private ImageView imageViewChoice3;
     private Button buttonConfirmNext;
 
     private ColorStateList textColorDefaultRb;
@@ -126,8 +130,11 @@ public class QuizActivity extends AppCompatActivity {
         timerBar = findViewById(R.id.timerBar);
         rbGroup = findViewById(R.id.radioGroup);
         rb1 = findViewById(R.id.radioButtonOption1);
+        imageViewChoice1 = findViewById(R.id.imageViewChoice1);
         rb2 = findViewById(R.id.radioButtonOption2);
+        imageViewChoice2 = findViewById(R.id.imageViewChoice2);
         rb3 = findViewById(R.id.radioButtonOption3);
+        imageViewChoice3 = findViewById(R.id.imageViewChoice3);
         buttonConfirmNext = findViewById(R.id.btnConfirmAnswer);
     }
 
@@ -139,6 +146,8 @@ public class QuizActivity extends AppCompatActivity {
         rb2.setEnabled(true);
         rb3.setEnabled(true);
         rbGroup.clearCheck();
+
+        configureRadioButtonState();
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
@@ -165,6 +174,51 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             finishQuiz();
         }
+    }
+
+    private void configureRadioButtonState() {
+
+        imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+        imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+        imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+        rb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
+
+        rb2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
+
+        rb3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    // Add logic for Option 2
+                } else {
+                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                }
+            }
+        });
     }
 
     private void startCountDown() {
@@ -303,12 +357,15 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
+                imageViewChoice1.setImageResource(R.drawable.mielsmorales);
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
+                imageViewChoice2.setImageResource(R.drawable.mielsmorales);
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
+                imageViewChoice3.setImageResource(R.drawable.mielsmorales);
                 break;
         }
 
