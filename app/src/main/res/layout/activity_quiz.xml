@@ -113,6 +113,7 @@
             android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </FrameLayout>
 
     <RelativeLayout
@@ -186,14 +187,29 @@
         </RadioGroup>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/relLayoutRadioGroupChoiceLogiquiz"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="48dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/basiquiz_radio_button_default_state"/>
+
     <Button
         android:id="@+id/btnConfirmAnswer"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relLayoutRadioGroupChoiceLogiquiz"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Confirm" />
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Confirm"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
