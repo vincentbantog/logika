@@ -347,6 +347,9 @@ public class QuizActivity extends AppCompatActivity {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
+        imageViewChoice1.setImageResource(R.drawable.noir);
+        imageViewChoice2.setImageResource(R.drawable.noir);
+        imageViewChoice3.setImageResource(R.drawable.noir);
 
         fragmentManager.beginTransaction()
                 .replace(R.id.questionFragmentContainer, simulationFragment.getClass(), null)
