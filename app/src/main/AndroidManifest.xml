@@ -13,9 +13,12 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
+            android:name=".gameActivities.TorF.TorFQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".gameActivities.logiQuiz.EndActivity"
             android:exported="false"
-            android:parentActivityName=".gameActivities.logiQuiz.QuizActivity"/>
+            android:parentActivityName=".gameActivities.logiQuiz.QuizActivity" />
         <activity
             android:name=".gameActivities.basiQuiz.BQQuizActivity"
             android:exported="false" />
@@ -26,7 +29,7 @@
             android:name=".gameActivities.logiQuiz.LogicGate"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TrueOrFalse"
+            android:name=".gameActivities.TorF.TrueOrFalse"
             android:exported="false" />
         <activity
             android:name=".gameActivities.basiQuiz.MultipleChoice"

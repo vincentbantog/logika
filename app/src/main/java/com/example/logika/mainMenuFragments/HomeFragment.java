@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.LogicGate;
 import com.example.logika.gameActivities.basiQuiz.MultipleChoice;
-import com.example.logika.gameActivities.TrueOrFalse;
+import com.example.logika.gameActivities.TorF.TrueOrFalse;
 
 import java.util.Random;
 

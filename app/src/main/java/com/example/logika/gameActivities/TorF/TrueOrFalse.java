@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities;
+package com.example.logika.gameActivities.TorF;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import com.example.logika.R;
 
 public class TrueOrFalse extends AppCompatActivity {
 
+    private Button btnConfirm;
     private Button btnBack;
 
     @Override
@@ -20,6 +21,7 @@ public class TrueOrFalse extends AppCompatActivity {
         setContentView(R.layout.activity_true_or_false);
 
         configureBackButton();
+        configureStartButton();
     }
 
     public void configureBackButton(){
@@ -30,6 +32,17 @@ public class TrueOrFalse extends AppCompatActivity {
                 Intent mainIntent = new Intent(TrueOrFalse.this, MainMenu.class);
                 startActivity(mainIntent);
                 finish();
+            }
+        });
+    }
+
+    public void configureStartButton(){
+        btnConfirm = findViewById(R.id.btnBegin);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrueOrFalse.this, TorFQuizActivity.class);
+                startActivity(intent);
             }
         });
     }
