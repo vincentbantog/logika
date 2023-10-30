@@ -7,17 +7,17 @@
     tools:context=".gameActivities.TorF.TorFQuizActivity">
 
     <TextView
+        android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score:"
-        android:id="@+id/txtScore"/>
+        android:text="Score:" />
 
     <TextView
+        android:id="@+id/txtLives"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lives: "
-        android:id="@+id/txtLives"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:text="Lives: " />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,74 +61,13 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true">
 
-            <ImageView
-                android:id="@+id/imageViewProgress1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress1"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress2"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress3"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@+id/imageViewProgress4"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress6"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress5"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress7"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress6"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress8"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress7"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress9"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress8"
-                android:src="@drawable/progress_tracker_neutral_circle" />
-
-            <ImageView
-                android:id="@+id/imageViewProgress10"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_toRightOf="@id/imageViewProgress9"
-                android:src="@drawable/progress_tracker_neutral_circle" />
+            <ProgressBar
+                android:id="@+id/timerBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:progressDrawable="@drawable/timer_bar_design" />
 
 
         </RelativeLayout>
@@ -185,19 +124,19 @@
                 android:id="@+id/radioButtonOptionTrue"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
                 android:background="@color/paleYellow"
                 android:text="T"
-                android:textAlignment="center"
-                android:layout_marginStart="15dp"/>
+                android:textAlignment="center" />
 
             <RadioButton
                 android:id="@+id/radioButtonOptionFalse"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
                 android:background="@color/paleYellow"
                 android:text="F"
-                android:textAlignment="center"
-                android:layout_marginStart="50dp"/>
+                android:textAlignment="center" />
 
         </RadioGroup>
 
@@ -213,13 +152,12 @@
         android:layout_marginEnd="40dp">
 
         <Button
+            android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Confirm"
-            android:id="@+id/btnConfirm"/>
+            android:text="Confirm" />
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>
