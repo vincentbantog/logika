@@ -20,6 +20,7 @@ import java.util.List;
 public class TorFQuizActivity extends AppCompatActivity {
 
     private TextView txtScore;
+    private TextView txtLives;
     private TextView txtQuestionCount;
     private TextView txtQuestion;
 
@@ -40,6 +41,9 @@ public class TorFQuizActivity extends AppCompatActivity {
     private int score;
     private boolean answered;
 
+    private int livesCount;
+    private boolean isGameOver;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         questionList = dbHelper.getAllQuestions();
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
+
+        livesCount = 3;
 
         showNextQuestion();
 
@@ -76,6 +82,7 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     private void initializeViewElements(){
         txtScore = findViewById(R.id.txtScore);
+        txtLives = findViewById(R.id.txtLives);
         txtQuestionCount = findViewById(R.id.txtQuestionCount);
         txtQuestion = findViewById(R.id.txtQuestion);
         rbGroupChoices = findViewById(R.id.radioGroupChoices);
@@ -88,6 +95,12 @@ public class TorFQuizActivity extends AppCompatActivity {
         rbChoiceTrue.setTextColor(textColorDefaultRb);
         rbChoiceFalse.setTextColor(textColorDefaultRb);
         rbGroupChoices.clearCheck();
+
+        txtLives.setText("Lives: " + livesCount);
+
+        if (livesCount == 0) {
+            finishQuiz();
+        }
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
@@ -114,6 +127,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (answerNr == currentQuestion.getAnswerNr()){
             score++;
             txtScore.setText("Score: " + score);
+        } else {
+            livesCount--;
         }
 
         showSolution();
