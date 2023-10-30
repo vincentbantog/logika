@@ -22,6 +22,7 @@ import com.example.logika.gameActivities.logiQuiz.QuizActivity;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class TorFQuizActivity extends AppCompatActivity {
     private static final long COUNTDOWN_IN_MILLIS = 30000;
@@ -30,6 +31,7 @@ public class TorFQuizActivity extends AppCompatActivity {
     private TextView txtLives;
 
     private ProgressBar timerBar;
+    private TextView txtTimer;
 
     private TextView txtQuestionCount;
     private TextView txtQuestion;
@@ -99,6 +101,7 @@ public class TorFQuizActivity extends AppCompatActivity {
     private void initializeViewElements(){
         txtScore = findViewById(R.id.txtScore);
         timerBar = findViewById(R.id.timerBar);
+        txtTimer = findViewById(R.id.txtTimer);
         txtLives = findViewById(R.id.txtLives);
         txtQuestionCount = findViewById(R.id.txtQuestionCount);
         txtQuestion = findViewById(R.id.txtQuestion);
@@ -143,12 +146,14 @@ public class TorFQuizActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
                 updateProgressBar();
             }
 
             @Override
             public void onFinish() {
                 timeLeftInMillis = 0;
+                updateCountDownText();
                 timerBar.setProgress(0);
                 checkAnswer();
             }
@@ -160,8 +165,25 @@ public class TorFQuizActivity extends AppCompatActivity {
         timerBar.setProgress(progress);
     }
 
+    private void updateCountDownText(){
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+
+        txtTimer.setText(timeFormatted);
+
+        if (timeLeftInMillis < 10000) {
+            txtTimer.setTextColor(Color.RED);
+        } else {
+            txtTimer.setTextColor(Color.BLACK);
+        }
+    }
+
     private void checkAnswer(){
         answered = true;
+
+        countDownTimer.cancel();
 
         RadioButton rbSelected = findViewById(rbGroupChoices.getCheckedRadioButtonId());
         int answerNr = rbGroupChoices.indexOfChild(rbSelected) + 1;

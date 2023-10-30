@@ -57,6 +57,16 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
         addQuestion(q4);
         TFQuestion q5 = new TFQuestion("T is Correct", "T", "F", 1);
         addQuestion(q5);
+        TFQuestion q6 = new TFQuestion("F is Correct", "T", "F", 2);
+        addQuestion(q6);
+        TFQuestion q7 = new TFQuestion("F is Correct", "T", "F", 2);
+        addQuestion(q7);
+        TFQuestion q8 = new TFQuestion("F is Correct", "T", "F", 2);
+        addQuestion(q8);
+        TFQuestion q9 = new TFQuestion("T is Correct", "T", "F", 1);
+        addQuestion(q9);
+        TFQuestion q10 = new TFQuestion("T is Correct", "T", "F", 1);
+        addQuestion(q10);
 
     }
 
