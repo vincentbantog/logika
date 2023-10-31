@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.TorFQuizActivity">
+    tools:context=".gameActivities.TorF.singlePlayer.TorFQuizActivity">
 
     <TextView
         android:id="@+id/txtScore"

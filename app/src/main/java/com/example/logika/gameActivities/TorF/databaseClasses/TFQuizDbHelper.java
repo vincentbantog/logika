@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities.TorF;
+package com.example.logika.gameActivities.TorF.databaseClasses;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,8 +7,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
+import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
+import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizContract;
 
 import java.util.ArrayList;
 import java.util.List;

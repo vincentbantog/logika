@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities.TorF;
+package com.example.logika.gameActivities.TorF.singlePlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.logika.MainMenu;
 import com.example.logika.R;
+import com.example.logika.gameActivities.TorF.TFHomePage;
 
 public class TrueOrFalse extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class TrueOrFalse extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(TrueOrFalse.this, MainMenu.class);
+                Intent mainIntent = new Intent(TrueOrFalse.this, TFHomePage.class);
                 startActivity(mainIntent);
                 finish();
             }

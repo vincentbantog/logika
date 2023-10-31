@@ -4,34 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.singlePlayer.TrueOrFalse">
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Back" />
+    tools:context=".gameActivities.TorF.TFHomePage">
 
     <TextView
-        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="True or False Game!"
-        android:textSize="26dp" />
+        android:layout_marginTop="100dp"
+        android:text="Choose a game mode!"
+        android:textSize="30dp" />
 
     <Button
-        android:id="@+id/btnBegin"
+        android:id="@+id/btnSinglePlayerTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:text="Single Player" />
+
+    <Button
+        android:id="@+id/btnTwoPlayerTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSinglePlayerTF"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Begin" />
-
-
+        android:text="2 Players" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities.TorF;
+package com.example.logika.gameActivities.TorF.singlePlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,8 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.logika.R;
-import com.example.logika.gameActivities.logiQuiz.LogicGate;
-import com.example.logika.gameActivities.logiQuiz.QuizActivity;
+import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
+import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizDbHelper;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,6 +29,10 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     private TextView txtScore;
     private TextView txtLives;
+
+    private ImageView imageViewLives1;
+    private ImageView imageViewLives2;
+    private ImageView imageViewLives3;
 
     private ProgressBar timerBar;
     private TextView txtTimer;
@@ -78,6 +82,9 @@ public class TorFQuizActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
 
         livesCount = 3;
+        imageViewLives1.setImageResource(R.drawable.simulation_output_display_on);
+        imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
+        imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
 
         showNextQuestion();
 
@@ -100,6 +107,9 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     private void initializeViewElements(){
         txtScore = findViewById(R.id.txtScore);
+        imageViewLives1 = findViewById(R.id.imageViewLives1);
+        imageViewLives2 = findViewById(R.id.imageViewLives2);
+        imageViewLives3 = findViewById(R.id.imageViewLives3);
         timerBar = findViewById(R.id.timerBar);
         txtTimer = findViewById(R.id.txtTimer);
         txtLives = findViewById(R.id.txtLives);
@@ -120,6 +130,10 @@ public class TorFQuizActivity extends AppCompatActivity {
 
         if (livesCount == 0) {
             finishQuiz();
+        } else if (livesCount == 2){
+            imageViewLives3.setImageResource(R.drawable.simulation_output_display_off);
+        } else if (livesCount == 1){
+            imageViewLives2.setImageResource(R.drawable.simulation_output_display_off);
         }
 
         if (questionCounter < questionCountTotal) {

@@ -11,9 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.TorF.TFHomePage;
 import com.example.logika.gameActivities.logiQuiz.LogicGate;
 import com.example.logika.gameActivities.basiQuiz.MultipleChoice;
-import com.example.logika.gameActivities.TorF.TrueOrFalse;
+import com.example.logika.gameActivities.TorF.singlePlayer.TrueOrFalse;
 
 import java.util.Random;
 
@@ -57,7 +58,7 @@ public class HomeFragment extends Fragment {
         btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentTrueOrFalse = new Intent(getActivity(), TrueOrFalse.class);
+                Intent intentTrueOrFalse = new Intent(getActivity(), TFHomePage.class);
                 startActivity(intentTrueOrFalse);
             }
         });

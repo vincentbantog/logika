@@ -1,4 +1,4 @@
-package com.example.logika.gameActivities.TorF;
+package com.example.logika.gameActivities.TorF.databaseClasses;
 
 public class TFQuestion {
     private String Question;
