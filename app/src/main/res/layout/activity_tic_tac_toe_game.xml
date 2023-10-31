@@ -4,22 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeMain">
+    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeGame">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Tic Tac Toe Game!"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="TIC TAC TOE"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/btnBegin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
-        android:text="Begin" />
+        android:layout_marginTop="100dp"
+        android:textSize="40dp"/>
 
 </RelativeLayout>
