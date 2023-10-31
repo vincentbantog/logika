@@ -33,8 +33,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
 
         for (int i = 0; i < 3; i++){
-            for (int j = 0; i < 3; j++){
-                String buttonID = "button_" + i + j;
+            for (int j = 0; j < 3; j++){
+                String buttonID = "TTT_btn_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);
@@ -45,7 +45,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                resetBoard();
             }
         });
 
