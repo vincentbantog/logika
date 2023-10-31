@@ -36,6 +36,13 @@
             android:freezesText="true"
             android:text="Reset" />
 
+        <TextView
+            android:id="@+id/txtLastAnswerChecker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Last Answer: " />
+
     </RelativeLayout>
 
     <LinearLayout

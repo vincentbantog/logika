@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeQuiz">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Topic: "
+        android:textSize="25dp" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/relLayoutTimer"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp">
+
+        <ProgressBar
+            android:id="@+id/timerBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:progressDrawable="@drawable/timer_bar_design" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutQuestion"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/relLayoutTimer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/lightBlue">
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Here lies the question"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:layout_below="@id/relLayoutQuestion"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relLayoutChoices"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="25dp"
+            android:background="@color/paleYellow"
+            android:id="@+id/TTT_imageViewTrue"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="185dp"
+            android:background="@color/paleYellow"
+            android:id="@+id/TTT_imageViewFalse"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/TTT_radioGroupChoices"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="25dp"
+                android:id="@+id/TTT_radioButtonTrue"
+                android:text="T"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="50dp"
+                android:id="@+id/TTT_radioButtonFalse"
+                android:text="F"
+                android:textAlignment="center"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@color/lightBlue"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relLayoutChoices"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:id="@+id/relLayoutConfirmButton">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Confirm"
+            android:id="@+id/btnConfirm"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

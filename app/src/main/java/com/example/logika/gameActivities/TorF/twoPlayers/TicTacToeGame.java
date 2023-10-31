@@ -1,8 +1,10 @@
 package com.example.logika.gameActivities.TorF.twoPlayers;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import com.example.logika.R;
 
 public class TicTacToeGame extends AppCompatActivity implements View.OnClickListener {
+    public static final String KEY_CHECKER = "extraChecker";
+    public static final int REQUEST_CODE_TTT = 1;
 
     private Button[][] buttons = new Button[3][3];
 
@@ -25,6 +29,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private TextView txtScorePlayer1;
     private TextView txtScorePlayer2;
 
+    private boolean isCorrect;
+    private TextView txtLastAnswerChecker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         txtScorePlayer1 = findViewById(R.id.TTT_txtScorePlayer1);
         txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
+        txtLastAnswerChecker = findViewById(R.id.txtLastAnswerChecker);
+
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
@@ -54,6 +63,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+
+        showQuestion();
+
         if (!((Button) v).getText().toString().equals("")){
             return;
         }
@@ -79,6 +91,31 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         }
 
 
+    }
+
+    private void showQuestion() {
+        Intent intent = new Intent(TicTacToeGame.this, TicTacToeQuiz.class);
+        intent.putExtra(KEY_CHECKER, isCorrect);
+        startActivityForResult(intent, REQUEST_CODE_TTT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_TTT) {
+            if (resultCode == RESULT_OK) {
+                boolean isCorrect = data.getBooleanExtra(KEY_CHECKER, false);
+                if (isCorrect) {
+                    txtLastAnswerChecker.setText("Last Answer: Correct Answer!");
+                } else {
+                   txtLastAnswerChecker.setText("Last Answer: Wrong Answer!");
+                }
+            }
+            if (requestCode == RESULT_CANCELED) {
+                txtLastAnswerChecker.setText("Nothing Received");
+            }
+        }
     }
 
     private boolean checkForWin() {
