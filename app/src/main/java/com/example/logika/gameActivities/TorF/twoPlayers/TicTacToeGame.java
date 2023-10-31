@@ -28,9 +28,14 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private TextView txtScorePlayer1;
     private TextView txtScorePlayer2;
+    private TextView txtPlayerTurnDisplay;
+
+
 
     private boolean isCorrect;
     private TextView txtLastAnswerChecker;
+
+    private View clickedView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +45,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         txtScorePlayer1 = findViewById(R.id.TTT_txtScorePlayer1);
         txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
         txtLastAnswerChecker = findViewById(R.id.txtLastAnswerChecker);
-
+        txtPlayerTurnDisplay = findViewById(R.id.TTT_txtPlayerTurnDisplay);
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
@@ -50,6 +55,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
                 buttons[i][j].setOnClickListener(this);
             }
         }
+
 
         Button buttonReset = findViewById(R.id.TTT_btnReset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
@@ -64,38 +70,27 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+        if (!player1Turn) {
+            txtPlayerTurnDisplay.setText("Player 1's Turn!");
+        } else {
+            txtPlayerTurnDisplay.setText("Player 2's Turn!");
+        }
+
         showQuestion();
 
         if (!((Button) v).getText().toString().equals("")){
             return;
         }
 
-        if (player1Turn) {
-            ((Button) v).setText("X");
-        } else {
-            ((Button) v).setText("O");
-        }
+        clickedView = v;
 
         roundCount++;
-
-        if (checkForWin()) {
-            if (player1Turn) {
-                player1Wins();
-            } else {
-                player2Wins();
-            }
-        } else if (roundCount == 9) {
-            draw();
-        } else {
-            player1Turn = !player1Turn;
-        }
-
-
     }
+
+
 
     private void showQuestion() {
         Intent intent = new Intent(TicTacToeGame.this, TicTacToeQuiz.class);
-        intent.putExtra(KEY_CHECKER, isCorrect);
         startActivityForResult(intent, REQUEST_CODE_TTT);
     }
 
@@ -105,14 +100,42 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         if (requestCode == REQUEST_CODE_TTT) {
             if (resultCode == RESULT_OK) {
-                boolean isCorrect = data.getBooleanExtra(KEY_CHECKER, false);
+                isCorrect = data.getBooleanExtra(KEY_CHECKER, false);
                 if (isCorrect) {
                     txtLastAnswerChecker.setText("Last Answer: Correct Answer!");
                 } else {
                    txtLastAnswerChecker.setText("Last Answer: Wrong Answer!");
                 }
+
+                if (player1Turn) {
+                    if (isCorrect) {
+                        ((Button) clickedView).setText("X");
+                    } else {
+                        ((Button) clickedView).setText("");
+                    }
+                } else {
+                    if (isCorrect) {
+                        ((Button) clickedView).setText("O");
+                    } else {
+                        ((Button) clickedView).setText("");
+                    }
+                }
+
+                if (checkForWin()) {
+                    if (player1Turn) {
+                        player1Wins();
+                    } else {
+                        player2Wins();
+                    }
+                } else if (roundCount == 9) {
+                    draw();
+                } else {
+                    player1Turn = !player1Turn;
+                }
+
+
             }
-            if (requestCode == RESULT_CANCELED) {
+            if (resultCode == RESULT_CANCELED) {
                 txtLastAnswerChecker.setText("Nothing Received");
             }
         }
@@ -157,6 +180,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         return false;
     }
+
+
 
     private void player1Wins(){
         player1Points++;
