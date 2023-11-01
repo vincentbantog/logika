@@ -70,12 +70,6 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        if (!player1Turn) {
-            txtPlayerTurnDisplay.setText("Player 1's Turn!");
-        } else {
-            txtPlayerTurnDisplay.setText("Player 2's Turn!");
-        }
-
         showQuestion();
 
         if (!((Button) v).getText().toString().equals("")){
@@ -92,6 +86,12 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private void showQuestion() {
         Intent intent = new Intent(TicTacToeGame.this, TicTacToeQuiz.class);
         startActivityForResult(intent, REQUEST_CODE_TTT);
+
+        if (!player1Turn) {
+            txtPlayerTurnDisplay.setText("Player 1's Turn!");
+        } else {
+            txtPlayerTurnDisplay.setText("Player 2's Turn!");
+        }
     }
 
     @Override
@@ -214,6 +214,12 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         roundCount = 0;
         player1Turn = true;
+
+        if (player1Turn) {
+            txtPlayerTurnDisplay.setText("Player 1's Turn!");
+        } else {
+            txtPlayerTurnDisplay.setText("Player 2's Turn!");
+        }
     }
 
     private void resetGame(){
