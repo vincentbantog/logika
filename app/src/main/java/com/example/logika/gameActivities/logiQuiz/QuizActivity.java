@@ -423,6 +423,32 @@ public class QuizActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    private void showLeaveGameDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        dialog.show();
+    }
+
+
     private void finishQuiz() {
         Intent resultIntent = new Intent();
         resultIntent.putExtra(EXTRA_SCORE, score);
@@ -434,14 +460,7 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()) {
-            Intent intent = new Intent(QuizActivity.this, LogicGate.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Press back again to confirm", Toast.LENGTH_SHORT).show();
-        }
-
-        backPressedTime = System.currentTimeMillis();
+        showLeaveGameDialog();
     }
 
     @Override
