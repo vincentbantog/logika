@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -335,8 +335,11 @@ public class QuizActivity extends AppCompatActivity {
             score++;
             textViewScore.setText("Score: " + score);
 
+            showCorrectAnswerDialog();
             circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_small);
         } else {
+
+            showWrongAnswerDialog();
             circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_wrong);
         }
 
@@ -384,6 +387,40 @@ public class QuizActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private void showCorrectAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.correct_answer_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showWrongAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     private void finishQuiz() {
