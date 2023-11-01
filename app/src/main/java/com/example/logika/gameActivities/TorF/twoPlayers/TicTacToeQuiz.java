@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -20,7 +22,12 @@ import java.util.List;
 
 public class TicTacToeQuiz extends AppCompatActivity {
     public static final String KEY_CHECKER = "extraChecker";
+    private static final long COUNTDOWN_IN_MILLIS = 20000;
 
+
+    private ProgressBar timerBar;
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
 
     private TextView txtQuestion;
     private RadioGroup radioGroupChoices;
@@ -75,6 +82,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
+        timerBar = findViewById(R.id.timerBar);
         txtQuestion = findViewById(R.id.txtQuestion);
         radioGroupChoices = findViewById(R.id.TTT_radioGroupChoices);
         radioButtonTrue = findViewById(R.id.TTT_radioButtonTrue);
@@ -92,6 +100,32 @@ public class TicTacToeQuiz extends AppCompatActivity {
         answered = false;
         btnConfirm.setText("Confirm");
 
+        timeLeftInMillis = COUNTDOWN_IN_MILLIS;
+        startCountDown();
+
+    }
+
+    private void startCountDown() {
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateProgressBar();
+            }
+
+            @Override
+            public void onFinish() {
+                timeLeftInMillis = 0;
+                timerBar.setProgress(0);
+                checkAnswer();
+
+            }
+        }.start();
+    }
+
+    private void updateProgressBar(){
+        int progress = (int) (timeLeftInMillis * 100 / COUNTDOWN_IN_MILLIS);
+        timerBar.setProgress(progress);
     }
 
     private void checkAnswer(){
