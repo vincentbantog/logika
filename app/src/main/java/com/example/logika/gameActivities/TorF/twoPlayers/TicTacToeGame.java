@@ -213,13 +213,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         }
 
         roundCount = 0;
-        player1Turn = true;
 
-        if (player1Turn) {
-            txtPlayerTurnDisplay.setText("Player 1's Turn!");
-        } else {
-            txtPlayerTurnDisplay.setText("Player 2's Turn!");
-        }
+        player1Turn = !player1Turn;
     }
 
     private void resetGame(){
