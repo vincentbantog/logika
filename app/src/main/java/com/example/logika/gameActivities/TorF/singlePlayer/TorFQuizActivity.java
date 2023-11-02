@@ -2,6 +2,7 @@ package com.example.logika.gameActivities.TorF.singlePlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class TorFQuizActivity extends AppCompatActivity {
+    public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
     private TextView txtScore;
@@ -128,20 +130,11 @@ public class TorFQuizActivity extends AppCompatActivity {
 
         txtLives.setText("Lives: " + livesCount);
 
-        if (livesCount == 0) {
-            finishQuiz();
-        } else if (livesCount == 3){
-            imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
-        } else if (livesCount == 2){
-            imageViewLives3.setImageResource(R.drawable.simulation_output_display_off);
-            imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
-        } else if (livesCount == 1){
-            imageViewLives2.setImageResource(R.drawable.simulation_output_display_off);
-        }
+        rbChoiceTrue.setEnabled(true);
+        rbChoiceFalse.setEnabled(true);
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
-
         if (currentQuestion.getIsBonusQuestion() == 1){
             txtQuestion.setText("BONUS QUESTION: \n" + currentQuestion.getQuestion());
             rbChoiceTrue.setText(currentQuestion.getOption1());
@@ -153,7 +146,7 @@ public class TorFQuizActivity extends AppCompatActivity {
         }
 
             questionCounter++;
-            txtQuestionCount.setText("0" + questionCounter + "/" + questionCountTotal);
+            txtQuestionCount.setText(questionCounter + "/" + questionCountTotal);
             answered = false;
             btnConfirm.setText("Confirm");
 
@@ -215,17 +208,33 @@ public class TorFQuizActivity extends AppCompatActivity {
             score++;
             txtScore.setText("Score: " + score);
 
+            showCorrectAnswerDialog();
+
             if (currentQuestion.getIsBonusQuestion() == 1){
-                livesCount++;
+                if (livesCount < 3) {
+                    livesCount++;
+                }
             }
 
         } else {
+            showWrongAnswerDialog();
             if (currentQuestion.getIsBonusQuestion() != 1){
                 livesCount--;
             }
         }
 
         showSolution();
+
+        if (livesCount == 0) {
+            finishQuiz();
+        } else if (livesCount == 3){
+            imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
+        } else if (livesCount == 2){
+            imageViewLives3.setImageResource(R.drawable.simulation_output_display_off);
+            imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
+        } else if (livesCount == 1){
+            imageViewLives2.setImageResource(R.drawable.simulation_output_display_off);
+        }
     }
 
     private void showSolution() {
@@ -241,6 +250,9 @@ public class TorFQuizActivity extends AppCompatActivity {
                 break;
         }
 
+        rbChoiceTrue.setEnabled(false);
+        rbChoiceFalse.setEnabled(false);
+
         if (questionCounter < questionCountTotal) {
             btnConfirm.setText("Next");
         } else {
@@ -249,21 +261,84 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     }
 
+
+
     private void finishQuiz(){
-        finish();
+        Intent intent = new Intent(TorFQuizActivity.this, TorFEndActivity.class);
+        intent.putExtra(EXTRA_SCORE, score);
+        startActivity(intent);
+    }
+
+    private void showCorrectAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+
+        if (currentQuestion.getIsBonusQuestion() == 1){
+            dialog.setContentView(R.layout.correct_answer_bonus_dialog_torf);
+        } else {
+            dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
+        }
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showWrongAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        if (currentQuestion.getIsBonusQuestion() == 1) {
+            dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+        } else {
+            dialog.setContentView(R.layout.wrong_answer_dialog_torf);
+        }
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showLeaveGameDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        dialog.show();
     }
 
 
     @Override
     public void onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()) {
-            Intent intent = new Intent(TorFQuizActivity.this, TrueOrFalse.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Press back again to confirm", Toast.LENGTH_SHORT).show();
-        }
-
-        backPressedTime = System.currentTimeMillis();
+       showLeaveGameDialog();
     }
 
     @Override
