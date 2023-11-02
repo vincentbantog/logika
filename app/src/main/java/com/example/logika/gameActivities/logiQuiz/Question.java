@@ -1,20 +1,41 @@
 package com.example.logika.gameActivities.logiQuiz;
 
 public class Question {
+    public static final String DIFFICULTY_MEDIUM = "Medium";
+    public static final String DIFFICULTY_HARD = "Hard";
+
     private int circuitFragment;
     private String option1;
     private String option2;
     private String option3;
     private int answerNr;
+    private String difficulty;
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public static String[] getAllDifficultyLevels() {
+        return new String[]{
+                DIFFICULTY_MEDIUM,
+                DIFFICULTY_HARD
+        };
+    }
 
     public Question() {}
 
-    public Question(int circuitFragment, String option1, String option2, String option3, int answerNr) {
+    public Question(int circuitFragment, String option1,
+                    String option2, String option3, int answerNr, String difficulty) {
         this.circuitFragment = circuitFragment;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.answerNr = answerNr;
+        this.difficulty = difficulty;
     }
 
     public int getCircuitFragment() {
@@ -56,4 +77,6 @@ public class Question {
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
     }
+
+
 }
