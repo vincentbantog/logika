@@ -12,5 +12,5 @@ public class TFQuizContract {
         public static final String COLUMN_OPTION1 = "option1";
         public static final String COLUMN_OPTION2 = "option2";
         public static final String COLUMN_ANSWER_NR = "answer_nr";
-    }
+        public static final String COLUMN_IS_BONUS_QUESTION = "is_bonus_question";}
 }

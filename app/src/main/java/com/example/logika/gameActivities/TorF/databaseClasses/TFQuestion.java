@@ -5,14 +5,24 @@ public class TFQuestion {
     private String option1;
     private String option2;
     private int answerNr;
+    private int isBonusQuestion;
 
     public TFQuestion(){}
 
-    public TFQuestion(String question, String option1, String option2, int answerNr) {
+    public int getIsBonusQuestion() {
+        return isBonusQuestion;
+    }
+
+    public void setIsBonusQuestion(int isBonusQuestion) {
+        this.isBonusQuestion = isBonusQuestion;
+    }
+
+    public TFQuestion(String question, String option1, String option2, int answerNr, int isBonusQuestion) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.answerNr = answerNr;
+        this.isBonusQuestion = isBonusQuestion;
     }
 
     public String getQuestion() {
