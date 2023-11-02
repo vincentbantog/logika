@@ -130,8 +130,11 @@ public class TorFQuizActivity extends AppCompatActivity {
 
         if (livesCount == 0) {
             finishQuiz();
+        } else if (livesCount == 3){
+            imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
         } else if (livesCount == 2){
             imageViewLives3.setImageResource(R.drawable.simulation_output_display_off);
+            imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
         } else if (livesCount == 1){
             imageViewLives2.setImageResource(R.drawable.simulation_output_display_off);
         }
@@ -139,9 +142,15 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
 
+        if (currentQuestion.getIsBonusQuestion() == 1){
+            txtQuestion.setText("BONUS QUESTION: \n" + currentQuestion.getQuestion());
+            rbChoiceTrue.setText(currentQuestion.getOption1());
+            rbChoiceFalse.setText(currentQuestion.getOption2());
+        } else {
             txtQuestion.setText(currentQuestion.getQuestion());
             rbChoiceTrue.setText(currentQuestion.getOption1());
             rbChoiceFalse.setText(currentQuestion.getOption2());
+        }
 
             questionCounter++;
             txtQuestionCount.setText("0" + questionCounter + "/" + questionCountTotal);
@@ -205,8 +214,15 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (answerNr == currentQuestion.getAnswerNr()){
             score++;
             txtScore.setText("Score: " + score);
+
+            if (currentQuestion.getIsBonusQuestion() == 1){
+                livesCount++;
+            }
+
         } else {
-            livesCount--;
+            if (currentQuestion.getIsBonusQuestion() != 1){
+                livesCount--;
+            }
         }
 
         showSolution();
