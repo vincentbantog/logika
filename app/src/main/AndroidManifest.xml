@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
+            android:name=".gameActivities.basiQuiz.BQEndActivity"
+            android:exported="false" />
+        <activity
             android:name=".gameActivities.TorF.twoPlayers.TicTacToeQuiz"
             android:exported="false" />
         <activity

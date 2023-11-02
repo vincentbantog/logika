@@ -36,6 +36,8 @@ import java.util.List;
 
 public class BQQuizActivity extends AppCompatActivity {
 
+    public static final String EXTRA_SCORE = "extraScore";
+
     private TextView txtQuestionNumber;
     private TextView txtQuestion;
     private TextView txtScore;
@@ -285,7 +287,8 @@ public class BQQuizActivity extends AppCompatActivity {
         }
     }
     private void finishQuiz() {
-        Intent intent = new Intent(BQQuizActivity.this, MultipleChoice.class);
+        Intent intent = new Intent(BQQuizActivity.this, BQEndActivity.class);
+        intent.putExtra(EXTRA_SCORE, score);
         startActivity(intent);
     }
 }
