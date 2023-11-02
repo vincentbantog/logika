@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Canvas;
@@ -145,6 +146,10 @@ public class BQQuizActivity extends AppCompatActivity {
         radioBtnChoice2.setTextColor(textColorDefaultRb);
         radioBtnChoice3.setTextColor(textColorDefaultRb);
         radioBtnChoice4.setTextColor(textColorDefaultRb);
+        radioBtnChoice1.setEnabled(true);
+        radioBtnChoice2.setEnabled(true);
+        radioBtnChoice3.setEnabled(true);
+        radioBtnChoice4.setEnabled(true);
         rbGroup.clearCheck();
 
         configureRadioButtonState();
@@ -247,8 +252,12 @@ public class BQQuizActivity extends AppCompatActivity {
             txtScore.setText("Score: " + score);
             updateScoreBar();
 
+            showCorrectAnswerDialog();
+
             progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_correct);
         } else {
+
+            showWrongAnswerDialog();
             progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_wrong);
         }
 
@@ -280,15 +289,84 @@ public class BQQuizActivity extends AppCompatActivity {
                 break;
         }
 
+        radioBtnChoice1.setEnabled(false);
+        radioBtnChoice2.setEnabled(false);
+        radioBtnChoice3.setEnabled(false);
+        radioBtnChoice4.setEnabled(false);
         if (questionCounter < questionCountTotal) {
             btnConfirm.setText("Next");
         } else {
             btnConfirm.setText("Finish");
         }
     }
+
+    private void showCorrectAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showWrongAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showLeaveGameDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        dialog.show();
+    }
+
     private void finishQuiz() {
         Intent intent = new Intent(BQQuizActivity.this, BQEndActivity.class);
         intent.putExtra(EXTRA_SCORE, score);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        showLeaveGameDialog();
     }
 }
