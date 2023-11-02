@@ -2,6 +2,7 @@ package com.example.logika.gameActivities.TorF.twoPlayers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -136,8 +137,10 @@ public class TicTacToeQuiz extends AppCompatActivity {
 
         if (answerNr == currentQuestion.getAnswerNr()) {
             txtQuestion.setText("You got the answer correct!");
+            showCorrectAnswerDialog();
             isCorrect = true;
         }  else {
+            showWrongAnswerDialog();
             txtQuestion.setText("You got the answer wrong");
             isCorrect = false;
         }
@@ -145,5 +148,68 @@ public class TicTacToeQuiz extends AppCompatActivity {
         btnConfirm.setText("Next");
     }
 
+    private void showCorrectAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showWrongAnswerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showLeaveGameDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        showLeaveGameDialog();
+    }
 
 }
