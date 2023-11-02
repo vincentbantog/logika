@@ -94,6 +94,9 @@ public class TicTacToeQuiz extends AppCompatActivity {
     private void showQuestion(){
         currentQuestion = questionList.get(0);
 
+        radioButtonTrue.setEnabled(true);
+        radioButtonFalse.setEnabled(true);
+
         txtQuestion.setText(currentQuestion.getQuestion());
         radioButtonTrue.setText(currentQuestion.getOption1());
         radioButtonFalse.setText(currentQuestion.getOption2());
@@ -137,50 +140,18 @@ public class TicTacToeQuiz extends AppCompatActivity {
 
         if (answerNr == currentQuestion.getAnswerNr()) {
             txtQuestion.setText("You got the answer correct!");
-            showCorrectAnswerDialog();
             isCorrect = true;
         }  else {
-            showWrongAnswerDialog();
             txtQuestion.setText("You got the answer wrong");
             isCorrect = false;
         }
 
+        radioButtonTrue.setEnabled(false);
+        radioButtonFalse.setEnabled(false);
+
         btnConfirm.setText("Next");
     }
 
-    private void showCorrectAnswerDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
-
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
-        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
-
-        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-    }
-
-    private void showWrongAnswerDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
-
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
-        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
-
-        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-    }
 
     private void showLeaveGameDialog(){
         Dialog dialog = new Dialog(this);

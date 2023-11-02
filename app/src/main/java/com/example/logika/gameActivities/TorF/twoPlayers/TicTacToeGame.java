@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -61,7 +62,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetGame();
+                showResetDialog();
             }
         });
 
@@ -70,11 +71,11 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        showQuestion();
-
         if (!((Button) v).getText().toString().equals("")){
             return;
         }
+        showQuestion();
+
 
         clickedView = v;
 
@@ -187,16 +188,19 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
+        showPlayer1WinnerDialog();
         resetBoard();
     }
     private void player2Wins(){
         player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
+        showPlayer2WinnerDialog();
         resetBoard();
     }
     private void draw(){
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        showDrawDialog();
         resetBoard();
     }
 
@@ -217,11 +221,21 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         player1Turn = !player1Turn;
     }
 
-    private void resetGame(){
+    private void resetGame() {
         player1Points = 0;
         player2Points = 0;
         updatePointsText();
-        resetBoard();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+            }
+        }
+
+        roundCount = 0;
+
+        player1Turn = true;
+        txtPlayerTurnDisplay.setText("Player 1's Turn!");
     }
 
     @Override
@@ -242,5 +256,122 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         player1Points = savedInstanceState.getInt("player1Points");
         player2Points = savedInstanceState.getInt("player2Points");
         player1Turn = savedInstanceState.getBoolean("player1Turn");
+    }
+
+    private void showPlayer1WinnerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        messageText.setText("Player 1 Wins!");
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showPlayer2WinnerDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        messageText.setText("Player 2 Wins!");
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showDrawDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+
+        messageText.setText("Draw!");
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showResetDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        messageText.setText("Reset Game?");
+        btnResume.setText("Reset");
+        btnExit.setText("Back");
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showLeaveGameDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        Button btnResume = dialog.findViewById(R.id.btnContinue);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        showLeaveGameDialog();
     }
 }
