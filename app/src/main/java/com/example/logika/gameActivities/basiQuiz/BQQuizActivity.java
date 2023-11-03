@@ -38,7 +38,10 @@ import java.util.List;
 public class BQQuizActivity extends AppCompatActivity {
 
     public static final String EXTRA_SCORE = "extraScore";
-
+    public static final String EXTRA_EASY_SCORE = "extraEasyScore";
+    public static final String EXTRA_MEDIUM_SCORE = "extraMediumScore";
+    public static final String EXTRA_HARD_SCORE = "extraHardScore";
+    private TextView txtEasyScore;
     private TextView txtQuestionNumber;
     private TextView txtQuestion;
     private TextView txtScore;
@@ -79,6 +82,9 @@ public class BQQuizActivity extends AppCompatActivity {
     private BQQuestion currentQuestion;
 
     private String difficulty;
+    private int easyScore;
+    private int mediumScore;
+    private int hardScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +126,7 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     private void initializeViewElements() {
+        txtEasyScore = findViewById(R.id.txtEasyScore);
         txtQuestionNumber = findViewById(R.id.txtQuestionNumber);
         txtQuestion = findViewById(R.id.txtQuestion);
         txtScore = findViewById(R.id.txtBQScore);
@@ -263,8 +270,18 @@ public class BQQuizActivity extends AppCompatActivity {
             txtScore.setText("Score: " + score);
             updateScoreBar();
 
-            showCorrectAnswerDialog();
+            String difficulty = currentQuestion.getDifficulty();
+            if ("Easy".equals(difficulty)) {
+                easyScore++;
+            } else if ("Medium".equals(difficulty)) {
+                mediumScore++;
+            } else if ("Hard".equals(difficulty)){
+                hardScore++;
+            }
+            txtEasyScore.setText("Easy Score: " + easyScore);
 
+
+            showCorrectAnswerDialog();
             progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_correct);
         } else {
 
@@ -376,6 +393,9 @@ public class BQQuizActivity extends AppCompatActivity {
     private void finishQuiz() {
         Intent intent = new Intent(BQQuizActivity.this, BQEndActivity.class);
         intent.putExtra(EXTRA_SCORE, score);
+        intent.putExtra(EXTRA_EASY_SCORE, easyScore);
+        intent.putExtra(EXTRA_MEDIUM_SCORE, mediumScore);
+        intent.putExtra(EXTRA_HARD_SCORE, hardScore);
         startActivity(intent);
     }
 

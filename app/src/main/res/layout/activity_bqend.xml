@@ -36,40 +36,112 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutProgressDisplay"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_below="@+id/relLayoutScore"
-        android:background="@color/lightBlue"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:id="@+id/relLayoutProgressDisplay">
+        android:background="@color/lightBlue">
+
+        <TextView
+            android:id="@+id/txtDifficultyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Difficulty Scores"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDifficultyTitle"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Easy: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEasy"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Medium: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtHard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMedium"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Hard: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtEasyScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDifficultyTitle"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/txtEasy"
+            android:text="0/10 "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtMediumScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEasyScore"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/txtMedium"
+            android:text="0/10 "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtHardScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMediumScore"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/txtHard"
+            android:text="0/10 "
+            android:textSize="20dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutButtons"
         android:layout_width="300dp"
         android:layout_height="130dp"
         android:layout_below="@+id/relLayoutProgressDisplay"
-        android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/relLayoutButtons">
+        android:layout_marginTop="15dp">
 
         <Button
+            android:id="@+id/btnRetry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="40dp"
-            android:text="Retry"
-            android:id="@+id/btnRetry"/>
+            android:text="Retry" />
 
         <Button
+            android:id="@+id/btnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="40dp"
-            android:text="Home"
-            android:id="@+id/btnHome"/>
+            android:text="Home" />
     </RelativeLayout>
 
 
