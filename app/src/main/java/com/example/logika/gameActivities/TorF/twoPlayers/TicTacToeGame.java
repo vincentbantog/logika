@@ -363,7 +363,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+                startActivity(intent);
             }
         });
 

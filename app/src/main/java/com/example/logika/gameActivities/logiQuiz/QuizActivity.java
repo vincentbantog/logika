@@ -449,7 +449,8 @@ public class QuizActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(QuizActivity.this, LogicGate.class);
+                startActivity(intent);
             }
         });
 

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.TorF.TFHomePage;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizDbHelper;
 
@@ -351,7 +352,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(TorFQuizActivity.this, TrueOrFalse.class);
+                startActivity(intent);
             }
         });
 

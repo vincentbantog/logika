@@ -173,7 +173,8 @@ public class TicTacToeQuiz extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(TicTacToeQuiz.this, TicTacToeMain.class);
+                startActivity(intent);
             }
         });
 
