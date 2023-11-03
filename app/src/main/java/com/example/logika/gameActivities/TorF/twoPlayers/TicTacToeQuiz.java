@@ -18,6 +18,7 @@ import com.example.logika.R;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizDbHelper;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,6 +26,8 @@ public class TicTacToeQuiz extends AppCompatActivity {
     public static final String KEY_CHECKER = "extraChecker";
     private static final long COUNTDOWN_IN_MILLIS = 20000;
 
+
+    private TextView txtTopic;
 
     private ProgressBar timerBar;
     private CountDownTimer countDownTimer;
@@ -37,8 +40,6 @@ public class TicTacToeQuiz extends AppCompatActivity {
     private Button btnConfirm;
 
     private List<TFQuestion> questionList;
-    private int questionCounter;
-    private int questionCountTotal;
     private TFQuestion currentQuestion;
     private boolean answered;
 
@@ -55,9 +56,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
         initializeViewElements();
 
         TFQuizDbHelper dbHelper = new TFQuizDbHelper(this);
-        questionList = dbHelper.getAllQuestions();
-        questionCountTotal = questionList.size();
-        Collections.shuffle(questionList);
+        questionList = dbHelper.getQuestionsWithTopic();
 
         showQuestion();
 
@@ -83,6 +82,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
+        txtTopic = findViewById(R.id.txtTopic);
         timerBar = findViewById(R.id.timerBar);
         txtQuestion = findViewById(R.id.txtQuestion);
         radioGroupChoices = findViewById(R.id.TTT_radioGroupChoices);
@@ -93,6 +93,8 @@ public class TicTacToeQuiz extends AppCompatActivity {
 
     private void showQuestion(){
         currentQuestion = questionList.get(0);
+
+        txtTopic.setText("Topic: " + currentQuestion.getTopic());
 
         radioButtonTrue.setEnabled(true);
         radioButtonFalse.setEnabled(true);

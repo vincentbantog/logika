@@ -6,12 +6,17 @@ public class TFQuestion {
     public static final String DIFFICULTY_MEDIUM = "Medium";
     public static final String DIFFICULTY_HARD = "Hard";
 
+    public static final String TOPIC_A = "Topic A";
+    public static final String TOPIC_B = "Topic B";
+    public static final String TOPIC_C = "Topic C";
+
     private String Question;
     private String option1;
     private String option2;
     private int answerNr;
     private int isBonusQuestion;
     private String difficulty;
+    private String topic;
 
 
     public TFQuestion(){}
@@ -25,13 +30,14 @@ public class TFQuestion {
     }
 
     public TFQuestion(String question, String option1, String option2,
-                      int answerNr, int isBonusQuestion, String difficulty) {
+                      int answerNr, int isBonusQuestion, String difficulty, String topic) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.answerNr = answerNr;
         this.isBonusQuestion = isBonusQuestion;
         this.difficulty = difficulty;
+        this.topic = topic;
     }
 
     public String getQuestion() {
@@ -72,5 +78,13 @@ public class TFQuestion {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 }

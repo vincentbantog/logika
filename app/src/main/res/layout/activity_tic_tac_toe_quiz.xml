@@ -7,13 +7,13 @@
     tools:context=".gameActivities.TorF.twoPlayers.TicTacToeQuiz">
 
     <TextView
+        android:id="@+id/txtTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:text="Topic: "
         android:textSize="25dp" />
-
 
 
     <RelativeLayout
@@ -53,70 +53,70 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutChoices"
         android:layout_width="350dp"
         android:layout_height="140dp"
         android:layout_below="@id/relLayoutQuestion"
-        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/relLayoutChoices"
+        android:layout_marginTop="30dp"
         android:padding="15dp">
 
         <ImageView
+            android:id="@+id/TTT_imageViewTrue"
             android:layout_width="100dp"
             android:layout_height="110dp"
             android:layout_marginStart="25dp"
-            android:background="@color/paleYellow"
-            android:id="@+id/TTT_imageViewTrue"/>
+            android:background="@color/paleYellow" />
 
         <ImageView
+            android:id="@+id/TTT_imageViewFalse"
             android:layout_width="100dp"
             android:layout_height="110dp"
             android:layout_marginStart="185dp"
-            android:background="@color/paleYellow"
-            android:id="@+id/TTT_imageViewFalse"/>
+            android:background="@color/paleYellow" />
 
         <RadioGroup
+            android:id="@+id/TTT_radioGroupChoices"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/TTT_radioGroupChoices"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/TTT_radioButtonTrue"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="25dp"
-                android:id="@+id/TTT_radioButtonTrue"
                 android:text="T"
-                android:textAlignment="center"/>
+                android:textAlignment="center" />
 
             <RadioButton
+                android:id="@+id/TTT_radioButtonFalse"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="50dp"
-                android:id="@+id/TTT_radioButtonFalse"
                 android:text="F"
-                android:textAlignment="center"/>
+                android:textAlignment="center" />
 
         </RadioGroup>
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutConfirmButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:background="@color/lightBlue"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/relLayoutChoices"
-        android:layout_marginTop="15dp"
         android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
-        android:id="@+id/relLayoutConfirmButton">
+        android:background="@color/lightBlue">
 
         <Button
+            android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Confirm"
-            android:id="@+id/btnConfirm"/>
+            android:text="Confirm" />
 
     </RelativeLayout>
 
