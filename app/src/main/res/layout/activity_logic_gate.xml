@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.LogicGate"
-    android:background="@drawable/noir">
+    tools:context=".gameActivities.logiQuiz.LogicGate">
 
 
     <Button
@@ -21,25 +20,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="160dp"
         android:text="Logic Gate Simulation!"
         android:textSize="26dp" />
 
-    <TextView
-        android:id="@+id/txtHighScore"
+    <Button
+        android:id="@+id/btnBeginNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:text="Highscore: " />
+        android:text="1 -2 Logic Gates"
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/txtHighScoreNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Highscore: "
+        android:layout_below="@+id/btnBeginNormal"
+        android:layout_marginTop="20dp"/>
 
     <Button
-        android:id="@+id/btnBegin"
+        android:id="@+id/btnBeginHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="340dp"
-        android:text="Begin" />
+        android:text="3 Logic Gates"
+        android:layout_below="@+id/txtHighScoreNormal"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/txtHighScoreHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Highscore: "
+        android:layout_below="@+id/btnBeginHard"
+        android:layout_marginTop="20dp"/>
 
 
 

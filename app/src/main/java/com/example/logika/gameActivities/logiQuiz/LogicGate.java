@@ -14,81 +14,59 @@ import com.example.logika.MainMenu;
 import com.example.logika.R;
 
 public class LogicGate extends AppCompatActivity {
-    public static final int REQUEST_CODE_QUIZ = 1;
+    public static final String EXTRA_DIFFICULTY = "extraDifficulty";
 
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY_HIGHSCORE = "keyHighScore";
+    private Button btnBeginNormal;
+    private Button btnBeginHard;
 
-    private TextView textViewHighScore;
-    private int highScore;
-    private Button btnBack;
+    private String difficulty;
 
-    private Button btnBegin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logic_gate);
 
-        textViewHighScore = findViewById(R.id.txtHighScore);
-        loadHighScore();
+        initializeViewElements();
 
-        configureBackButton();
-        configureBeginButton();
+        String[] difficultyLevels = Question.getAllDifficultyLevels();
 
-    }
-
-    public void configureBackButton(){
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mainIntent = new Intent(LogicGate.this, MainMenu.class);
-                startActivity(mainIntent);
-                finish();
-            }
-        });
-    }
-
-    public void configureBeginButton() {
-        btnBegin = findViewById(R.id.btnBegin);
-        textViewHighScore = findViewById(R.id.txtHighScore);
-        btnBegin.setOnClickListener(new View.OnClickListener() {
+        btnBeginNormal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainIntent = new Intent(LogicGate.this, QuizActivity.class);
-                startActivityForResult(mainIntent, REQUEST_CODE_QUIZ);
+                difficulty = difficultyLevels[0];
+
+
+                Intent intent = new Intent(LogicGate.this, QuizActivity.class);
+                intent.putExtra(EXTRA_DIFFICULTY, difficulty);
+                startActivity(intent);
+            }
+        });
+
+        btnBeginHard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                difficulty = difficultyLevels[1];
+
+
+                Intent intent = new Intent(LogicGate.this, QuizActivity.class);
+                intent.putExtra(EXTRA_DIFFICULTY, difficulty);
+                startActivity(intent);
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_QUIZ) {
-            if (resultCode == RESULT_OK) {
-                int score = data.getIntExtra(QuizActivity.EXTRA_SCORE, 0);
-                if (score > highScore) {
-                    updateHighScore(score);
-                }
-            }
-        }
+    private void initializeViewElements(){
+        btnBeginNormal = findViewById(R.id.btnBeginNormal);
+        btnBeginHard = findViewById(R.id.btnBeginHard);
     }
 
 
-    private void loadHighScore(){
-        SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        highScore = prefs.getInt(KEY_HIGHSCORE, 0);
-        textViewHighScore.setText("Highscore: " + highScore);
-    }
-    private void updateHighScore(int highScoreNew) {
-        highScore = highScoreNew;
-        textViewHighScore.setText("Highscore: " + highScore);
 
-        SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt(KEY_HIGHSCORE, highScore);
-        editor.apply();
-    }
+
+
+
+
+
+
 }

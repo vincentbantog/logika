@@ -21,6 +21,12 @@
         android:text="Question 1/x"
         android:visibility="gone" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty: "
+        android:id="@+id/txtDifficulty"/>
+
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
         android:layout_width="320dp"

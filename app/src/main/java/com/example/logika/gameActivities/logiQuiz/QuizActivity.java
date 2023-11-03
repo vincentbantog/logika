@@ -42,6 +42,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
+    private TextView txtDifficulty;
+
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private List<ImageView> circleDisplayList;
@@ -95,9 +97,14 @@ public class QuizActivity extends AppCompatActivity {
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewTimer.getTextColors();
 
+        Intent intent = getIntent();
+        String difficulty = intent.getStringExtra(LogicGate.EXTRA_DIFFICULTY);
+
+        txtDifficulty.setText("Difficulty: " + difficulty);
+
 
         QuizDbHelper dbHelper = new QuizDbHelper(this);
-        questionList = dbHelper.getQuestionsWithDifficulty("Medium");
+        questionList = dbHelper.getQuestionsWithDifficulty(difficulty);
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
 
@@ -120,6 +127,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
+        txtDifficulty = findViewById(R.id.txtDifficulty);
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtQuestionNumber);
         circleDisplay1 = findViewById(R.id.circle1);
