@@ -458,9 +458,6 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void finishQuiz() {
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra(EXTRA_SCORE, score);
-        setResult(RESULT_OK, resultIntent);
         Intent endIntent = new Intent(QuizActivity.this, EndActivity.class);
         endIntent.putExtra(EXTRA_SCORE, score);
         startActivity(endIntent);

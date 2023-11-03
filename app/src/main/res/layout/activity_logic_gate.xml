@@ -40,7 +40,8 @@
         android:layout_centerHorizontal="true"
         android:text="Highscore: "
         android:layout_below="@+id/btnBeginNormal"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btnBeginHard"
@@ -58,7 +59,8 @@
         android:layout_centerHorizontal="true"
         android:text="Highscore: "
         android:layout_below="@+id/btnBeginHard"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
 
 
 
