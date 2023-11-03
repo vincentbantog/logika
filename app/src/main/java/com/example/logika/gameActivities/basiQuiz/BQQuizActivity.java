@@ -81,7 +81,6 @@ public class BQQuizActivity extends AppCompatActivity {
     private int score;
     private BQQuestion currentQuestion;
 
-    private String difficulty;
     private int easyScore;
     private int mediumScore;
     private int hardScore;
@@ -95,7 +94,6 @@ public class BQQuizActivity extends AppCompatActivity {
 
         textColorDefaultRb = radioBtnChoice1.getTextColors();
 
-        difficulty = "Easy";
 
         BQQuizDbHelper dbHelper = new BQQuizDbHelper(this);
 
@@ -278,7 +276,6 @@ public class BQQuizActivity extends AppCompatActivity {
             } else if ("Hard".equals(difficulty)){
                 hardScore++;
             }
-            txtEasyScore.setText("Easy Score: " + easyScore);
 
 
             showCorrectAnswerDialog();

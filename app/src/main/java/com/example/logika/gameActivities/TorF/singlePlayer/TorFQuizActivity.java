@@ -21,12 +21,16 @@ import com.example.logika.R;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizDbHelper;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
 public class TorFQuizActivity extends AppCompatActivity {
     public static final String EXTRA_SCORE = "extraScore";
+    public static final String EXTRA_EASY_SCORE = "extraEasyScore";
+    public static final String EXTRA_MEDIUM_SCORE = "extraMediumScore";
+    public static final String EXTRA_HARD_SCORE = "extraHardScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
     private TextView txtScore;
@@ -61,12 +65,13 @@ public class TorFQuizActivity extends AppCompatActivity {
 
 
     private int score;
+    private int easyScore;
+    private int mediumScore;
+    private int hardScore;
     private boolean answered;
 
     private int livesCount;
-    private boolean isGameOver;
 
-    private long backPressedTime;
 
 
     @Override
@@ -79,9 +84,15 @@ public class TorFQuizActivity extends AppCompatActivity {
         textColorDefaultRb = rbChoiceTrue.getTextColors();
 
         TFQuizDbHelper dbHelper = new TFQuizDbHelper(this);
-        questionList = dbHelper.getAllQuestions();
+        questionList = new ArrayList<>();
+
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Easy", 3));
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Medium", 4));
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Hard", 3));
+
+
         questionCountTotal = questionList.size();
-        Collections.shuffle(questionList);
+
 
         livesCount = 3;
         imageViewLives1.setImageResource(R.drawable.simulation_output_display_on);
@@ -207,13 +218,21 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (answerNr == currentQuestion.getAnswerNr()){
             score++;
             txtScore.setText("Score: " + score);
-
             showCorrectAnswerDialog();
 
             if (currentQuestion.getIsBonusQuestion() == 1){
                 if (livesCount < 3) {
                     livesCount++;
                 }
+            }
+
+            String difficulty = currentQuestion.getDifficulty();
+            if ("Easy".equals(difficulty)){
+                easyScore++;
+            } else if ("Medium".equals(difficulty)){
+                mediumScore++;
+            } else if ("Hard".equals(difficulty)){
+                hardScore++;
             }
 
         } else {
@@ -266,6 +285,10 @@ public class TorFQuizActivity extends AppCompatActivity {
     private void finishQuiz(){
         Intent intent = new Intent(TorFQuizActivity.this, TorFEndActivity.class);
         intent.putExtra(EXTRA_SCORE, score);
+        intent.putExtra(EXTRA_EASY_SCORE, easyScore);
+        intent.putExtra(EXTRA_MEDIUM_SCORE, mediumScore);
+        intent.putExtra(EXTRA_HARD_SCORE, hardScore);
+
         startActivity(intent);
     }
 

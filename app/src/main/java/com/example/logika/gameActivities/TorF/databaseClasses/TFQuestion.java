@@ -1,11 +1,18 @@
 package com.example.logika.gameActivities.TorF.databaseClasses;
 
 public class TFQuestion {
+
+    public static final String DIFFICULTY_EASY = "Easy";
+    public static final String DIFFICULTY_MEDIUM = "Medium";
+    public static final String DIFFICULTY_HARD = "Hard";
+
     private String Question;
     private String option1;
     private String option2;
     private int answerNr;
     private int isBonusQuestion;
+    private String difficulty;
+
 
     public TFQuestion(){}
 
@@ -17,12 +24,14 @@ public class TFQuestion {
         this.isBonusQuestion = isBonusQuestion;
     }
 
-    public TFQuestion(String question, String option1, String option2, int answerNr, int isBonusQuestion) {
+    public TFQuestion(String question, String option1, String option2,
+                      int answerNr, int isBonusQuestion, String difficulty) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.answerNr = answerNr;
         this.isBonusQuestion = isBonusQuestion;
+        this.difficulty = difficulty;
     }
 
     public String getQuestion() {
@@ -55,5 +64,13 @@ public class TFQuestion {
 
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 }

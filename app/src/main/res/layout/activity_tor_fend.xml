@@ -44,6 +44,78 @@
         android:layout_marginTop="15dp"
         android:id="@+id/relLayoutProgressDisplay">
 
+        <TextView
+            android:id="@+id/txtDifficultyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Difficulty Scores"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDifficultyTitle"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Easy: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEasy"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Medium: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtHard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMedium"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Hard: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtEasyScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDifficultyTitle"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/txtEasy"
+            android:text="0/10 "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtMediumScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEasyScore"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/txtMedium"
+            android:text="0/10 "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtHardScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMediumScore"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/txtHard"
+            android:text="0/10 "
+            android:textSize="20dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
