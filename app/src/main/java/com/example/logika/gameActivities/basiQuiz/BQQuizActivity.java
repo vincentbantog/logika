@@ -72,12 +72,13 @@ public class BQQuizActivity extends AppCompatActivity {
     private int answerNr;
 
     private List<BQQuestion> questionList;
-
     private int questionCounter;
     private int questionCountTotal;
     private boolean answered;
     private int score;
     private BQQuestion currentQuestion;
+
+    private String difficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +89,17 @@ public class BQQuizActivity extends AppCompatActivity {
 
         textColorDefaultRb = radioBtnChoice1.getTextColors();
 
+        difficulty = "Easy";
+
         BQQuizDbHelper dbHelper = new BQQuizDbHelper(this);
-        questionList = dbHelper.getAllQuestions();
+
+        questionList = new ArrayList<>();
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Easy", 3));
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Medium", 4));
+        questionList.addAll(dbHelper.getQuestionsWithDifficultyAndCount("Hard", 3));
+
         questionCountTotal = questionList.size();
-        Collections.shuffle(questionList);
+
 
         showNextQuestion();
 
@@ -142,6 +150,8 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     private void showNextQuestion() {
+
+
         radioBtnChoice1.setTextColor(textColorDefaultRb);
         radioBtnChoice2.setTextColor(textColorDefaultRb);
         radioBtnChoice3.setTextColor(textColorDefaultRb);
@@ -155,6 +165,7 @@ public class BQQuizActivity extends AppCompatActivity {
         configureRadioButtonState();
 
         if (questionCounter < questionCountTotal) {
+
             currentQuestion = questionList.get(questionCounter);
 
             txtQuestion.setText(currentQuestion.getQuestion());
@@ -268,6 +279,8 @@ public class BQQuizActivity extends AppCompatActivity {
         int progress = (int) (score * 10);
         scoreBar.setProgress(progress);
     }
+
+
     private void showSolution() {
         radioBtnChoice1.setTextColor(Color.RED);
         radioBtnChoice2.setTextColor(Color.RED);
@@ -352,7 +365,8 @@ public class BQQuizActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(BQQuizActivity.this, MultipleChoice.class);
+                startActivity(intent);
             }
         });
 
