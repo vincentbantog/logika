@@ -10,14 +10,16 @@
         android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score:" />
+        android:text="Score:"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/txtLives"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="Lives: " />
+        android:text="Lives: "
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/txtTimer"
@@ -25,13 +27,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/txtLives"
-        android:text="00:30 " />
+        android:text="00:30 "
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Exit game" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:text="Difficulty Level" />
 
     <RelativeLayout
@@ -39,7 +50,7 @@
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="110dp"
         android:background="@color/lightBlue"
         android:padding="5dp">
 

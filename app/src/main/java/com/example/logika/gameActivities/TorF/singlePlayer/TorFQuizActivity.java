@@ -37,6 +37,8 @@ public class TorFQuizActivity extends AppCompatActivity {
     private TextView txtScore;
     private TextView txtLives;
 
+    private Button btnBack;
+
     private ImageView imageViewLives1;
     private ImageView imageViewLives2;
     private ImageView imageViewLives3;
@@ -81,6 +83,7 @@ public class TorFQuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tor_fquiz);
 
         initializeViewElements();
+        configureBackButton();
 
         textColorDefaultRb = rbChoiceTrue.getTextColors();
 
@@ -121,6 +124,7 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     private void initializeViewElements(){
         txtScore = findViewById(R.id.txtScore);
+        btnBack = findViewById(R.id.btnBack);
         imageViewLives1 = findViewById(R.id.imageViewLives1);
         imageViewLives2 = findViewById(R.id.imageViewLives2);
         imageViewLives3 = findViewById(R.id.imageViewLives3);
@@ -133,6 +137,15 @@ public class TorFQuizActivity extends AppCompatActivity {
         rbChoiceTrue = findViewById(R.id.radioButtonOptionTrue);
         rbChoiceFalse = findViewById(R.id.radioButtonOptionFalse);
         btnConfirm = findViewById(R.id.btnConfirm);
+    }
+
+    private void configureBackButton(){
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLeaveGameDialog();
+            }
+        });
     }
 
     private void showNextQuestion() {
@@ -291,6 +304,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_HARD_SCORE, hardScore);
 
         startActivity(intent);
+
+        finish();
     }
 
     private void showCorrectAnswerDialog(){
@@ -354,6 +369,8 @@ public class TorFQuizActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TorFQuizActivity.this, TrueOrFalse.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 

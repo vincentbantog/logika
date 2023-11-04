@@ -45,6 +45,7 @@ public class BQQuizActivity extends AppCompatActivity {
     private TextView txtQuestionNumber;
     private TextView txtQuestion;
     private TextView txtScore;
+    private Button btnBack;
 
     private ProgressBar scoreBar;
     private List<ImageView> progressBarImageList;
@@ -91,6 +92,7 @@ public class BQQuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bqquiz);
 
         initializeViewElements();
+        configureBackButton();
 
         textColorDefaultRb = radioBtnChoice1.getTextColors();
 
@@ -128,6 +130,7 @@ public class BQQuizActivity extends AppCompatActivity {
         txtQuestionNumber = findViewById(R.id.txtQuestionNumber);
         txtQuestion = findViewById(R.id.txtQuestion);
         txtScore = findViewById(R.id.txtBQScore);
+        btnBack = findViewById(R.id.btnBack);
 
         scoreBar = findViewById(R.id.scoreBar);
         imageViewProgressBar1 = findViewById(R.id.imageViewProgressBar1);
@@ -152,6 +155,15 @@ public class BQQuizActivity extends AppCompatActivity {
         imageViewChoice4 = findViewById(R.id.imageViewChoice4);
 
         btnConfirm = findViewById(R.id.btnConfirm);
+    }
+
+    private void configureBackButton(){
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLeaveGameDialog();
+            }
+        });
     }
 
     private void showNextQuestion() {
@@ -381,6 +393,8 @@ public class BQQuizActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BQQuizActivity.this, MultipleChoice.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 
@@ -394,6 +408,8 @@ public class BQQuizActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MEDIUM_SCORE, mediumScore);
         intent.putExtra(EXTRA_HARD_SCORE, hardScore);
         startActivity(intent);
+
+        finish();
     }
 
     @Override

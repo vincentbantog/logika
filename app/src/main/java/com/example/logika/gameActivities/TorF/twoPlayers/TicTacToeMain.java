@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.TorF.TFHomePage;
 
 public class TicTacToeMain extends AppCompatActivity {
 
     private Button btnBegin;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +21,21 @@ public class TicTacToeMain extends AppCompatActivity {
         setContentView(R.layout.activity_tic_tac_toe_main);
 
         btnBegin = findViewById(R.id.btnBegin);
+        btnBack = findViewById(R.id.btnBack);
         btnBegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TicTacToeMain.this, TicTacToeGame.class);
                 startActivity(intent);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeMain.this, TFHomePage.class);
+                startActivity(intent);
+                finish();
             }
         });
 

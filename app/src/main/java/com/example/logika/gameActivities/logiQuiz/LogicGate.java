@@ -16,6 +16,7 @@ import com.example.logika.R;
 public class LogicGate extends AppCompatActivity {
     public static final String EXTRA_DIFFICULTY = "extraDifficulty";
 
+    private Button btnBack;
     private Button btnBeginNormal;
     private Button btnBeginHard;
 
@@ -30,6 +31,16 @@ public class LogicGate extends AppCompatActivity {
         initializeViewElements();
 
         String[] difficultyLevels = Question.getAllDifficultyLevels();
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogicGate.this, MainMenu.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
 
         btnBeginNormal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +68,7 @@ public class LogicGate extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
+        btnBack = findViewById(R.id.btnBack);
         btnBeginNormal = findViewById(R.id.btnBeginNormal);
         btnBeginHard = findViewById(R.id.btnBeginHard);
     }

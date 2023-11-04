@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".gameActivities.TorF.twoPlayers.TicTacToeGame">
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Exit game" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -43,9 +43,11 @@ public class QuizActivity extends AppCompatActivity {
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
     private TextView txtDifficulty;
-
     private TextView textViewScore;
     private TextView textViewQuestionCount;
+
+    private Button btnBack;
+
     private List<ImageView> circleDisplayList;
     private ImageView circleDisplay1;
     private ImageView circleDisplay2;
@@ -93,6 +95,7 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         initializeViewElements();
+        configureBackButton();
 
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewTimer.getTextColors();
@@ -130,6 +133,7 @@ public class QuizActivity extends AppCompatActivity {
         txtDifficulty = findViewById(R.id.txtDifficulty);
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtQuestionNumber);
+        btnBack = findViewById(R.id.btnBack);
         circleDisplay1 = findViewById(R.id.circle1);
         circleDisplay2 = findViewById(R.id.circle2);
         circleDisplay3 = findViewById(R.id.circle3);
@@ -145,6 +149,15 @@ public class QuizActivity extends AppCompatActivity {
         rb3 = findViewById(R.id.radioButtonOption3);
         imageViewChoice3 = findViewById(R.id.imageViewChoice3);
         buttonConfirmNext = findViewById(R.id.btnConfirmAnswer);
+    }
+
+    private void configureBackButton(){
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLeaveGameDialog();
+            }
+        });
     }
 
     private void showNextQuestion() {
@@ -451,6 +464,8 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(QuizActivity.this, LogicGate.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 

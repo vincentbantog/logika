@@ -27,6 +27,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private int player1Points;
     private int player2Points;
 
+    private Button btnBack;
     private TextView txtScorePlayer1;
     private TextView txtScorePlayer2;
     private TextView txtPlayerTurnDisplay;
@@ -43,6 +44,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe_game);
 
+        btnBack = findViewById(R.id.btnBack);
         txtScorePlayer1 = findViewById(R.id.TTT_txtScorePlayer1);
         txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
         txtLastAnswerChecker = findViewById(R.id.txtLastAnswerChecker);
@@ -57,6 +59,12 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
             }
         }
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLeaveGameDialog();
+            }
+        });
 
         Button buttonReset = findViewById(R.id.TTT_btnReset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
@@ -365,6 +373,8 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 

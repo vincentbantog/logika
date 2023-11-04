@@ -26,6 +26,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
     public static final String KEY_CHECKER = "extraChecker";
     private static final long COUNTDOWN_IN_MILLIS = 20000;
 
+    private Button btnBack;
 
     private TextView txtTopic;
 
@@ -54,6 +55,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_tic_tac_toe_quiz);
 
         initializeViewElements();
+        configureBackButton();
 
         TFQuizDbHelper dbHelper = new TFQuizDbHelper(this);
         questionList = dbHelper.getQuestionsWithTopic();
@@ -82,6 +84,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
+        btnBack = findViewById(R.id.btnBack);
         txtTopic = findViewById(R.id.txtTopic);
         timerBar = findViewById(R.id.timerBar);
         txtQuestion = findViewById(R.id.txtQuestion);
@@ -89,6 +92,15 @@ public class TicTacToeQuiz extends AppCompatActivity {
         radioButtonTrue = findViewById(R.id.TTT_radioButtonTrue);
         radioButtonFalse = findViewById(R.id.TTT_radioButtonFalse);
         btnConfirm = findViewById(R.id.btnConfirm);
+    }
+
+    private void configureBackButton(){
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLeaveGameDialog();
+            }
+        });
     }
 
     private void showQuestion(){
@@ -175,6 +187,8 @@ public class TicTacToeQuiz extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TicTacToeQuiz.this, TicTacToeMain.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 
