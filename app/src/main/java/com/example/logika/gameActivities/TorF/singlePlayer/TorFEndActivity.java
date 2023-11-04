@@ -49,6 +49,8 @@ public class TorFEndActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TorFEndActivity.this, TorFQuizActivity.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 
@@ -57,6 +59,8 @@ public class TorFEndActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TorFEndActivity.this, TrueOrFalse.class);
                 startActivity(intent);
+
+                finish();
             }
         });
     }

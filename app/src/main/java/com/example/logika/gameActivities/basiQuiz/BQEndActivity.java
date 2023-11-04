@@ -49,6 +49,8 @@ public class BQEndActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BQEndActivity.this, BQQuizActivity.class);
                 startActivity(intent);
+
+                finish();
             }
         });
 
@@ -57,6 +59,8 @@ public class BQEndActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BQEndActivity.this, MultipleChoice.class);
                 startActivity(intent);
+
+                finish();
             }
         });
     }

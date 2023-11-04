@@ -27,6 +27,7 @@ public class TicTacToeMain extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TicTacToeMain.this, TicTacToeGame.class);
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -39,6 +39,7 @@ import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_SCORE = "extraScore";
+    public static final String EXTRA_DIFFICULTY = "difficulty";
 
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
@@ -86,7 +87,8 @@ public class QuizActivity extends AppCompatActivity {
     private Fragment fragment;
     private Fragment simulationFragment;
 
-    private long backPressedTime;
+    private String difficulty;
+
 
 
     @Override
@@ -101,7 +103,11 @@ public class QuizActivity extends AppCompatActivity {
         textColorDefaultCd = textViewTimer.getTextColors();
 
         Intent intent = getIntent();
-        String difficulty = intent.getStringExtra(LogicGate.EXTRA_DIFFICULTY);
+        if (intent.hasExtra(LogicGate.EXTRA_DIFFICULTY)) {
+            difficulty = intent.getStringExtra(LogicGate.EXTRA_DIFFICULTY);
+        } else if (intent.hasExtra(EndActivity.EXTRA_DIFFICULTY)) {
+            difficulty = intent.getStringExtra(EndActivity.EXTRA_DIFFICULTY);
+        }
 
         txtDifficulty.setText("Difficulty: " + difficulty);
 
@@ -476,7 +482,10 @@ public class QuizActivity extends AppCompatActivity {
     private void finishQuiz() {
         Intent endIntent = new Intent(QuizActivity.this, EndActivity.class);
         endIntent.putExtra(EXTRA_SCORE, score);
+        endIntent.putExtra(EXTRA_DIFFICULTY, difficulty);
         startActivity(endIntent);
+
+        finish();
     }
 
     @Override

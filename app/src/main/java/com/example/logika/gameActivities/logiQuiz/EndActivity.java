@@ -11,9 +11,13 @@ import android.widget.TextView;
 import com.example.logika.R;
 
 public class EndActivity extends AppCompatActivity {
+    public static final String EXTRA_DIFFICULTY = "difficulty";
+
     private TextView txtScore;
     private Button btnTryAgain;
     private Button btnHome;
+
+    private String difficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class EndActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int score = intent.getIntExtra(QuizActivity.EXTRA_SCORE, 0);
+        difficulty = intent.getStringExtra(QuizActivity.EXTRA_DIFFICULTY);
         txtScore.setText("Score: " + score);
 
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
@@ -46,12 +51,17 @@ public class EndActivity extends AppCompatActivity {
 
     private void tryAgain(){
         Intent intent = new Intent(EndActivity.this, QuizActivity.class);
+        intent.putExtra(EXTRA_DIFFICULTY, difficulty);
         startActivity(intent);
+
+        finish();
     }
 
     private void home(){
         Intent intent = new Intent(EndActivity.this, LogicGate.class);
         startActivity(intent);
+
+        finish();
     }
 
 }
