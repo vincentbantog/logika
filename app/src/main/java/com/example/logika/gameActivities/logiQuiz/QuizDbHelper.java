@@ -53,16 +53,27 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question(1,  "MED: X = 0, Y = 0", "X = 1, Y = 1", "X = 1, Y = 0", 2, Question.DIFFICULTY_MEDIUM);
+        Question q1 = new Question(1,  "A", "B (correct)", "C", 2, Question.DIFFICULTY_MEDIUM);
         addQuestion(q1);
-        Question q2 = new Question(2,  "MED: AND gate", "OR gate", "NOR gate", 2, Question.DIFFICULTY_MEDIUM);
+        Question q2 = new Question(2,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_MEDIUM);
         addQuestion(q2);
-        Question q3 = new Question(3,  "MED: 0", "1", "2", 1, Question.DIFFICULTY_MEDIUM);
+        Question q3 = new Question(3,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_MEDIUM);
         addQuestion(q3);
-        Question q4 = new Question(4,  "HARD: X=1, Y=1", "X=0, Y=1", "X=0, Y=0", 3, Question.DIFFICULTY_HARD);
+        Question q4 = new Question(4,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_MEDIUM);
         addQuestion(q4);
-        Question q5 = new Question(5,  "HARD: 0", "1", "2", 1, Question.DIFFICULTY_HARD);
+        Question q5 = new Question(5,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_MEDIUM);
         addQuestion(q5);
+        Question q6 = new Question(6,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_HARD);
+        addQuestion(q6);
+        Question q7 = new Question(7,  "A", "B (correct)", "C", 2, Question.DIFFICULTY_HARD);
+        addQuestion(q7);
+        Question q8 = new Question(8,  "A (correct)", "B", "C", 1,  Question.DIFFICULTY_HARD);
+        addQuestion(q8);
+        Question q9 = new Question(9,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_HARD);
+        addQuestion(q9);
+        Question q10 = new Question(10,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_HARD);
+        addQuestion(q10);
+
     }
 
     private void addQuestion(Question question) {

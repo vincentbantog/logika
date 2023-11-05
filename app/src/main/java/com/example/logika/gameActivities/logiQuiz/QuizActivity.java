@@ -22,15 +22,25 @@ import android.widget.Toast;
 
 import com.example.logika.R;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment1;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment10;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment3;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment4;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment5;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment6;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment7;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment8;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.QuestionFragment9;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment10;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment2;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment3;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment4;
 import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment5;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment6;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment7;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment8;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.SimulationFragment9;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -308,6 +318,21 @@ public class QuizActivity extends AppCompatActivity {
             case 5:
                 fragment = new QuestionFragment5();
                 break;
+            case 6:
+                fragment = new QuestionFragment6();
+                break;
+            case 7:
+                fragment = new QuestionFragment7();
+                break;
+            case 8:
+                fragment = new QuestionFragment8();
+                break;
+            case 9:
+                fragment = new QuestionFragment9();
+                break;
+            case 10:
+                fragment = new QuestionFragment10();
+                break;
             default:
                 break;
         }
@@ -334,6 +359,21 @@ public class QuizActivity extends AppCompatActivity {
                 break;
             case 5:
                 fragment = new SimulationFragment5();
+                break;
+            case 6:
+                fragment = new SimulationFragment6();
+                break;
+            case 7:
+                fragment = new SimulationFragment7();
+                break;
+            case 8:
+                fragment = new SimulationFragment8();
+                break;
+            case 9:
+                fragment = new SimulationFragment9();
+                break;
+            case 10:
+                fragment = new SimulationFragment10();
                 break;
             default:
                 break;
