@@ -3,10 +3,12 @@ package com.example.logika.gameActivities.basiQuiz;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.logika.R;
 import com.example.logika.gameActivities.basiQuiz.BQQuizContract.*;
 
 import androidx.annotation.Nullable;
@@ -19,10 +21,13 @@ public class BQQuizDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "GeneralQuestions.db";
     public static final int DATABASE_VERSION = 1;
 
+    private Context context;
+
     private SQLiteDatabase db;
 
     public BQQuizDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -53,38 +58,29 @@ public class BQQuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        BQQuestion q1 = new BQQuestion("Easy: A is correct",
-                "A", "B", "C", "D", 1, "Easy");
-        addQuestion(q1);
-        BQQuestion q2 = new BQQuestion("Easy: C is correct",
-                "A", "B", "C", "D", 3, "Easy");
-        addQuestion(q2);
-        BQQuestion q3 = new BQQuestion("Easy: B is correct",
-                "A", "B", "C", "D", 2, "Easy");
-        addQuestion(q3);
-        BQQuestion q4 = new BQQuestion("Medium: C is correct",
-                "A", "B", "C", "D", 3, "Medium");
-        addQuestion(q4);
-        BQQuestion q5 = new BQQuestion("Medium: D is correct",
-                "A", "B", "C", "D", 4, "Medium");
-        addQuestion(q5);
-        BQQuestion q6 = new BQQuestion("Medium: A is correct",
-                "A", "B", "C", "D", 1, "Medium");
-        addQuestion(q6);
-        BQQuestion q7 = new BQQuestion("Medium: A is correct",
-                "A", "B", "C", "D", 1, "Medium");
-        addQuestion(q7);
-        BQQuestion q8 = new BQQuestion("Hard: C is correct",
-                "A", "B", "C", "D", 3, "Hard");
-        addQuestion(q8);
-        BQQuestion q9 = new BQQuestion("Hard: B is correct",
-                "A", "B", "C", "D", 2, "Hard");
-        addQuestion(q9);
-        BQQuestion q10 = new BQQuestion("Hard: A is correct",
-                "A", "B", "C", "D", 1, "Hard");
-        addQuestion(q10);
+        Resources resources = context.getResources();
 
-    }
+        String[] questions = resources.getStringArray(R.array.questions);
+        String[] options1 = resources.getStringArray(R.array.options1);
+        String[] options2 = resources.getStringArray(R.array.options2);
+        String[] options3 = resources.getStringArray(R.array.options3);
+        String[] options4 = resources.getStringArray(R.array.options4);
+        String[] answerNrs = resources.getStringArray(R.array.answer_nrs);
+        String[] difficulties = resources.getStringArray(R.array.difficulties);
+
+        for (int i = 0; i < questions.length; i++) {
+            BQQuestion question = new BQQuestion(
+                questions[i],
+                options1[i],
+                options2[i],
+                options3[i],
+                options4[i],
+                Integer.parseInt(answerNrs[i]),
+                difficulties[i]
+            );
+            addQuestion(question);
+            }
+        }
 
     private void addQuestion(BQQuestion question) {
         ContentValues cv = new ContentValues();

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions">
+        <item>What is the primary focus of studying digital electronics?</item>
+    </string-array>
+
+    <string-array name="options1">
+        <item>Analyzing analog circuits</item>
+
+    </string-array>
+
+    <string-array name="options2">
+        <item>Understanding mechanical systems</item>
+
+    </string-array>
+
+    <string-array name="options3">
+        <item>Examining digital electronics components</item>
+
+    </string-array>
+
+    <string-array name="options4">
+        <item>Investigating chemical reactions</item>
+
+    </string-array>
+
+    <string-array name="answer_nrs">
+        <item>3</item>
+
+    </string-array>
+
+    <string-array name="difficulties">
+        <item>Easy</item>
+
+    </string-array>
+
+</resources>
