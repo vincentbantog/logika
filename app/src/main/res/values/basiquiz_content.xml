@@ -2,36 +2,233 @@
 <resources>
     <string-array name="questions">
         <item>What is the primary focus of studying digital electronics?</item>
+        <item>Why is it important to recognize the changes in digital electronics over time?</item>
+        <item>Which of the following is not related to digital electronics?</item>
+        <item>Which of the following is NOT a basic logic gate?</item>
+        <item>In digital electronics, what does the term "bit" stand for?</item>
+        <item>What do you call the building block of digital electronics?</item>
+        <item>Which Logic Gate produces the output of 1 when one input is 1?</item>
+        <item>What numbers are used in binary?</item>
+        <item>Which Logic Gate is also known as an “inverter”?</item>
+        <item>How many input combinations are possible for a 2-input logic gate?</item>
+        <item>Which logic gate is commonly used to perform binary addition in digital circuits?</item>
+        <item>Which digital logic gate returns a true (1) output when both of its inputs are true (1)?</item>
+        <item>What is the complement of the logical AND operation?</item>
+        <item>What is the role of a truth table in analyzing logic circuits?</item>
+        <item>In digital electronics, what do logic gates perform?</item>
+        <item>What does a multiplexer do in a logic circuit?</item>
+        <item>What is the purpose of a flip-flop in digital circuits?</item>
+        <item>Which logic gate has the same output as an OR gate followed by a NOT gate?</item>
+        <item>What is the purpose of an ADC (Analog-to-Digital Converter) in digital electronics?</item>
+        <item>What is the primary role of a counter in digital electronics?</item>
+        <item>What is the Boolean expression for the XOR gate?</item>
+        <item>What is the Boolean expression for the OR gate?</item>
+        <item>What is the Boolean expression for the AND gate?</item>
+        <item>What is the result of the binary division: 11001 ÷ 10?</item>
+        <item>What is the result of the binary addition: 1110 + 1101?</item>
+        <item>What is the binary equivalent of the decimal number 13?</item>
+        <item>What is the binary equivalent of the decimal number 6?</item>
+        <item>What is the binary equivalent of the decimal number 20?</item>
+        <item>What is the binary representation of the decimal number 42?</item>
+        <item>What is the result of the binary multiplication 1010 * 1101?</item>
     </string-array>
 
     <string-array name="options1">
         <item>Analyzing analog circuits</item>
-
+        <item>To cling to outdated technology</item>
+        <item>Identifying digital components</item>
+        <item>OR gate</item>
+        <item>Binary Incremented Token</item>
+        <item>Bite</item>
+        <item>NOT Gate</item>
+        <item>1 and 0</item>
+        <item>AND Gate</item>
+        <item>1</item>
+        <item>AND gate</item>
+        <item>AND gate</item>
+        <item>OR</item>
+        <item>A truth table represents the price of logic gates</item>
+        <item>Arithmetic operations</item>
+        <item>Performs Mathematical Calculations</item>
+        <item>To perform arithmetic calculations</item>
+        <item>AND gate</item>
+        <item>To convert analog signals to digital signals</item>
+        <item>To add two binary numbers</item>
+        <item>A + B</item>
+        <item>A + B</item>
+        <item>A + B</item>
+        <item>110</item>
+        <item>10101</item>
+        <item>1101</item>
+        <item>1010</item>
+        <item>11000</item>
+        <item>101010</item>
+        <item>11011</item>
     </string-array>
 
     <string-array name="options2">
         <item>Understanding mechanical systems</item>
-
+        <item>To appreciate the timeless nature of electronics</item>
+        <item>Analyzing the composition of minerals</item>
+        <item>CD gate</item>
+        <item>Basic Information Token</item>
+        <item>Bits</item>
+        <item>OR Gate</item>
+        <item>2 and 7</item>
+        <item>OR Gate</item>
+        <item>2</item>
+        <item>OR gate</item>
+        <item>OR gate</item>
+        <item>XOR</item>
+        <item>A truth table defines the lifespan of a computer</item>
+        <item>Logical operations</item>
+        <item>Amplifies Analog Signals</item>
+        <item>To store and manipulate data</item>
+        <item>XOR gate</item>
+        <item>To convert digital signals to analog signals</item>
+        <item>To store data temporarily</item>
+        <item>A × B</item>
+        <item>A × B</item>
+        <item>A × B</item>
+        <item>100</item>
+        <item>11000</item>
+        <item>1011</item>
+        <item>0110</item>
+        <item>10100</item>
+        <item>110101</item>
+        <item>10011</item>
     </string-array>
 
     <string-array name="options3">
         <item>Examining digital electronics components</item>
-
+        <item>To adapt to evolving technology trends</item>
+        <item>Understanding the evolution of technology</item>
+        <item>XOR gate</item>
+        <item>Binary Digit</item>
+        <item>Byte</item>
+        <item>XOR Gate</item>
+        <item>5 and 6</item>
+        <item>NOT Gate</item>
+        <item>3</item>
+        <item>XOR gate</item>
+        <item>XOR gate</item>
+        <item>NOR</item>
+        <item>A truth table lists all possible input and output combinations</item>
+        <item>Cooking recipes</item>
+        <item>Combines multiple digital inputs into one output</item>
+        <item>To generate clock signals</item>
+        <item>NAND gate</item>
+        <item>To compress data</item>
+        <item>To count the number of input pulses</item>
+        <item>A - B</item>
+        <item>A - B</item>
+        <item>A - B</item>
+        <item>11</item>
+        <item>11011</item>
+        <item>1110</item>
+        <item>0011</item>
+        <item>10010</item>
+        <item>100101</item>
+        <item>11110</item>
     </string-array>
 
     <string-array name="options4">
         <item>Investigating chemical reactions</item>
-
+        <item>To study geological processes</item>
+        <item>Applying digital electronics principles in practical applications</item>
+        <item>NOT gate</item>
+        <item>Byte of Information</item>
+        <item>Bytes</item>
+        <item>AND Gate</item>
+        <item>4 and 5</item>
+        <item>XOR Gate</item>
+        <item>4</item>
+        <item>NOT gate</item>
+        <item>NOT gate</item>
+        <item>NOT</item>
+        <item>A truth table summarizes the plot of a novel</item>
+        <item>Artistic expressions</item>
+        <item>Stores data temporarily</item>
+        <item>To convert analog signals to digital</item>
+        <item>NOR gate</item>
+        <item>To amplify signals</item>
+        <item>To convert analog signals to digital signals</item>
+        <item>A ÷ B</item>
+        <item>A ÷ B</item>
+        <item>A ÷ B</item>
+        <item>10</item>
+        <item>11111</item>
+        <item>1001</item>
+        <item>1001</item>
+        <item>11100</item>
+        <item>101100</item>
+        <item>11000</item>
     </string-array>
 
     <string-array name="answer_nrs">
         <item>3</item>
-
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>3</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="difficulties">
         <item>Easy</item>
-
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Medium</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
+        <item>Hard</item>
     </string-array>
 
 </resources>
