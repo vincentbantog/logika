@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.QuizActivity">
+    tools:context=".gameActivities.logiQuiz.QuizActivity"
+    android:background="@drawable/logiquiz_background_main">
 
     <TextView
         android:id="@+id/txtScore"
@@ -28,21 +29,36 @@
         android:id="@+id/txtDifficulty"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
+
+    <RelativeLayout
+        android:id="@+id/relLayoutBackButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Back" />
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/imageViewBtnBack"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/lq_001" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
         android:layout_width="320dp"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:background="@color/lightBlue">
+        android:layout_marginTop="70dp">
 
         <ImageView
             android:id="@+id/circle1"
@@ -50,7 +66,7 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_toStartOf="@+id/circle2"
-            android:src="@drawable/progress_tracker_neutral_circle" />
+            android:src="@drawable/lq_006" />
 
         <ImageView
             android:id="@+id/circle2"
@@ -58,14 +74,14 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_toStartOf="@id/circle3"
-            android:src="@drawable/progress_tracker_neutral_circle" />
+            android:src="@drawable/lq_006" />
 
         <ImageView
             android:id="@+id/circle3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/progress_tracker_neutral_circle" />
+            android:src="@drawable/lq_006" />
 
         <ImageView
             android:id="@+id/circle4"
@@ -73,7 +89,7 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_toEndOf="@id/circle3"
-            android:src="@drawable/progress_tracker_neutral_circle" />
+            android:src="@drawable/lq_006" />
 
         <ImageView
             android:id="@+id/circle5"
@@ -81,7 +97,7 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_toEndOf="@id/circle4"
-            android:src="@drawable/progress_tracker_neutral_circle" />
+            android:src="@drawable/lq_006" />
 
 
     </RelativeLayout>
@@ -118,10 +134,11 @@
     <FrameLayout
         android:id="@+id/questionFrameContainer"
         android:layout_width="360dp"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp">
+        android:layout_marginTop="17dp"
+        android:background="@drawable/lq_007">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/questionFragmentContainer"
@@ -148,7 +165,7 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/lq_008" />
 
         <ImageView
             android:id="@+id/imageViewChoice2"
@@ -156,7 +173,7 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/lq_008" />
 
         <ImageView
             android:id="@+id/imageViewChoice3"
@@ -164,7 +181,7 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="130dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/lq_008" />
 
         <RadioGroup
             android:id="@+id/radioGroup"

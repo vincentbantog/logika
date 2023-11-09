@@ -216,18 +216,18 @@ public class QuizActivity extends AppCompatActivity {
 
     private void configureRadioButtonState() {
 
-        imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
-        imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
-        imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+        imageViewChoice1.setImageResource(R.drawable.lq_008);
+        imageViewChoice2.setImageResource(R.drawable.lq_008);
+        imageViewChoice3.setImageResource(R.drawable.lq_008);
         rb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice1.setImageResource(R.drawable.lq_009);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice1.setImageResource(R.drawable.lq_008);
                 }
             }
         });
@@ -237,10 +237,10 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice2.setImageResource(R.drawable.lq_009);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice2.setImageResource(R.drawable.lq_008);
                 }
             }
         });
@@ -250,10 +250,10 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice3.setImageResource(R.drawable.lq_009);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice3.setImageResource(R.drawable.lq_008);
                 }
             }
         });
@@ -403,11 +403,11 @@ public class QuizActivity extends AppCompatActivity {
             textViewScore.setText("Score: " + score);
 
             showCorrectAnswerDialog();
-            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_small);
+            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.lq_004);
         } else {
 
             showWrongAnswerDialog();
-            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.progress_tracker_correct_circle_wrong);
+            circleDisplayList.get(questionCounter - 1).setImageResource(R.drawable.lq_005);
         }
 
         showSolution();
