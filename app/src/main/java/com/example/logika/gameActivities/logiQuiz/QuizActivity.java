@@ -7,7 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -451,10 +454,20 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showCorrectAnswerDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_018);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.correct_answer_dialog_logiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -468,10 +481,19 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showWrongAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_019);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.wrong_answer_dialog_logiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -485,10 +507,21 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showLeaveGameDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
+
+        int newWidth = 360;
+        int newHeight = 360;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+
         Button btnResume = dialog.findViewById(R.id.btnContinue);
         Button btnExit = dialog.findViewById(R.id.btnExit);
 

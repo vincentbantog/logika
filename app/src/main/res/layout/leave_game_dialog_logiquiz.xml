@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="330dp">
+    android:layout_width="360dp"
+    android:layout_height="360dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are about to \nlose your progress!"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:textSize="25dp"
-        android:id="@+id/txtMessage" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtMessage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Resume"
-        android:id="@+id/btnContinue"/>
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="235dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnContinue"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Exit"
-        android:id="@+id/btnExit"/>
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lq_023" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lq_024"
+            android:layout_below="@+id/btnContinue"/>
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnContinue"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
