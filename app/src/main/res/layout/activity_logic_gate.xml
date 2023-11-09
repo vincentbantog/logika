@@ -43,11 +43,37 @@
         android:layout_below="@+id/imageViewTitle"
         android:layout_centerHorizontal="true">
 
+        <ImageView
+            android:id="@+id/imageViewBtnBeginNormal"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/lq_002" />
+
+        <ImageView
+            android:id="@+id/imageViewBtnBeginHard"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageViewBtnBeginNormal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/lq_003" />
+
+        <ImageView
+            android:id="@+id/imageViewBtnBeginInstructions"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageViewBtnBeginHard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/lq_021" />
+
         <Button
             android:id="@+id/btnBeginNormal"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/btnBeginHard"
@@ -55,7 +81,17 @@
             android:layout_height="50dp"
             android:layout_below="@+id/btnBeginNormal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btnBeginInstructions"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnBeginHard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 
