@@ -415,12 +415,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showSolution() {
-        rb1.setTextColor(Color.RED);
-        rb2.setTextColor(Color.RED);
-        rb3.setTextColor(Color.RED);
-        imageViewChoice1.setImageResource(R.drawable.noir);
-        imageViewChoice2.setImageResource(R.drawable.noir);
-        imageViewChoice3.setImageResource(R.drawable.noir);
+        imageViewChoice1.setImageResource(R.drawable.lq_010);
+        imageViewChoice2.setImageResource(R.drawable.lq_010);
+        imageViewChoice3.setImageResource(R.drawable.lq_010);
 
         fragmentManager.beginTransaction()
                 .replace(R.id.questionFragmentContainer, simulationFragment.getClass(), null)
@@ -430,16 +427,13 @@ public class QuizActivity extends AppCompatActivity {
 
         switch (currentQuestion.getAnswerNr()) {
             case 1:
-                rb1.setTextColor(Color.GREEN);
-                imageViewChoice1.setImageResource(R.drawable.mielsmorales);
+                imageViewChoice1.setImageResource(R.drawable.lq_011);
                 break;
             case 2:
-                rb2.setTextColor(Color.GREEN);
-                imageViewChoice2.setImageResource(R.drawable.mielsmorales);
+                imageViewChoice2.setImageResource(R.drawable.lq_011);
                 break;
             case 3:
-                rb3.setTextColor(Color.GREEN);
-                imageViewChoice3.setImageResource(R.drawable.mielsmorales);
+                imageViewChoice3.setImageResource(R.drawable.lq_011);
                 break;
         }
 

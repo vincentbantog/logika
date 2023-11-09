@@ -51,6 +51,8 @@ public class LogicGate extends AppCompatActivity {
                 Intent intent = new Intent(LogicGate.this, QuizActivity.class);
                 intent.putExtra(LogicGate.EXTRA_DIFFICULTY, difficulty);
                 startActivity(intent);
+
+                finish();
             }
         });
 
@@ -63,6 +65,8 @@ public class LogicGate extends AppCompatActivity {
                 Intent intent = new Intent(LogicGate.this, QuizActivity.class);
                 intent.putExtra(EXTRA_DIFFICULTY, difficulty);
                 startActivity(intent);
+
+                finish();
             }
         });
     }
