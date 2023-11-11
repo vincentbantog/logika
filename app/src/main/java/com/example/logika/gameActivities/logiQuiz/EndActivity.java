@@ -32,7 +32,7 @@ public class EndActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int score = intent.getIntExtra(QuizActivity.EXTRA_SCORE, 0);
         difficulty = intent.getStringExtra(QuizActivity.EXTRA_DIFFICULTY);
-        txtScore.setText("Score: " + score);
+        txtScore.setText(score + "");
 
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override

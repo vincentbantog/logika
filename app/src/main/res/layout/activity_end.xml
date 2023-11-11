@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/lq_bg3"
     tools:context=".gameActivities.logiQuiz.EndActivity">
 
     <TextView
@@ -13,35 +14,70 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="160dp"
         android:text="You did good, Ka-avio!"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/txtScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtTitle"
+    <RelativeLayout
+        android:id="@+id/relLayoutScore"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="Score:"
-        android:textSize="30dp" />
+        android:layout_marginTop="400dp">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/lq_015" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:text="2"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="50dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/relLayoutScore"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lq_016"/>
+
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lq_017"
+            android:layout_below="@+id/btnTryAgain"
+            android:layout_marginTop="15dp"/>
+
 
     <Button
         android:id="@+id/btnTryAgain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtScore"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:text="Try Again"/>
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_below="@id/btnTryAgain"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Home"/>
-
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>
+
+    </RelativeLayout>
