@@ -72,6 +72,7 @@ public class BQQuizActivity extends AppCompatActivity {
     private RadioButton radioBtnChoice4;
     private ImageView imageViewChoice4;
     private Button btnConfirm;
+    private ImageView imageViewButtonConfirm;
 
     private int answerNr;
 
@@ -155,6 +156,7 @@ public class BQQuizActivity extends AppCompatActivity {
         imageViewChoice4 = findViewById(R.id.imageViewChoice4);
 
         btnConfirm = findViewById(R.id.btnConfirm);
+        imageViewButtonConfirm = findViewById(R.id.imageViewButtonConfirm);
     }
 
     private void configureBackButton(){
@@ -195,7 +197,8 @@ public class BQQuizActivity extends AppCompatActivity {
             questionCounter++;
             txtQuestionNumber.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
-            btnConfirm.setText("Confirm");
+            imageViewButtonConfirm.setImageResource(R.drawable.bq_027);
+
 
 
         } else {
@@ -291,11 +294,11 @@ public class BQQuizActivity extends AppCompatActivity {
 
 
             showCorrectAnswerDialog();
-            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_correct);
+            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.bq_024);
         } else {
 
             showWrongAnswerDialog();
-            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.image_progress_bar_basicquiz_wrong);
+            progressBarImageList.get(questionCounter - 1).setImageResource(R.drawable.bq_025);
         }
 
         showSolution();
@@ -333,9 +336,9 @@ public class BQQuizActivity extends AppCompatActivity {
         radioBtnChoice3.setEnabled(false);
         radioBtnChoice4.setEnabled(false);
         if (questionCounter < questionCountTotal) {
-            btnConfirm.setText("Next");
+            imageViewButtonConfirm.setImageResource(R.drawable.bq_004);
         } else {
-            btnConfirm.setText("Finish");
+            imageViewButtonConfirm.setImageResource(R.drawable.bq_028);
         }
     }
 

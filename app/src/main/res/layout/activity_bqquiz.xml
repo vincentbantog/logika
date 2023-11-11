@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bq_bg2"
     tools:context=".gameActivities.basiQuiz.BQQuizActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Question Count: "
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txtBQScore"
@@ -20,7 +21,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
         android:text="Score: "
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
     <TextView
@@ -30,24 +31,34 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
         android:text="Easy Score: "
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:text="Exit game" />
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bq_001" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressBar"
-        android:layout_width="380dp"
-        android:layout_height="30dp"
+        android:layout_width="370dp"
+        android:layout_height="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:background="@color/lightBlue">
+        android:layout_marginTop="90dp">
 
         <ProgressBar
             android:id="@+id/scoreBar"
@@ -61,82 +72,82 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutScoreBar"
-        android:layout_width="380dp"
-        android:layout_height="30dp"
+        android:layout_width="370dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/relLayoutProgressBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:background="@color/lightBlue">
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/imageViewProgressBar1"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral" />
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar2"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar1"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar3"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar2"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar4"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar3"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar5"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar4"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar6"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar5"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar7"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar6"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar8"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar7"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar9"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar8"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
         <ImageView
             android:id="@+id/imageViewProgressBar10"
-            android:layout_width="38dp"
-            android:layout_height="30dp"
+            android:layout_width="37dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/imageViewProgressBar9"
-            android:src="@drawable/image_progress_bar_basicquiz_neutral"/>
+            android:src="@drawable/bq_026" />
 
 
     </RelativeLayout>
@@ -147,14 +158,16 @@
         android:layout_height="200dp"
         android:layout_below="@id/relLayoutScoreBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bq_009">
 
         <TextView
             android:id="@+id/txtQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Question will be displayed here" />
+            android:text="Question will be displayed here"
+            android:textSize="20dp" />
 
     </RelativeLayout>
 
@@ -170,34 +183,35 @@
             android:id="@+id/imageViewChoice1"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/bq_005" />
 
         <ImageView
             android:id="@+id/imageViewChoice2"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
             android:layout_marginTop="62.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/bq_006" />
 
         <ImageView
             android:id="@+id/imageViewChoice3"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
             android:layout_marginTop="125dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/bq_007" />
 
         <ImageView
             android:id="@+id/imageViewChoice4"
             android:layout_width="match_parent"
             android:layout_height="62.5dp"
             android:layout_marginTop="187.5dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/bq_008" />
 
         <RadioGroup
             android:id="@+id/radioGroupChoices"
             android:layout_width="350dp"
             android:layout_height="250dp"
             android:layout_centerHorizontal="true">
+
 
             <RadioButton
                 android:id="@+id/radioBtnOption1"
@@ -207,7 +221,6 @@
                 android:button="@android:color/transparent"
                 android:text="Option 1"
                 android:textAlignment="center" />
-
 
             <RadioButton
                 android:id="@+id/radioBtnOption2"
@@ -243,16 +256,26 @@
 
     </RelativeLayout>
 
-
-    <Button
-        android:id="@+id/btnConfirm"
+    <RelativeLayout
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relLayoutRadioGroupChoices"
+        android:layout_height="45dp"
+        android:layout_below="@id/relLayoutRadioGroupChoices"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="40dp"
-        android:text="Confirm" />
+        android:layout_marginRight="40dp">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bq_027"
+            android:id="@+id/imageViewButtonConfirm"/>
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
