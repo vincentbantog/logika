@@ -233,13 +233,13 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:src="@drawable/basiquiz_radio_button_default_state" />
+            android:src="@drawable/lq_025"
+            android:id="@+id/imageViewConfirmButton"/>
 
         <Button
             android:id="@+id/btnConfirmAnswer"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Confirm"
             android:layout_alignParentEnd="true"
             android:background="@android:color/transparent" />
 

@@ -80,6 +80,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton rb3;
     private ImageView imageViewChoice3;
     private Button buttonConfirmNext;
+    private ImageView imageViewConfirmButton;
 
     private ColorStateList textColorDefaultRb;
     private ColorStateList textColorDefaultCd;
@@ -168,6 +169,7 @@ public class QuizActivity extends AppCompatActivity {
         rb3 = findViewById(R.id.radioButtonOption3);
         imageViewChoice3 = findViewById(R.id.imageViewChoice3);
         buttonConfirmNext = findViewById(R.id.btnConfirmAnswer);
+        imageViewConfirmButton = findViewById(R.id.imageViewConfirmButton);
     }
 
     private void configureBackButton(){
@@ -207,7 +209,8 @@ public class QuizActivity extends AppCompatActivity {
             questionCounter++;
             textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
-            buttonConfirmNext.setText("Confirm");
+            imageViewConfirmButton.setImageResource(R.drawable.lq_025);
+
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
@@ -445,9 +448,9 @@ public class QuizActivity extends AppCompatActivity {
         rb3.setEnabled(false);
 
         if (questionCounter < questionCountTotal) {
-            buttonConfirmNext.setText("Next");
+            imageViewConfirmButton.setImageResource(R.drawable.lq_013);
         } else {
-            buttonConfirmNext.setText("Finish");
+            imageViewConfirmButton.setImageResource(R.drawable.lq_026);
         }
 
 
