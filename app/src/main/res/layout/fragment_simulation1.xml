@@ -70,6 +70,13 @@
         android:layout_marginTop="110dp"
         android:id="@+id/outputDisplay"/>
 
+    <ImageView
+        android:layout_width="258dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/simulation_1_circuit"
+        android:layout_marginTop="50dp"/>
+
 
 
 </RelativeLayout>
