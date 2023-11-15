@@ -154,8 +154,8 @@
 
     <RelativeLayout
         android:id="@+id/frameLayoutQuestions"
-        android:layout_width="330dp"
-        android:layout_height="200dp"
+        android:layout_width="360dp"
+        android:layout_height="220dp"
         android:layout_below="@id/relLayoutScoreBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
@@ -163,11 +163,13 @@
 
         <TextView
             android:id="@+id/txtQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
+            android:padding="30dp"
             android:text="Question will be displayed here"
-            android:textSize="20dp" />
+            android:gravity="center"
+            android:textSize="25dp" />
 
     </RelativeLayout>
 
@@ -220,7 +222,8 @@
                 android:background="@drawable/radio_selector_basiquiz"
                 android:button="@android:color/transparent"
                 android:text="Option 1"
-                android:textAlignment="center" />
+                android:gravity="center"
+                android:paddingStart="10dp"/>
 
             <RadioButton
                 android:id="@+id/radioBtnOption2"
@@ -229,7 +232,8 @@
                 android:background="@drawable/radio_selector_basiquiz"
                 android:button="@android:color/transparent"
                 android:text="Option 2"
-                android:textAlignment="center" />
+                android:gravity="center"
+                android:paddingStart="10dp" />
 
 
             <RadioButton
@@ -239,7 +243,8 @@
                 android:background="@drawable/radio_selector_basiquiz"
                 android:button="@android:color/transparent"
                 android:text="Option 3"
-                android:textAlignment="center" />
+                android:gravity="center"
+                android:paddingStart="10dp"  />
 
 
             <RadioButton
@@ -249,7 +254,8 @@
                 android:background="@drawable/radio_selector_basiquiz"
                 android:button="@android:color/transparent"
                 android:text="Option 4"
-                android:textAlignment="center" />
+                android:gravity="center"
+                android:paddingStart="10dp"  />
 
         </RadioGroup>
 

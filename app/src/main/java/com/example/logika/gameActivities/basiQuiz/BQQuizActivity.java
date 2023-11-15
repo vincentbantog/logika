@@ -208,12 +208,16 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     public void configureRadioButtonState(){
+        imageViewChoice1.setImageResource(R.drawable.bq_005);
+        imageViewChoice2.setImageResource(R.drawable.bq_006);
+        imageViewChoice3.setImageResource(R.drawable.bq_007);
+        imageViewChoice4.setImageResource(R.drawable.bq_008);
         radioBtnChoice1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice1.setImageResource(R.drawable.bq_029);
                     // Add logic for Option 2
                 } else {
                     imageViewChoice1.setImageResource(R.drawable.bq_005);
@@ -226,7 +230,7 @@ public class BQQuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice2.setImageResource(R.drawable.bq_030);
                     // Add logic for Option 2
                 } else {
                     imageViewChoice2.setImageResource(R.drawable.bq_006);
@@ -239,7 +243,7 @@ public class BQQuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice3.setImageResource(R.drawable.bq_031);
                     // Add logic for Option 2
                 } else {
                     imageViewChoice3.setImageResource(R.drawable.bq_007);
@@ -252,7 +256,7 @@ public class BQQuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewChoice4.setImageResource(R.drawable.basiquiz_radio_button_on_state);
+                    imageViewChoice4.setImageResource(R.drawable.bq_032);
                     // Add logic for Option 2
                 } else {
                     imageViewChoice4.setImageResource(R.drawable.bq_008);
@@ -311,23 +315,25 @@ public class BQQuizActivity extends AppCompatActivity {
 
 
     private void showSolution() {
-        radioBtnChoice1.setTextColor(Color.RED);
-        radioBtnChoice2.setTextColor(Color.RED);
-        radioBtnChoice3.setTextColor(Color.RED);
-        radioBtnChoice4.setTextColor(Color.RED);
+
+
+        imageViewChoice1.setImageResource(R.drawable.bq_010);
+        imageViewChoice2.setImageResource(R.drawable.bq_010);
+        imageViewChoice3.setImageResource(R.drawable.bq_010);
+        imageViewChoice4.setImageResource(R.drawable.bq_010);
 
         switch (currentQuestion.getAnswerNr()){
             case 1:
-                radioBtnChoice1.setTextColor(Color.GREEN);
+                imageViewChoice1.setImageResource(R.drawable.bq_005);
                 break;
             case 2:
-                radioBtnChoice2.setTextColor(Color.GREEN);
+                imageViewChoice2.setImageResource(R.drawable.bq_006);
                 break;
             case 3:
-                radioBtnChoice3.setTextColor(Color.GREEN);
+                imageViewChoice3.setImageResource(R.drawable.bq_007);
                 break;
             case 4:
-                radioBtnChoice4.setTextColor(Color.GREEN);
+                imageViewChoice4.setImageResource(R.drawable.bq_008);
                 break;
         }
 
