@@ -9,10 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -349,7 +352,17 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     private void showCorrectAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bq_011);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
 
         TextView messageText = dialog.findViewById(R.id.txtMessage);
@@ -366,7 +379,17 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     private void showWrongAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bq_013);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
 
         TextView messageText = dialog.findViewById(R.id.txtMessage);
@@ -383,7 +406,17 @@ public class BQQuizActivity extends AppCompatActivity {
     }
 
     private void showLeaveGameDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
+
+        int newWidth = 360;
+        int newHeight = 360;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
 
         TextView messageText = dialog.findViewById(R.id.txtMessage);
