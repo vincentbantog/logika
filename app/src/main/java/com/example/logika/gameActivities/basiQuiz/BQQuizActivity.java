@@ -216,7 +216,7 @@ public class BQQuizActivity extends AppCompatActivity {
                     imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_on_state);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice1.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice1.setImageResource(R.drawable.bq_005);
                 }
             }
         });
@@ -229,7 +229,7 @@ public class BQQuizActivity extends AppCompatActivity {
                     imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_on_state);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice2.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice2.setImageResource(R.drawable.bq_006);
                 }
             }
         });
@@ -242,7 +242,7 @@ public class BQQuizActivity extends AppCompatActivity {
                     imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_on_state);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice3.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice3.setImageResource(R.drawable.bq_007);
                 }
             }
         });
@@ -255,7 +255,7 @@ public class BQQuizActivity extends AppCompatActivity {
                     imageViewChoice4.setImageResource(R.drawable.basiquiz_radio_button_on_state);
                     // Add logic for Option 2
                 } else {
-                    imageViewChoice4.setImageResource(R.drawable.basiquiz_radio_button_default_state);
+                    imageViewChoice4.setImageResource(R.drawable.bq_008);
                 }
             }
         });
