@@ -4,117 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:background="@drawable/bq_bg3"
     tools:context=".gameActivities.basiQuiz.BQEndActivity">
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="CONGRATULATIONS!"
-        android:textSize="30dp" />
 
     <RelativeLayout
         android:id="@+id/relLayoutScore"
-        android:layout_width="300dp"
-        android:layout_height="180dp"
-        android:layout_below="@+id/txtTitle"
+        android:layout_width="340dp"
+        android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@color/lightBlue">
+        android:layout_marginTop="130dp"
+        android:background="@drawable/bq_015">
 
         <TextView
             android:id="@+id/txtScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Score: \n\n00/10"
-            android:textSize="25dp" />
+            android:text="10"
+            android:textSize="50dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutProgressDisplay"
-        android:layout_width="300dp"
+        android:layout_width="340dp"
         android:layout_height="200dp"
         android:layout_below="@+id/relLayoutScore"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@color/lightBlue">
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bq_016"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/txtDifficultyTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:text="Difficulty Scores"
-            android:textSize="20dp" />
+        <RelativeLayout
+            android:id="@+id/relLayoutEasy"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="15dp">
 
-        <TextView
-            android:id="@+id/txtEasy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtDifficultyTitle"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Easy: "
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/txtEasy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy: "
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtEasy"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Medium: "
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/txtEasyScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtEasy"
+                android:text="0/3 "
+                android:textSize="20dp"
+                android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/txtHard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtMedium"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Hard: "
-            android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtEasyScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtDifficultyTitle"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/txtEasy"
-            android:text="0/10 "
-            android:textSize="20dp" />
+            <ProgressBar
+                android:id="@+id/progressBarEasy"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="12dp"
+                android:progressDrawable="@drawable/score_progress_bar_design"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"/>
 
-        <TextView
-            android:id="@+id/txtMediumScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtEasyScore"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/txtMedium"
-            android:text="0/10 "
-            android:textSize="20dp" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/txtHardScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtMediumScore"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/txtHard"
-            android:text="0/10 "
-            android:textSize="20dp" />
+        <RelativeLayout
+            android:id="@+id/relLayoutMedium"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/relLayoutEasy"
+            android:paddingStart="15dp">
+
+            <TextView
+                android:id="@+id/txtMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium: "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txtMediumScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtMedium"
+                android:text="0/4 "
+                android:textSize="20dp"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarMedium"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="12dp"
+                android:progressDrawable="@drawable/score_progress_bar_design"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutHard"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/relLayoutMedium"
+            android:paddingStart="15dp">
+
+
+            <TextView
+                android:id="@+id/txtHard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard: "
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/txtHardScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtHard"
+                android:text="0/3 "
+                android:textSize="20dp"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarHard"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="12dp"
+                android:progressDrawable="@drawable/score_progress_bar_design"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -126,22 +153,38 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp">
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/bq_017"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnRetry"
+            android:src="@drawable/bq_018"
+            android:layout_marginTop="10dp"/>
+
         <Button
             android:id="@+id/btnRetry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
-            android:text="Retry" />
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="40dp"
-            android:text="Home" />
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnRetry"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"/>
+
     </RelativeLayout>
 
 

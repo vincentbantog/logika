@@ -11,26 +11,26 @@
         <item>What numbers are used in binary?</item>
         <item>Which Logic Gate is also known as an “inverter”?</item>
         <item>How many input combinations are possible for a 2-input logic gate?</item>
-        <item>Which logic gate is commonly used to perform binary addition in digital circuits?</item>
-        <item>Which digital logic gate returns a true (1) output when both of its inputs are true (1)?</item>
-        <item>What is the complement of the logical AND operation?</item>
-        <item>What is the role of a truth table in analyzing logic circuits?</item>
-        <item>In digital electronics, what do logic gates perform?</item>
-        <item>What does a multiplexer do in a logic circuit?</item>
-        <item>What is the purpose of a flip-flop in digital circuits?</item>
-        <item>Which logic gate has the same output as an OR gate followed by a NOT gate?</item>
-        <item>What is the purpose of an ADC (Analog-to-Digital Converter) in digital electronics?</item>
-        <item>What is the primary role of a counter in digital electronics?</item>
-        <item>What is the Boolean expression for the XOR gate?</item>
-        <item>What is the Boolean expression for the OR gate?</item>
-        <item>What is the Boolean expression for the AND gate?</item>
-        <item>What is the result of the binary division: 11001 ÷ 10?</item>
-        <item>What is the result of the binary addition: 1110 + 1101?</item>
-        <item>What is the binary equivalent of the decimal number 13?</item>
-        <item>What is the binary equivalent of the decimal number 6?</item>
-        <item>What is the binary equivalent of the decimal number 20?</item>
-        <item>What is the binary representation of the decimal number 42?</item>
-        <item>What is the result of the binary multiplication 1010 * 1101?</item>
+        <item>How would you define the correct result of adding the two binary answers 001 and 111?</item>
+        <item>What should be the right solution to subtracting the two binary answers 111 and 110?</item>
+        <item>Analyze the expression: AC + B given A = 1, B = 0, C = 0</item>
+        <item>Analyze the expression: A+BC if A=1, B=0, C=0?</item>
+        <item>Analyze the equation for AB if BA = 1.</item>
+        <item>Evaluate the expression: A AND (NOT B), where A = 1 and B = 1.</item>
+        <item>Determine the outcome of the Boolean operation: (NOT A) NOR (NOT B), when A = 0 and B = 0.</item>
+        <item>Analyze this Boolean expression: A OR (B AND C). Determine what Boolean Law it applies.</item>
+        <item>Evaluate this Boolean expression: (A AND B) OR (C AND D). Determine what Boolean Law can be used to simplify this expression.</item>
+        <item>Given this Boolean expression: (A OR B) AND C. Which Boolean Law can be used to simplify this expression.</item>
+        <item>What is the correct result of adding the two binary numbers 101 and 110?</item>
+        <item>What should the correct response be when subtracting the two binary numbers 101 and 001?</item>
+        <item>How would you define the correct result of multiplying the two binary answers 101 and 100?</item>
+        <item>How would you define the correct result of dividing the two binary answers 110 and 001?</item>
+        <item>In a simple logic circuit for operating an LED containing toggle switches, resistor, transistor, and LED, what component serves as the INPUT?</item>
+        <item>In a simple logic circuit for operating an LED containing toggle switches, resistor, transistor, and LED, what component serves as the OUTPUT?</item>
+        <item>In a simple logic circuit for operating an LED containing toggle switches, resistor, transistor, and LED, what component serves as the LOGIC GATE?</item>
+        <item>Which aircraft system best makes use of Boolean Logic for its operation?</item>
+        <item>In a simple LED circuit, there are two voltage inputs: GND and VCC. By closing and opening the switch that connects to VCC, the LED circuit closes and opens respectively, what rule of Boolean Algebra applies here?</item>
+        <item>What is AB + BC if A = 1, B = 0, C = 1?</item>
     </string-array>
 
     <string-array name="options1">
@@ -44,26 +44,26 @@
         <item>1 and 0</item>
         <item>AND Gate</item>
         <item>1</item>
-        <item>AND gate</item>
-        <item>AND gate</item>
-        <item>OR</item>
-        <item>A truth table represents the price of logic gates</item>
-        <item>Arithmetic operations</item>
-        <item>Performs Mathematical Calculations</item>
-        <item>To perform arithmetic calculations</item>
-        <item>AND gate</item>
-        <item>To convert analog signals to digital signals</item>
-        <item>To add two binary numbers</item>
-        <item>A + B</item>
-        <item>A + B</item>
-        <item>A + B</item>
-        <item>110</item>
-        <item>10101</item>
-        <item>1101</item>
-        <item>1010</item>
-        <item>11000</item>
-        <item>101010</item>
-        <item>11011</item>
+        <item>0010</item>
+        <item>000</item>
+        <item>0</item>
+        <item>10</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>Associative Law</item>
+        <item>Associative Law</item>
+        <item>Associative Law</item>
+        <item>00101</item>
+        <item>000</item>
+        <item>01010</item>
+        <item>0000</item>
+        <item>Transistor</item>
+        <item>Transistor</item>
+        <item>Transistor</item>
+        <item>Air Conditioning System</item>
+        <item>A+1 = 1</item>
+        <item>0</item>
     </string-array>
 
     <string-array name="options2">
@@ -77,26 +77,26 @@
         <item>2 and 7</item>
         <item>OR Gate</item>
         <item>2</item>
-        <item>OR gate</item>
-        <item>OR gate</item>
-        <item>XOR</item>
-        <item>A truth table defines the lifespan of a computer</item>
-        <item>Logical operations</item>
-        <item>Amplifies Analog Signals</item>
-        <item>To store and manipulate data</item>
-        <item>XOR gate</item>
-        <item>To convert digital signals to analog signals</item>
-        <item>To store data temporarily</item>
-        <item>A × B</item>
-        <item>A × B</item>
-        <item>A × B</item>
-        <item>100</item>
-        <item>11000</item>
-        <item>1011</item>
-        <item>0110</item>
-        <item>10100</item>
-        <item>110101</item>
-        <item>10011</item>
+        <item>0100</item>
+        <item>001</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Distributive Law</item>
+        <item>Distributive Law</item>
+        <item>Distributive Law</item>
+        <item>01011</item>
+        <item>011</item>
+        <item>01110</item>
+        <item>0011</item>
+        <item>Toggle Switches</item>
+        <item>Toggle Switches</item>
+        <item>Toggle Switches</item>
+        <item>Entertainment System</item>
+        <item>A+0 = 1</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="options3">
@@ -110,26 +110,26 @@
         <item>5 and 6</item>
         <item>NOT Gate</item>
         <item>3</item>
-        <item>XOR gate</item>
-        <item>XOR gate</item>
-        <item>NOR</item>
-        <item>A truth table lists all possible input and output combinations</item>
-        <item>Cooking recipes</item>
-        <item>Combines multiple digital inputs into one output</item>
-        <item>To generate clock signals</item>
-        <item>NAND gate</item>
-        <item>To compress data</item>
-        <item>To count the number of input pulses</item>
-        <item>A - B</item>
-        <item>A - B</item>
-        <item>A - B</item>
+        <item>1000</item>
+        <item>010</item>
+        <item>10</item>
+        <item>1</item>
         <item>11</item>
-        <item>11011</item>
-        <item>1110</item>
-        <item>0011</item>
-        <item>10010</item>
-        <item>100101</item>
-        <item>11110</item>
+        <item>A</item>
+        <item>A</item>
+        <item>Commutative Law</item>
+        <item>Commutative Law</item>
+        <item>Commutative Law</item>
+        <item>10101</item>
+        <item>100</item>
+        <item>10100</item>
+        <item>0101</item>
+        <item>Resistor</item>
+        <item>Resistor</item>
+        <item>Resistor</item>
+        <item>Lights System</item>
+        <item>A+A = A</item>
+        <item>10</item>
     </string-array>
 
     <string-array name="options4">
@@ -143,26 +143,26 @@
         <item>4 and 5</item>
         <item>XOR Gate</item>
         <item>4</item>
-        <item>NOT gate</item>
-        <item>NOT gate</item>
-        <item>NOT</item>
-        <item>A truth table summarizes the plot of a novel</item>
-        <item>Artistic expressions</item>
-        <item>Stores data temporarily</item>
-        <item>To convert analog signals to digital</item>
-        <item>NOR gate</item>
-        <item>To amplify signals</item>
-        <item>To convert analog signals to digital signals</item>
-        <item>A ÷ B</item>
-        <item>A ÷ B</item>
-        <item>A ÷ B</item>
+        <item>1100</item>
+        <item>011</item>
+        <item>11</item>
+        <item>11</item>
         <item>10</item>
-        <item>11111</item>
-        <item>1001</item>
-        <item>1001</item>
-        <item>11100</item>
-        <item>101100</item>
+        <item>B</item>
+        <item>B</item>
+        <item>Identity Law</item>
+        <item>Identity Law</item>
+        <item>Identity Law</item>
+        <item>11101</item>
+        <item>110</item>
         <item>11000</item>
+        <item>0110</item>
+        <item>LED</item>
+        <item>LED</item>
+        <item>LED</item>
+        <item>Landing Gear System</item>
+        <item>A*A = A</item>
+        <item>11</item>
     </string-array>
 
     <string-array name="answer_nrs">
@@ -177,25 +177,25 @@
         <item>3</item>
         <item>4</item>
         <item>3</item>
+        <item>2</item>
         <item>1</item>
         <item>3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
         <item>3</item>
+        <item>1</item>
+        <item>2</item>
         <item>2</item>
         <item>3</item>
+        <item>3</item>
+        <item>4</item>
         <item>2</item>
         <item>4</item>
         <item>1</item>
-        <item>3</item>
-        <item>3</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
         <item>4</item>
         <item>1</item>
-        <item>2</item>
-        <item>2</item>
         <item>1</item>
-        <item>4</item>
     </string-array>
 
     <string-array name="difficulties">
