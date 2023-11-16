@@ -44,7 +44,6 @@ public class TrueOrFalse extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TrueOrFalse.this, TorFQuizActivity.class);
                 startActivity(intent);
-
                 finish();
             }
         });
