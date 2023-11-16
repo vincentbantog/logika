@@ -4,39 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.TFHomePage">
+    tools:context=".gameActivities.TorF.TFHomePage"
+    android:background="@drawable/tf_bg1">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Back" />
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/relLayoutBackButton">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/tf_001"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="110dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="Choose a game mode!"
-        android:textSize="30dp" />
+        android:layout_marginTop="370dp">
 
-    <Button
-        android:id="@+id/btnSinglePlayerTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp"
-        android:text="1 Player" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/tf_002"/>
 
-    <Button
-        android:id="@+id/btnTwoPlayerTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnSinglePlayerTF"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="2 Players" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/tf_003"
+            android:layout_below="@+id/btnSinglePlayerTF"/>
+
+        <Button
+            android:id="@+id/btnSinglePlayerTF"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btnTwoPlayerTF"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/btnSinglePlayerTF"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>
