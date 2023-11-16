@@ -1,6 +1,7 @@
 package com.example.logika.gameActivities.TorF.singlePlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -74,6 +75,8 @@ public class TorFQuizActivity extends AppCompatActivity {
     private boolean answered;
 
     private int livesCount;
+
+
 
 
 

@@ -94,8 +94,8 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/relLayoutQuestion"
+    <FrameLayout
+        android:id="@+id/questionFragmentLayout"
         android:layout_width="330dp"
         android:layout_height="220dp"
         android:layout_below="@+id/relLayoutLives"
@@ -108,25 +108,30 @@
             android:id="@+id/txtQuestionCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="00/10" />
+            android:text="00/10"
+            android:layout_gravity="center_horizontal"/>
 
         <TextView
             android:id="@+id/txtQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_gravity="center"
             android:text="Here lies the question" />
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/questionFragmentContainer"
+            android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    </RelativeLayout>
+    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutRadioGroupChoice"
         android:layout_width="330dp"
         android:layout_height="110dp"
-        android:layout_below="@id/relLayoutQuestion"
+        android:layout_below="@id/questionFragmentLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:padding="10dp">
