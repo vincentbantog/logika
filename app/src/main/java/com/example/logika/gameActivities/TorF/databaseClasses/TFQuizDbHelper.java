@@ -103,43 +103,43 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
         TFQuestion q17 = new TFQuestion("In binary subtraction: 110 - 001 = 0100",
                 "T", "F", 2, 0, "Medium", null, 0);
         addQuestion(q17);
-        TFQuestion q18 = new TFQuestion("In binary multiplication: A * A = A",
+        TFQuestion q18 = new TFQuestion("In this Boolean Algebra presented: A * A = A",
                 "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q18);
         TFQuestion q19 = new TFQuestion("According to the Distributive Law, this Boolean Algebra statement is correct. 'A(B+C) equals AB+BC'",
                 "T", "F", 2, 0, "Medium", null, 0);
         addQuestion(q19);
-        TFQuestion q20 = new TFQuestion("In binary addition. A + A' = 1",
+        TFQuestion q20 = new TFQuestion("In this Boolean Algebra presented: A + A' = 1",
                 "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q20);
         TFQuestion q21 = new TFQuestion("The truth table provided is associated with the logic gate circuit",
-                "T", "F", 2, 0, "Hard", null, 0);
+                "T", "F", 2, 0, "Hard", null, 1);
         addQuestion(q21);
         TFQuestion q22 = new TFQuestion("This truth table connected to the provided LED circuit",
-                "T", "F", 1, 0, "Hard", null, 0);
+                "T", "F", 1, 0, "Hard", null, 2);
         addQuestion(q22);
-        TFQuestion q23 = new TFQuestion("The LED output lights up when a binary input of 1 is applied to the AND gate",
-                "T", "F", 1, 0, "Hard", null, 0);
+        TFQuestion q23 = new TFQuestion("The LED output lights up when both the binary input of 1 is applied to the AND gate",
+                "T", "F", 1, 0, "Hard", null, 3);
         addQuestion(q23);
-        TFQuestion q24 = new TFQuestion("The LED output light when a binary input of 0 is applied to the OR gate",
-                "T", "F", 2, 0, "Hard", null, 0);
+        TFQuestion q24 = new TFQuestion("The LED output light when one binary input of 0 is applied to the OR gate",
+                "T", "F", 2, 0, "Hard", null, 4);
         addQuestion(q24);
-        TFQuestion q25 = new TFQuestion("When the binary input of 1 is on the AND gate, does the output of this LED circuit remain at binary output of 1",
-                "T", "F", 1, 0, "Hard", null, 0);
+        TFQuestion q25 = new TFQuestion("When both of the binary input is 1 to an AND gate, the output of this LED circuit will result at binary output of 1",
+                "T", "F", 1, 0, "Hard", null, 5);
         addQuestion(q25);
         TFQuestion q26 = new TFQuestion("Boolean Algebra is not applied in the control systems of an aircraft",
                 "T", "F", 2, 0, "Hard", null, 0);
         addQuestion(q26);
-        TFQuestion q27 = new TFQuestion("In Boolean Algebra, (AB)' + AC = 1 if A = 0, B = 0, and C = 0",
+        TFQuestion q27 = new TFQuestion("This equation for the Boolean Algebra correct. (AB)' + AC = 1 if A = 0, B = 0, and C = 0",
                 "T", "F", 1, 0, "Hard", null, 0);
         addQuestion(q27);
-        TFQuestion q28 = new TFQuestion("In Boolean Algebra equation, A' + (AB)' = 1 if A = 1, B = 1",
+        TFQuestion q28 = new TFQuestion("This equation for the Boolean Algebra correct. A' + (AB)' = 1 if A = 1, B = 1",
                 "T", "F", 2, 0, "Hard", null, 0);
         addQuestion(q28);
-        TFQuestion q29 = new TFQuestion("In Boolean Algebra equation, BC + AC = 1 if A = 0, B = 1, C = 1",
+        TFQuestion q29 = new TFQuestion("This equation for the Boolean Algebra correct. BC + AC = 1 if A = 0, B = 1, C = 1",
                 "T", "F", 1, 0, "Hard", null, 0);
         addQuestion(q29);
-        TFQuestion q30 = new TFQuestion("In Boolean Algebra equation, AC + BC = B if A = 1, B = 0, C =1",
+        TFQuestion q30 = new TFQuestion("This equation for the Boolean Algebra correct. AC + BC = B if A = 1, B = 0, C =1",
                 "T", "F", 2, 0, "Hard", null, 0);
         addQuestion(q30);
 
