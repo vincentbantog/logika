@@ -17,6 +17,7 @@ public class TFQuestion {
     private int isBonusQuestion;
     private String difficulty;
     private String topic;
+    private int imageFragmentIdentifier;
 
 
     public TFQuestion(){}
@@ -30,7 +31,7 @@ public class TFQuestion {
     }
 
     public TFQuestion(String question, String option1, String option2,
-                      int answerNr, int isBonusQuestion, String difficulty, String topic) {
+                      int answerNr, int isBonusQuestion, String difficulty, String topic, int imageFragmentIdentifier) {
         Question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -38,6 +39,7 @@ public class TFQuestion {
         this.isBonusQuestion = isBonusQuestion;
         this.difficulty = difficulty;
         this.topic = topic;
+        this.imageFragmentIdentifier = imageFragmentIdentifier;
     }
 
     public String getQuestion() {
@@ -86,5 +88,13 @@ public class TFQuestion {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public int getImageFragmentIdentifier() {
+        return imageFragmentIdentifier;
+    }
+
+    public void setImageFragmentIdentifier(int imageFragmentIdentifier) {
+        this.imageFragmentIdentifier = imageFragmentIdentifier;
     }
 }

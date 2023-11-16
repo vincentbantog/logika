@@ -36,7 +36,8 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 TFQuizContract.QuestionsTable.COLUMN_ANSWER_NR + " INTEGER, " +
                 TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION + " INTEGER, " +
                 TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY + " TEXT, " +
-                TFQuizContract.QuestionsTable.COLUMN_TOPIC + " TEXT" +
+                TFQuizContract.QuestionsTable.COLUMN_TOPIC + " TEXT, " +
+                TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER + " INTEGER" +
                 ")";
 
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
@@ -51,45 +52,45 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        TFQuestion q1 = new TFQuestion("Easy: T is Correct", "T", "F", 1, 0, "Easy", null);
+        TFQuestion q1 = new TFQuestion("Easy: T is Correct", "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q1);
-        TFQuestion q2 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null);
+        TFQuestion q2 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q2);
-        TFQuestion q3 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null);
+        TFQuestion q3 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q3);
-        TFQuestion q4 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 0, "Medium", null);
+        TFQuestion q4 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q4);
-        TFQuestion q5 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 1, "Medium", null);
+        TFQuestion q5 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 1, "Medium", null, 0);
         addQuestion(q5);
-        TFQuestion q6 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null);
+        TFQuestion q6 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null, 1);
         addQuestion(q6);
-        TFQuestion q7 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null);
+        TFQuestion q7 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null, 2);
         addQuestion(q7);
-        TFQuestion q8 = new TFQuestion("Hard: F is Correct", "T", "F", 2, 0, "Hard", null);
+        TFQuestion q8 = new TFQuestion("Hard: F is Correct", "T", "F", 2, 0, "Hard", null, 3);
         addQuestion(q8);
-        TFQuestion q9 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null);
+        TFQuestion q9 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null, 4);
         addQuestion(q9);
-        TFQuestion q10 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null);
+        TFQuestion q10 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null, 5);
         addQuestion(q10);
 
 
-        TFQuestion q11 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A);
+        TFQuestion q11 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
         addQuestion(q11);
-        TFQuestion q12 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A);
+        TFQuestion q12 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
         addQuestion(q12);
-        TFQuestion q13 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A);
+        TFQuestion q13 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
         addQuestion(q13);
-        TFQuestion q14 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B);
+        TFQuestion q14 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
         addQuestion(q14);
-        TFQuestion q15 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B);
+        TFQuestion q15 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
         addQuestion(q15);
-        TFQuestion q16 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B);
+        TFQuestion q16 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
         addQuestion(q16);
-        TFQuestion q17 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C);
+        TFQuestion q17 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
         addQuestion(q17);
-        TFQuestion q18 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C);
+        TFQuestion q18 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
         addQuestion(q18);
-        TFQuestion q19 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C);
+        TFQuestion q19 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
         addQuestion(q19);
 
     }
@@ -103,6 +104,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
         cv.put(TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION, question.getIsBonusQuestion());
         cv.put(TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY, question.getDifficulty());
         cv.put(TFQuizContract.QuestionsTable.COLUMN_TOPIC, question.getTopic());
+        cv.put(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER, question.getTopic());
         db.insert(TFQuizContract.QuestionsTable.TABLE_NAME, null, cv);
     }
 
@@ -122,6 +124,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 question.setIsBonusQuestion(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION)));
                 question.setDifficulty(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY)));
                 question.setTopic(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_TOPIC)));
+                question.setImageFragmentIdentifier(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER)));
                 questionList.add(question);
             } while (c.moveToNext());
         }
@@ -149,6 +152,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 question.setIsBonusQuestion(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION)));
                 question.setDifficulty(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY)));
                 question.setTopic(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_TOPIC)));
+                question.setImageFragmentIdentifier(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER)));
                 questionList.add(question);
             } while (c.moveToNext());
         }
@@ -177,6 +181,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 question.setIsBonusQuestion(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION)));
                 question.setDifficulty(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY)));
                 question.setTopic(c.getString(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_TOPIC)));
+                question.setImageFragmentIdentifier(c.getInt(c.getColumnIndex(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER)));
                 questionList.add(question);
             } while (c.moveToNext());
         }

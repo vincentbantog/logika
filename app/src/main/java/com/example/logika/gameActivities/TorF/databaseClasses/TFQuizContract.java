@@ -15,5 +15,6 @@ public class TFQuizContract {
         public static final String COLUMN_IS_BONUS_QUESTION = "is_bonus_question";
         public static final String COLUMN_DIFFICULTY = "difficulty";
         public static final String COLUMN_TOPIC = "topic";
+        public static final String COLUMN_IMAGE_FRAGMENT_IDENTIFIER = "image_fragment_identifier";
     }
 }
