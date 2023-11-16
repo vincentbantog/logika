@@ -104,7 +104,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
         cv.put(TFQuizContract.QuestionsTable.COLUMN_IS_BONUS_QUESTION, question.getIsBonusQuestion());
         cv.put(TFQuizContract.QuestionsTable.COLUMN_DIFFICULTY, question.getDifficulty());
         cv.put(TFQuizContract.QuestionsTable.COLUMN_TOPIC, question.getTopic());
-        cv.put(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER, question.getTopic());
+        cv.put(TFQuizContract.QuestionsTable.COLUMN_IMAGE_FRAGMENT_IDENTIFIER, question.getImageFragmentIdentifier());
         db.insert(TFQuizContract.QuestionsTable.TABLE_NAME, null, cv);
     }
 

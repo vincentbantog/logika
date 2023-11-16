@@ -2,6 +2,7 @@ package com.example.logika.gameActivities.TorF.singlePlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -22,6 +23,12 @@ import com.example.logika.R;
 import com.example.logika.gameActivities.TorF.TFHomePage;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuestion;
 import com.example.logika.gameActivities.TorF.databaseClasses.TFQuizDbHelper;
+import com.example.logika.gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_1;
+import com.example.logika.gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_2;
+import com.example.logika.gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_3;
+import com.example.logika.gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_4;
+import com.example.logika.gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_5;
+import com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,6 +82,11 @@ public class TorFQuizActivity extends AppCompatActivity {
     private boolean answered;
 
     private int livesCount;
+
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    private Fragment questionFragment;
+    private Fragment placeholderFragment;
+    int imageQuestionIdentifier;
 
 
 
@@ -163,11 +175,35 @@ public class TorFQuizActivity extends AppCompatActivity {
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
-        if (currentQuestion.getIsBonusQuestion() == 1){
-            txtQuestion.setText("BONUS QUESTION: \n" + currentQuestion.getQuestion());
-            rbChoiceTrue.setText(currentQuestion.getOption1());
-            rbChoiceFalse.setText(currentQuestion.getOption2());
-        } else {
+            questionFragment = createFragmentBasedOnType(currentQuestion.getImageFragmentIdentifier());
+            placeholderFragment = new PlaceHolderFragment();
+
+            imageQuestionIdentifier = currentQuestion.getImageFragmentIdentifier();
+         if (imageQuestionIdentifier != 0){
+                fragmentManager.beginTransaction()
+                        .replace(R.id.questionFragmentContainer, questionFragment.getClass(), null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+
+                txtQuestion.setText("");
+                rbChoiceTrue.setText(currentQuestion.getOption1());
+                rbChoiceFalse.setText(currentQuestion.getOption2());
+            } else if (currentQuestion.getIsBonusQuestion() == 1){
+             fragmentManager.beginTransaction()
+                     .replace(R.id.questionFragmentContainer, placeholderFragment.getClass(), null)
+                     .setReorderingAllowed(true)
+                     .addToBackStack("name")
+                     .commit();
+             txtQuestion.setText("BONUS QUESTION: \n" + currentQuestion.getQuestion());
+             rbChoiceTrue.setText(currentQuestion.getOption1());
+             rbChoiceFalse.setText(currentQuestion.getOption2());
+         }  else {
+             fragmentManager.beginTransaction()
+                     .replace(R.id.questionFragmentContainer, placeholderFragment.getClass(), null)
+                     .setReorderingAllowed(true)
+                     .addToBackStack("name")
+                     .commit();
             txtQuestion.setText(currentQuestion.getQuestion());
             rbChoiceTrue.setText(currentQuestion.getOption1());
             rbChoiceFalse.setText(currentQuestion.getOption2());
@@ -184,6 +220,33 @@ public class TorFQuizActivity extends AppCompatActivity {
          finishQuiz();
         }
     }
+
+    public Fragment createFragmentBasedOnType(int questionFragment){
+        Fragment fragment = null;
+
+        switch (questionFragment) {
+            case 1:
+                fragment = new torf_image_question_fragment_1();
+                break;
+            case 2:
+                fragment = new torf_image_question_fragment_2();
+                break;
+            case 3:
+                fragment = new torf_image_question_fragment_3();
+                break;
+            case 4:
+                fragment = new torf_image_question_fragment_4();
+                break;
+            case 5:
+                fragment = new torf_image_question_fragment_5();
+                break;
+            default:
+                break;
+        }
+        return fragment;
+    }
+
+
 
     private void startCountdown() {
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
