@@ -52,46 +52,116 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        TFQuestion q1 = new TFQuestion("Easy: T is Correct", "T", "F", 1, 0, "Easy", null, 0);
+        TFQuestion q1 = new TFQuestion("Boolean algebra is a mathematical structure commonly used in digital circuit design",
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q1);
-        TFQuestion q2 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null, 0);
+        TFQuestion q2 = new TFQuestion("Analog electronics have completely replaced digital electronics in aviation",
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q2);
-        TFQuestion q3 = new TFQuestion("Easy: F is Correct", "T", "F", 2, 0, "Easy", null, 0);
+        TFQuestion q3 = new TFQuestion("Binary code is the foundation of digital information representation",
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q3);
-        TFQuestion q4 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 0, "Medium", null, 0);
+        TFQuestion q4 = new TFQuestion("'Binary' is a method of encoding information using the digits 0 and 1, with each digit representing a distinct value in the digital system",
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q4);
-        TFQuestion q5 = new TFQuestion("Medium: T is Correct", "T", "F", 1, 1, "Medium", null, 0);
+        TFQuestion q5 = new TFQuestion("In digital electronics, binary is not the most often used number system for representing data and instructions",
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q5);
-        TFQuestion q6 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null, 1);
+        TFQuestion q6 = new TFQuestion("In digital electronics, logic gates modify and process binary data",
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q6);
-        TFQuestion q7 = new TFQuestion("Medium: F is Correct", "T", "F", 2, 0, "Medium", null, 2);
+        TFQuestion q7 = new TFQuestion("In binary representation, '1' typically represents a high voltage level",
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q7);
-        TFQuestion q8 = new TFQuestion("Hard: F is Correct", "T", "F", 2, 0, "Hard", null, 3);
+        TFQuestion q8 = new TFQuestion("A NOT gate inverts the input signal",
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q8);
-        TFQuestion q9 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null, 4);
+        TFQuestion q9 = new TFQuestion("In binary representation, '1' typically represents a low voltage level",
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q9);
-        TFQuestion q10 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, "Hard", null, 5);
+        TFQuestion q10 = new TFQuestion("A logic gate performs arithmetic calculations in digital electronics",
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q10);
-
-
-        TFQuestion q11 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        TFQuestion q11 = new TFQuestion("In digital arithmetic, division can be performed by repeated subtraction",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q11);
-        TFQuestion q12 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        TFQuestion q12 = new TFQuestion("Division by zero is not possible in digital arithmetic",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q12);
-        TFQuestion q13 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        TFQuestion q13 = new TFQuestion("In binary arithmetic, the result of multiplying an odd number by 2 is always an even number",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q13);
-        TFQuestion q14 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        TFQuestion q14 = new TFQuestion("In binary arithmetic, division by zero results in an undefined value",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q14);
-        TFQuestion q15 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        TFQuestion q15 = new TFQuestion("The primary advantage of digital signals over analog signals in communication is reduced signal quality",
+                "T", "F", 2, 0, "Medium", null, 0);
         addQuestion(q15);
-        TFQuestion q16 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        TFQuestion q16 = new TFQuestion("In binary addition: 110 + 001 = 0111",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q16);
-        TFQuestion q17 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        TFQuestion q17 = new TFQuestion("In binary subtraction: 110 - 001 = 0100",
+                "T", "F", 2, 0, "Medium", null, 0);
         addQuestion(q17);
-        TFQuestion q18 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        TFQuestion q18 = new TFQuestion("In binary multiplication: A * A = A",
+                "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q18);
-        TFQuestion q19 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        TFQuestion q19 = new TFQuestion("According to the Distributive Law, this Boolean Algebra statement is correct. 'A(B+C) equals AB+BC'",
+                "T", "F", 2, 0, "Medium", null, 0);
         addQuestion(q19);
+        TFQuestion q20 = new TFQuestion("In binary addition. A + A' = 1",
+                "T", "F", 1, 0, "Medium", null, 0);
+        addQuestion(q20);
+        TFQuestion q21 = new TFQuestion("The truth table provided is associated with the logic gate circuit",
+                "T", "F", 2, 0, "Hard", null, 0);
+        addQuestion(q21);
+        TFQuestion q22 = new TFQuestion("This truth table connected to the provided LED circuit",
+                "T", "F", 1, 0, "Hard", null, 0);
+        addQuestion(q22);
+        TFQuestion q23 = new TFQuestion("The LED output lights up when a binary input of 1 is applied to the AND gate",
+                "T", "F", 1, 0, "Hard", null, 0);
+        addQuestion(q23);
+        TFQuestion q24 = new TFQuestion("The LED output light when a binary input of 0 is applied to the OR gate",
+                "T", "F", 2, 0, "Hard", null, 0);
+        addQuestion(q24);
+        TFQuestion q25 = new TFQuestion("When the binary input of 1 is on the AND gate, does the output of this LED circuit remain at binary output of 1",
+                "T", "F", 1, 0, "Hard", null, 0);
+        addQuestion(q25);
+        TFQuestion q26 = new TFQuestion("Boolean Algebra is not applied in the control systems of an aircraft",
+                "T", "F", 2, 0, "Hard", null, 0);
+        addQuestion(q26);
+        TFQuestion q27 = new TFQuestion("In Boolean Algebra, (AB)' + AC = 1 if A = 0, B = 0, and C = 0",
+                "T", "F", 1, 0, "Hard", null, 0);
+        addQuestion(q27);
+        TFQuestion q28 = new TFQuestion("In Boolean Algebra equation, A' + (AB)' = 1 if A = 1, B = 1",
+                "T", "F", 2, 0, "Hard", null, 0);
+        addQuestion(q28);
+        TFQuestion q29 = new TFQuestion("In Boolean Algebra equation, BC + AC = 1 if A = 0, B = 1, C = 1",
+                "T", "F", 1, 0, "Hard", null, 0);
+        addQuestion(q29);
+        TFQuestion q30 = new TFQuestion("In Boolean Algebra equation, AC + BC = B if A = 1, B = 0, C =1",
+                "T", "F", 2, 0, "Hard", null, 0);
+        addQuestion(q30);
+
+
+        TFQuestion q31 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        addQuestion(q31);
+        TFQuestion q32 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        addQuestion(q32);
+        TFQuestion q33 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
+        addQuestion(q33);
+        TFQuestion q34 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        addQuestion(q34);
+        TFQuestion q35 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        addQuestion(q35);
+        TFQuestion q36 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
+        addQuestion(q36);
+        TFQuestion q37 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        addQuestion(q37);
+        TFQuestion q38 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        addQuestion(q38);
+        TFQuestion q39 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
+        addQuestion(q39);
 
     }
 

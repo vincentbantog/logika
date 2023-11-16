@@ -88,6 +88,10 @@ public class TorFQuizActivity extends AppCompatActivity {
     private Fragment placeholderFragment;
     int imageQuestionIdentifier;
 
+    private Dialog correctAnswerDialog;
+    private Dialog wrongAnswerDialog;
+    private Dialog leaveGameDialog;
+
 
 
 
@@ -375,58 +379,60 @@ public class TorFQuizActivity extends AppCompatActivity {
     }
 
     private void showCorrectAnswerDialog(){
-        Dialog dialog = new Dialog(this);
+        correctAnswerDialog = new Dialog(this);
 
         if (currentQuestion.getIsBonusQuestion() == 1){
-            dialog.setContentView(R.layout.correct_answer_bonus_dialog_torf);
+            correctAnswerDialog.setContentView(R.layout.correct_answer_bonus_dialog_torf);
         } else {
-            dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
+            correctAnswerDialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
         }
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
-        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+        TextView messageText = correctAnswerDialog.findViewById(R.id.txtMessage);
+        Button btnCloseDialog = correctAnswerDialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                correctAnswerDialog.dismiss();
             }
         });
 
-        dialog.show();
+        correctAnswerDialog.show();
+
     }
 
     private void showWrongAnswerDialog(){
-        Dialog dialog = new Dialog(this);
+        wrongAnswerDialog = new Dialog(this);
         if (currentQuestion.getIsBonusQuestion() == 1) {
-            dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+            wrongAnswerDialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
         } else {
-            dialog.setContentView(R.layout.wrong_answer_dialog_torf);
+            wrongAnswerDialog.setContentView(R.layout.wrong_answer_dialog_torf);
         }
-        Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
+        Button btnCloseDialog = wrongAnswerDialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                wrongAnswerDialog.dismiss();
             }
         });
 
-        dialog.show();
+        wrongAnswerDialog.show();
     }
 
     private void showLeaveGameDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
-        Button btnResume = dialog.findViewById(R.id.btnContinue);
-        Button btnExit = dialog.findViewById(R.id.btnExit);
+        leaveGameDialog = new Dialog(this);
+        leaveGameDialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+        TextView messageText = leaveGameDialog.findViewById(R.id.txtMessage);
+        Button btnResume = leaveGameDialog.findViewById(R.id.btnContinue);
+        Button btnExit = leaveGameDialog.findViewById(R.id.btnExit);
 
         btnResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                leaveGameDialog.dismiss();
             }
         });
 
@@ -440,7 +446,19 @@ public class TorFQuizActivity extends AppCompatActivity {
             }
         });
 
-        dialog.show();
+        leaveGameDialog.show();
+    }
+
+    private void dismissDialog(){
+        if (correctAnswerDialog != null && correctAnswerDialog.isShowing()) {
+            correctAnswerDialog.dismiss();
+        }
+        if (wrongAnswerDialog != null && wrongAnswerDialog.isShowing()) {
+            wrongAnswerDialog.dismiss();
+        }
+        if (leaveGameDialog != null && leaveGameDialog.isShowing()) {
+            leaveGameDialog.dismiss();
+        }
     }
 
 
@@ -455,5 +473,6 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (countDownTimer != null){
             countDownTimer.cancel();
         }
+        dismissDialog();
     }
 }
