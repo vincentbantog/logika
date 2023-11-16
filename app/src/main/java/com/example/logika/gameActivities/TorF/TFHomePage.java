@@ -48,6 +48,8 @@ public class TFHomePage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TFHomePage.this, TrueOrFalse.class);
                 startActivity(intent);
+
+                finish();
             }
         });
     }
@@ -59,6 +61,8 @@ public class TFHomePage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TFHomePage.this, TicTacToeMain.class);
                 startActivity(intent);
+
+                finish();
             }
         });
     }

@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentMultipleChoice = new Intent(getActivity(), MultipleChoice.class);
                 startActivity(intentMultipleChoice);
+                getActivity().finish();
             }
         });
     }
@@ -60,17 +61,21 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentTrueOrFalse = new Intent(getActivity(), TFHomePage.class);
                 startActivity(intentTrueOrFalse);
+                getActivity().finish();
+
             }
+
         });
     }
 
     public void configureBtnLogicGate(View view){
-        btnTrueOrFalse = view.findViewById(R.id.btnLogicSim);
-        btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
+        btnLogicGate = view.findViewById(R.id.btnLogicSim);
+        btnLogicGate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
                 startActivity(intentTrueOrFalse);
+                getActivity().finish();
             }
         });
     }
@@ -85,6 +90,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentQuickStart = new Intent(getActivity(), gameActivities[randomIndex]);
                 startActivity(intentQuickStart);
+                getActivity().finish();
             }
         });
     }
