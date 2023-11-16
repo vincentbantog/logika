@@ -118,9 +118,9 @@ public class TorFQuizActivity extends AppCompatActivity {
 
 
         livesCount = 3;
-        imageViewLives1.setImageResource(R.drawable.simulation_output_display_on);
-        imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
-        imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
+        imageViewLives1.setImageResource(R.drawable.tf_006);
+        imageViewLives2.setImageResource(R.drawable.tf_006);
+        imageViewLives3.setImageResource(R.drawable.tf_006);
 
         showNextQuestion();
 
@@ -329,14 +329,15 @@ public class TorFQuizActivity extends AppCompatActivity {
         showSolution();
 
         if (livesCount == 0) {
-            finishQuiz();
+            imageViewLives1.setImageResource(R.drawable.tf_013);
+            questionCounter = 10;
         } else if (livesCount == 3){
-            imageViewLives3.setImageResource(R.drawable.simulation_output_display_on);
+            imageViewLives3.setImageResource(R.drawable.tf_006);
         } else if (livesCount == 2){
-            imageViewLives3.setImageResource(R.drawable.simulation_output_display_off);
-            imageViewLives2.setImageResource(R.drawable.simulation_output_display_on);
+            imageViewLives3.setImageResource(R.drawable.tf_013);
+            imageViewLives2.setImageResource(R.drawable.tf_006);
         } else if (livesCount == 1){
-            imageViewLives2.setImageResource(R.drawable.simulation_output_display_off);
+            imageViewLives2.setImageResource(R.drawable.tf_013);
         }
     }
 

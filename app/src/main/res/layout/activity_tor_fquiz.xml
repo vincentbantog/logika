@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.singlePlayer.TorFQuizActivity">
+    tools:context=".gameActivities.TorF.singlePlayer.TorFQuizActivity"
+    android:background="@drawable/tf_bg4">
 
     <TextView
         android:id="@+id/txtScore"
@@ -30,52 +31,67 @@
         android:text="00:30 "
         android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Exit game" />
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/relLayoutBackButton">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tf_001"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Difficulty Level" />
+        android:text="Difficulty Level"
+        android:visibility="gone"/>
 
     <RelativeLayout
         android:id="@+id/relLayoutLives"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
+        android:layout_width="340dp"
+        android:layout_height="95dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        android:background="@color/lightBlue"
+        android:layout_marginTop="85dp"
         android:padding="5dp">
 
         <ImageView
             android:id="@+id/imageViewLives1"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/simulation_output_display_off" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tf_006"
+            android:layout_marginEnd="10dp"/>
 
         <ImageView
             android:id="@+id/imageViewLives2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_toRightOf="@+id/imageViewLives1"
-            android:src="@drawable/simulation_output_display_off" />
+            android:src="@drawable/tf_006"
+            android:layout_marginEnd="10dp"/>
 
         <ImageView
             android:id="@+id/imageViewLives3"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_toRightOf="@id/imageViewLives2"
-            android:src="@drawable/simulation_output_display_off" />
+            android:src="@drawable/tf_006" />
 
         <RelativeLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true">
@@ -86,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="18dp"
                 android:layout_centerVertical="true"
-                android:progressDrawable="@drawable/timer_bar_design" />
+                android:progressDrawable="@drawable/timer_bar_design_torf" />
 
 
         </RelativeLayout>
