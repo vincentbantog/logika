@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -60,6 +61,8 @@ public class TorFQuizActivity extends AppCompatActivity {
     private RadioGroup rbGroupChoices;
     private RadioButton rbChoiceTrue;
     private RadioButton rbChoiceFalse;
+    private ImageView imageViewTrue;
+    private ImageView imageViewFalse;
 
     private Button btnConfirm;
 
@@ -155,6 +158,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         rbGroupChoices = findViewById(R.id.radioGroupChoices);
         rbChoiceTrue = findViewById(R.id.radioButtonOptionTrue);
         rbChoiceFalse = findViewById(R.id.radioButtonOptionFalse);
+        imageViewTrue = findViewById(R.id.imageViewTrue);
+        imageViewFalse = findViewById(R.id.imageViewFalse);
         btnConfirm = findViewById(R.id.btnConfirm);
     }
 
@@ -177,6 +182,8 @@ public class TorFQuizActivity extends AppCompatActivity {
         rbChoiceTrue.setEnabled(true);
         rbChoiceFalse.setEnabled(true);
 
+        configureRadioButtonStates();
+
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
             questionFragment = createFragmentBasedOnType(currentQuestion.getImageFragmentIdentifier());
@@ -191,8 +198,6 @@ public class TorFQuizActivity extends AppCompatActivity {
                         .commit();
 
                 txtQuestion.setText("");
-                rbChoiceTrue.setText(currentQuestion.getOption1());
-                rbChoiceFalse.setText(currentQuestion.getOption2());
             } else if (currentQuestion.getIsBonusQuestion() == 1){
              fragmentManager.beginTransaction()
                      .replace(R.id.questionFragmentContainer, placeholderFragment.getClass(), null)
@@ -200,8 +205,6 @@ public class TorFQuizActivity extends AppCompatActivity {
                      .addToBackStack("name")
                      .commit();
              txtQuestion.setText("BONUS QUESTION: \n" + currentQuestion.getQuestion());
-             rbChoiceTrue.setText(currentQuestion.getOption1());
-             rbChoiceFalse.setText(currentQuestion.getOption2());
          }  else {
              fragmentManager.beginTransaction()
                      .replace(R.id.questionFragmentContainer, placeholderFragment.getClass(), null)
@@ -209,8 +212,6 @@ public class TorFQuizActivity extends AppCompatActivity {
                      .addToBackStack("name")
                      .commit();
             txtQuestion.setText(currentQuestion.getQuestion());
-            rbChoiceTrue.setText(currentQuestion.getOption1());
-            rbChoiceFalse.setText(currentQuestion.getOption2());
         }
 
             questionCounter++;
@@ -223,6 +224,37 @@ public class TorFQuizActivity extends AppCompatActivity {
         } else {
          finishQuiz();
         }
+    }
+
+    public void configureRadioButtonStates(){
+        imageViewTrue.setImageResource(R.drawable.tf_008);
+        imageViewFalse.setImageResource(R.drawable.tf_009);
+
+        rbChoiceTrue.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewTrue.setImageResource(R.drawable.tf_011);
+                    // Add logic for Option 2
+                } else {
+                    imageViewTrue.setImageResource(R.drawable.tf_008);
+                }
+            }
+        });
+
+        rbChoiceFalse.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Change the ImageView for Option 2
+                    imageViewFalse.setImageResource(R.drawable.tf_015);
+                    // Add logic for Option 2
+                } else {
+                    imageViewFalse.setImageResource(R.drawable.tf_009);
+                }
+            }
+        });
     }
 
     public Fragment createFragmentBasedOnType(int questionFragment){
@@ -342,15 +374,15 @@ public class TorFQuizActivity extends AppCompatActivity {
     }
 
     private void showSolution() {
-        rbChoiceTrue.setTextColor(Color.RED);
-        rbChoiceFalse.setTextColor(Color.RED);
+        imageViewTrue.setImageResource(R.drawable.tf_014);
+        imageViewFalse.setImageResource(R.drawable.tf_026);
 
         switch (currentQuestion.getAnswerNr()) {
             case 1:
-                rbChoiceTrue.setTextColor(Color.GREEN);
+                imageViewTrue.setImageResource(R.drawable.tf_011);
                 break;
             case 2:
-                rbChoiceFalse.setTextColor(Color.GREEN);
+                imageViewFalse.setImageResource(R.drawable.tf_015);
                 break;
         }
 

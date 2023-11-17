@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".gameActivities.TorF.singlePlayer.imageQuestionFragments.torf_image_question_fragment_2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="logic circuit 2" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/torf_logic_circuit_2" />
 
 </FrameLayout>

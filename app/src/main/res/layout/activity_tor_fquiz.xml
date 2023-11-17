@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.singlePlayer.TorFQuizActivity"
-    android:background="@drawable/tf_bg4">
+    android:background="@drawable/tf_bg4"
+    tools:context=".gameActivities.TorF.singlePlayer.TorFQuizActivity">
 
     <TextView
         android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score:"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txtLives"
@@ -20,35 +20,35 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:text="Lives: "
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txtTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_below="@id/txtLives"
+        android:layout_alignParentEnd="true"
         android:text="00:30 "
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <RelativeLayout
+        android:id="@+id/relLayoutBackButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        android:id="@+id/relLayoutBackButton">
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tf_001"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:src="@drawable/tf_001" />
 
         <Button
             android:id="@+id/btnBack"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 
@@ -58,11 +58,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Difficulty Level"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/relLayoutLives"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="95dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="85dp"
@@ -72,16 +72,16 @@
             android:id="@+id/imageViewLives1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/tf_006"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/tf_006" />
 
         <ImageView
             android:id="@+id/imageViewLives2"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
             android:layout_toRightOf="@+id/imageViewLives1"
-            android:src="@drawable/tf_006"
-            android:layout_marginEnd="10dp"/>
+            android:src="@drawable/tf_006" />
 
         <ImageView
             android:id="@+id/imageViewLives3"
@@ -110,52 +110,84 @@
 
     </RelativeLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/questionFragmentLayout"
-        android:layout_width="330dp"
-        android:layout_height="220dp"
+        android:layout_width="310dp"
+        android:layout_height="300dp"
         android:layout_below="@+id/relLayoutLives"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@color/lightBlue"
-        android:padding="10dp">
+        android:background="@drawable/tf_007">
 
         <TextView
             android:id="@+id/txtQuestionCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
             android:text="00/10"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txtQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Here lies the question" />
+            android:layout_width="280dp"
+            android:layout_height="190dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:text="Here lies the question"
+            android:textSize="17dp"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="290dp"
+        android:layout_height="210dp"
+        android:layout_below="@+id/relLayoutLives"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/questionFragmentContainer"
             android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </FrameLayout>
 
+
+
     <RelativeLayout
         android:id="@+id/relLayoutRadioGroupChoice"
-        android:layout_width="330dp"
-        android:layout_height="110dp"
+        android:layout_width="260dp"
+        android:layout_height="100dp"
         android:layout_below="@id/questionFragmentLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:padding="10dp">
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/tf_008"
+            android:id="@+id/imageViewTrue"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/tf_009"
+            android:id="@+id/imageViewFalse"/>
+
 
         <RadioGroup
             android:id="@+id/radioGroupChoices"
             android:layout_width="260dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
             android:padding="10dp">
@@ -165,18 +197,19 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
-                android:background="@color/paleYellow"
-                android:text="T"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"
+                />
 
             <RadioButton
                 android:id="@+id/radioButtonOptionFalse"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="50dp"
-                android:background="@color/paleYellow"
-                android:text="F"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"/>
 
         </RadioGroup>
 
@@ -188,7 +221,7 @@
         android:layout_height="50dp"
         android:layout_below="@id/relLayoutRadioGroupChoice"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp">
 
         <Button
