@@ -65,6 +65,7 @@ public class TorFQuizActivity extends AppCompatActivity {
     private ImageView imageViewFalse;
 
     private Button btnConfirm;
+    private ImageView imageViewConfirm;
 
     private ColorStateList textColorDefaultRb;
 
@@ -161,6 +162,7 @@ public class TorFQuizActivity extends AppCompatActivity {
         imageViewTrue = findViewById(R.id.imageViewTrue);
         imageViewFalse = findViewById(R.id.imageViewFalse);
         btnConfirm = findViewById(R.id.btnConfirm);
+        imageViewConfirm = findViewById(R.id.imageViewConfirm);
     }
 
     private void configureBackButton(){
@@ -217,7 +219,7 @@ public class TorFQuizActivity extends AppCompatActivity {
             questionCounter++;
             txtQuestionCount.setText(questionCounter + "/" + questionCountTotal);
             answered = false;
-            btnConfirm.setText("Confirm");
+            imageViewConfirm.setImageResource(R.drawable.tf_010);
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountdown();
@@ -362,7 +364,8 @@ public class TorFQuizActivity extends AppCompatActivity {
 
         if (livesCount == 0) {
             imageViewLives1.setImageResource(R.drawable.tf_013);
-            questionCounter = 10;
+            imageViewConfirm.setImageResource(R.drawable.tf_016);
+            questionCounter = questionCountTotal;
         } else if (livesCount == 3){
             imageViewLives3.setImageResource(R.drawable.tf_006);
         } else if (livesCount == 2){
@@ -390,9 +393,9 @@ public class TorFQuizActivity extends AppCompatActivity {
         rbChoiceFalse.setEnabled(false);
 
         if (questionCounter < questionCountTotal) {
-            btnConfirm.setText("Next");
+            imageViewConfirm.setImageResource(R.drawable.tf_012);
         } else {
-            btnConfirm.setText("Finish");
+            imageViewConfirm.setImageResource(R.drawable.tf_016);
         }
 
     }
