@@ -365,7 +365,7 @@ public class BQQuizActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -392,7 +392,7 @@ public class BQQuizActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -419,7 +419,7 @@ public class BQQuizActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+
         Button btnResume = dialog.findViewById(R.id.btnContinue);
         Button btnExit = dialog.findViewById(R.id.btnExit);
 

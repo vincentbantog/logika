@@ -268,9 +268,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void showPlayer1WinnerDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         messageText.setText("Player 1 Wins!");
@@ -287,9 +287,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void showPlayer2WinnerDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         messageText.setText("Player 2 Wins!");
@@ -306,9 +306,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void showDrawDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnCloseDialog = dialog.findViewById(R.id.btnConfirm);
 
         messageText.setText("Draw!");
@@ -325,9 +325,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void showResetDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnResume = dialog.findViewById(R.id.btnContinue);
         Button btnExit = dialog.findViewById(R.id.btnExit);
 
@@ -355,9 +355,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void showLeaveGameDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnResume = dialog.findViewById(R.id.btnContinue);
         Button btnExit = dialog.findViewById(R.id.btnExit);
 

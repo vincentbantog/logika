@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200dp"
-    android:layout_height="230dp">
+    android:layout_width="300dp"
+    android:layout_height="330dp"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CORRECT answer!"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
-        android:id="@+id/txtMessage"
-        android:textColor="@color/paleYellow"/>
-
-    <ImageView
-        android:layout_width="50dp"
+    <RelativeLayout
+        android:layout_width="100dp"
         android:layout_height="50dp"
-        android:src="@drawable/simulation_output_display_on"
-        android:layout_below="@+id/txtMessage"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="60dp"
-        android:id="@+id/imageViewLives"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="200dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ 1"
-        android:layout_toLeftOf="@+id/imageViewLives"
-        android:layout_below="@+id/txtMessage"
-        android:layout_marginTop="30dp"
-        android:textSize="20dp"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lq_020" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewLives"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="OK"
-        android:id="@+id/btnConfirm"/>
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent" />
 
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -7,7 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -95,6 +98,8 @@ public class TorFQuizActivity extends AppCompatActivity {
     private Dialog correctAnswerDialog;
     private Dialog wrongAnswerDialog;
     private Dialog leaveGameDialog;
+    private Dialog correctAnswerBonusDialog;
+    private Dialog wrongAnswerBonusDialog;
 
 
 
@@ -336,12 +341,17 @@ public class TorFQuizActivity extends AppCompatActivity {
         if (answerNr == currentQuestion.getAnswerNr()){
             score++;
             txtScore.setText("Score: " + score);
-            showCorrectAnswerDialog();
+
 
             if (currentQuestion.getIsBonusQuestion() == 1){
                 if (livesCount < 3) {
+                    showBonusCorrectAnswerDialog();
                     livesCount++;
+                } else {
+                    showCorrectAnswerDialog();
                 }
+            } else {
+                showCorrectAnswerDialog();
             }
 
             String difficulty = currentQuestion.getDifficulty();
@@ -354,9 +364,11 @@ public class TorFQuizActivity extends AppCompatActivity {
             }
 
         } else {
-            showWrongAnswerDialog();
             if (currentQuestion.getIsBonusQuestion() != 1){
                 livesCount--;
+                showWrongAnswerDialog();
+            } else {
+                showWrongAnswerBonusDialog();
             }
         }
 
@@ -415,15 +427,20 @@ public class TorFQuizActivity extends AppCompatActivity {
     }
 
     private void showCorrectAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bq_011);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         correctAnswerDialog = new Dialog(this);
+        correctAnswerDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        correctAnswerDialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
 
-        if (currentQuestion.getIsBonusQuestion() == 1){
-            correctAnswerDialog.setContentView(R.layout.correct_answer_bonus_dialog_torf);
-        } else {
-            correctAnswerDialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
-        }
 
-        TextView messageText = correctAnswerDialog.findViewById(R.id.txtMessage);
         Button btnCloseDialog = correctAnswerDialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -437,13 +454,47 @@ public class TorFQuizActivity extends AppCompatActivity {
 
     }
 
+    private void showBonusCorrectAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tf_020);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        correctAnswerBonusDialog = new Dialog(this);
+        correctAnswerBonusDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        correctAnswerBonusDialog.setContentView(R.layout.correct_answer_dialog_basiquiz);
+
+
+        Button btnCloseDialog = correctAnswerBonusDialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                correctAnswerBonusDialog.dismiss();
+            }
+        });
+
+        correctAnswerBonusDialog.show();
+    }
+
     private void showWrongAnswerDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tf_019);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
         wrongAnswerDialog = new Dialog(this);
-        if (currentQuestion.getIsBonusQuestion() == 1) {
-            wrongAnswerDialog.setContentView(R.layout.wrong_answer_dialog_basiquiz);
-        } else {
-            wrongAnswerDialog.setContentView(R.layout.wrong_answer_dialog_torf);
-        }
+        wrongAnswerDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        wrongAnswerDialog.setContentView(R.layout.wrong_answer_dialog_torf);
+
         Button btnCloseDialog = wrongAnswerDialog.findViewById(R.id.btnConfirm);
 
         btnCloseDialog.setOnClickListener(new View.OnClickListener() {
@@ -456,12 +507,46 @@ public class TorFQuizActivity extends AppCompatActivity {
         wrongAnswerDialog.show();
     }
 
+    private void showWrongAnswerBonusDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bq_013);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        wrongAnswerBonusDialog = new Dialog(this);
+        wrongAnswerBonusDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        wrongAnswerBonusDialog.setContentView(R.layout.wrong_answer_dialog_torf);
+
+        Button btnCloseDialog = wrongAnswerBonusDialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wrongAnswerBonusDialog.dismiss();
+            }
+        });
+
+        wrongAnswerBonusDialog.show();
+    }
+
     private void showLeaveGameDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
+
+        int newWidth = 360;
+        int newHeight = 360;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
 
         leaveGameDialog = new Dialog(this);
+        leaveGameDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
         leaveGameDialog.setContentView(R.layout.leave_game_dialog_logiquiz);
 
-        TextView messageText = leaveGameDialog.findViewById(R.id.txtMessage);
         Button btnResume = leaveGameDialog.findViewById(R.id.btnContinue);
         Button btnExit = leaveGameDialog.findViewById(R.id.btnExit);
 

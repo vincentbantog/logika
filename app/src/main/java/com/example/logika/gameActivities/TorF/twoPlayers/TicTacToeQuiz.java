@@ -169,9 +169,9 @@ public class TicTacToeQuiz extends AppCompatActivity {
 
     private void showLeaveGameDialog(){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtMessage);
+        TextView messageText = dialog.findViewById(R.id.txtTitle);
         Button btnResume = dialog.findViewById(R.id.btnContinue);
         Button btnExit = dialog.findViewById(R.id.btnExit);
 
