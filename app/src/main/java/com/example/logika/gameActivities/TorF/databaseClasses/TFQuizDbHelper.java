@@ -53,19 +53,19 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
 
     private void fillQuestionsTable() {
         TFQuestion q1 = new TFQuestion("Boolean algebra is a mathematical structure commonly used in digital circuit design",
-                "T", "F", 1, 1, "Easy", null, 0);
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q1);
         TFQuestion q2 = new TFQuestion("Analog electronics have completely replaced digital electronics in aviation",
-                "T", "F", 2, 1, "Easy", null, 0);
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q2);
         TFQuestion q3 = new TFQuestion("Binary code is the foundation of digital information representation",
-                "T", "F", 2, 1, "Easy", null, 0);
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q3);
         TFQuestion q4 = new TFQuestion("'Binary' is a method of encoding information using the digits 0 and 1, with each digit representing a distinct value in the digital system",
-                "T", "F", 1, 1, "Easy", null, 0);
+                "T", "F", 1, 0, "Easy", null, 0);
         addQuestion(q4);
         TFQuestion q5 = new TFQuestion("In digital electronics, binary is not the most often used number system for representing data and instructions",
-                "T", "F", 2, 1, "Easy", null, 0);
+                "T", "F", 2, 0, "Easy", null, 0);
         addQuestion(q5);
         TFQuestion q6 = new TFQuestion("In digital electronics, logic gates modify and process binary data",
                 "T", "F", 1, 0, "Easy", null, 0);
@@ -101,7 +101,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 "T", "F", 1, 0, "Medium", null, 0);
         addQuestion(q16);
         TFQuestion q17 = new TFQuestion("In binary subtraction: 110 - 001 = 0100",
-                "T", "F", 2, 0, "Medium", null, 0);
+                "T", "F", 2, 1, "Medium", null, 0);
         addQuestion(q17);
         TFQuestion q18 = new TFQuestion("In this Boolean Algebra presented: A * A = A",
                 "T", "F", 1, 0, "Medium", null, 0);
@@ -137,7 +137,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
                 "T", "F", 2, 0, "Hard", null, 0);
         addQuestion(q28);
         TFQuestion q29 = new TFQuestion("This equation for the Boolean Algebra correct. BC + AC = 1 if A = 0, B = 1, C = 1",
-                "T", "F", 1, 0, "Hard", null, 0);
+                "T", "F", 1, 1, "Hard", null, 0);
         addQuestion(q29);
         TFQuestion q30 = new TFQuestion("This equation for the Boolean Algebra correct. AC + BC = B if A = 1, B = 0, C =1",
                 "T", "F", 2, 0, "Hard", null, 0);

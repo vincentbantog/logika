@@ -100,6 +100,7 @@ public class TorFQuizActivity extends AppCompatActivity {
     private Dialog leaveGameDialog;
     private Dialog correctAnswerBonusDialog;
     private Dialog wrongAnswerBonusDialog;
+    private Dialog gameOverDialog;
 
 
 
@@ -242,7 +243,7 @@ public class TorFQuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewTrue.setImageResource(R.drawable.tf_011);
+                    imageViewTrue.setImageResource(R.drawable.tf_027);
                     // Add logic for Option 2
                 } else {
                     imageViewTrue.setImageResource(R.drawable.tf_008);
@@ -255,7 +256,7 @@ public class TorFQuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // Change the ImageView for Option 2
-                    imageViewFalse.setImageResource(R.drawable.tf_015);
+                    imageViewFalse.setImageResource(R.drawable.tf_028);
                     // Add logic for Option 2
                 } else {
                     imageViewFalse.setImageResource(R.drawable.tf_009);
@@ -366,7 +367,13 @@ public class TorFQuizActivity extends AppCompatActivity {
         } else {
             if (currentQuestion.getIsBonusQuestion() != 1){
                 livesCount--;
-                showWrongAnswerDialog();
+                if (livesCount == 0){
+                    showGameOverDialog();
+                } else {
+                    showWrongAnswerDialog();
+                }
+
+
             } else {
                 showWrongAnswerBonusDialog();
             }
@@ -533,6 +540,32 @@ public class TorFQuizActivity extends AppCompatActivity {
         wrongAnswerBonusDialog.show();
     }
 
+    private void showGameOverDialog(){
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tf_029);
+
+        int newWidth = 300;
+        int newHeight = 330;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        gameOverDialog = new Dialog(this);
+        gameOverDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        gameOverDialog.setContentView(R.layout.game_over_dialog_torf);
+
+        Button btnCloseDialog = gameOverDialog.findViewById(R.id.btnConfirm);
+
+        btnCloseDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameOverDialog.dismiss();
+            }
+        });
+
+        gameOverDialog.show();
+    }
+
     private void showLeaveGameDialog(){
         Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
 
@@ -579,6 +612,9 @@ public class TorFQuizActivity extends AppCompatActivity {
         }
         if (leaveGameDialog != null && leaveGameDialog.isShowing()) {
             leaveGameDialog.dismiss();
+        }
+        if (gameOverDialog != null && gameOverDialog.isShowing()) {
+            gameOverDialog.dismiss();
         }
     }
 
