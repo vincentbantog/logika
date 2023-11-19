@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutBackButton"
-        android:layout_width="340dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp">
@@ -115,16 +115,14 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_00"
-            android:layout_alignParentBottom="true"
-
-            />
+            android:layout_alignParentBottom="true" />
 
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_01"
             android:layout_toRightOf="@+id/imageView_btn_00"
             />
@@ -132,7 +130,7 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_02"
             android:layout_toRightOf="@+id/imageView_btn_01"
             />
@@ -178,14 +176,14 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_10"
             />
 
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_11"
             android:layout_toRightOf="@+id/imageView_btn_10"
            />
@@ -193,7 +191,7 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_12"
             android:layout_toRightOf="@+id/imageView_btn_11"
             />
@@ -240,14 +238,14 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_20"
            />
 
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_21"
             android:layout_toRightOf="@+id/imageView_btn_20"
           />
@@ -255,7 +253,7 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tf_027"
+            android:src="@drawable/tc_023"
             android:id="@+id/imageView_btn_22"
             android:layout_toRightOf="@+id/imageView_btn_21"
            />

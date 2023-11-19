@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,7 +40,11 @@ public class TicTacToeQuiz extends AppCompatActivity {
     private RadioGroup radioGroupChoices;
     private RadioButton radioButtonTrue;
     private RadioButton radioButtonFalse;
+    private ImageView imageViewTrue;
+    private ImageView imageViewFalse;
+
     private Button btnConfirm;
+    private ImageView imageViewConfirm;
 
     private List<TFQuestion> questionList;
     private TFQuestion currentQuestion;
@@ -91,7 +97,10 @@ public class TicTacToeQuiz extends AppCompatActivity {
         radioGroupChoices = findViewById(R.id.TTT_radioGroupChoices);
         radioButtonTrue = findViewById(R.id.TTT_radioButtonTrue);
         radioButtonFalse = findViewById(R.id.TTT_radioButtonFalse);
+        imageViewTrue = findViewById(R.id.TTT_imageViewTrue);
+        imageViewFalse = findViewById(R.id.TTT_imageViewFalse);
         btnConfirm = findViewById(R.id.btnConfirm);
+        imageViewConfirm = findViewById(R.id.imageViewConfirm);
     }
 
     private void configureBackButton(){
@@ -104,6 +113,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
     }
 
     private void showQuestion(){
+        configureRadioButtons();
         currentQuestion = questionList.get(0);
 
         txtTopic.setText("Topic: " + currentQuestion.getTopic());
@@ -112,15 +122,40 @@ public class TicTacToeQuiz extends AppCompatActivity {
         radioButtonFalse.setEnabled(true);
 
         txtQuestion.setText(currentQuestion.getQuestion());
-        radioButtonTrue.setText(currentQuestion.getOption1());
-        radioButtonFalse.setText(currentQuestion.getOption2());
 
         answered = false;
-        btnConfirm.setText("Confirm");
+        imageViewConfirm.setImageResource(R.drawable.tf_010);
 
         timeLeftInMillis = COUNTDOWN_IN_MILLIS;
         startCountDown();
 
+    }
+
+    private void configureRadioButtons(){
+        imageViewTrue.setImageResource(R.drawable.tc_004);
+        imageViewFalse.setImageResource(R.drawable.tc_005);
+
+        radioButtonTrue.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    imageViewTrue.setImageResource(R.drawable.tc_024);
+                } else {
+                    imageViewTrue.setImageResource(R.drawable.tc_004);
+                }
+            }
+        });
+
+        radioButtonFalse.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    imageViewFalse.setImageResource(R.drawable.tc_025);
+                } else {
+                    imageViewFalse.setImageResource(R.drawable.tc_005);
+                }
+            }
+        });
     }
 
     private void startCountDown() {
@@ -153,19 +188,19 @@ public class TicTacToeQuiz extends AppCompatActivity {
         int answerNr = radioGroupChoices.indexOfChild(rbSelected) + 1;
 
         if (answerNr == currentQuestion.getAnswerNr()) {
-            txtQuestion.setText("You got the answer correct!");
+            txtQuestion.setText("You gain this turn!");
             isCorrect = true;
         }  else {
-            txtQuestion.setText("You got the answer wrong");
+            txtQuestion.setText("You lose this turn");
             isCorrect = false;
         }
 
         radioButtonTrue.setEnabled(false);
         radioButtonFalse.setEnabled(false);
 
-        btnConfirm.setText("Next");
-    }
 
+        imageViewConfirm.setImageResource(R.drawable.tc_022);
+    }
 
     private void showLeaveGameDialog(){
         Dialog dialog = new Dialog(this);
