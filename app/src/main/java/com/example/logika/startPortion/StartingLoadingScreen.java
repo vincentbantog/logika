@@ -34,6 +34,36 @@ public class StartingLoadingScreen extends AppCompatActivity {
 
         videoView.setVideoURI(videoUri);
 
+        // Adjust the video view to cover the entire screen
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.setLooping(false); // Set looping true/false as per your requirement
+                mediaPlayer.setVolume(0, 0); // Mute video (optional)
+
+                // Adjust the size of the video view to cover the entire screen
+                int videoWidth = mediaPlayer.getVideoWidth();
+                int videoHeight = mediaPlayer.getVideoHeight();
+
+                float videoProportion = (float) videoWidth / (float) videoHeight;
+                int screenWidth = getWindowManager().getDefaultDisplay().getWidth();
+                int screenHeight = getWindowManager().getDefaultDisplay().getHeight();
+                float screenProportion = (float) screenWidth / (float) screenHeight;
+
+                android.view.ViewGroup.LayoutParams lp = videoView.getLayoutParams();
+
+                if (videoProportion > screenProportion) {
+                    lp.width = screenWidth;
+                    lp.height = (int) ((float) screenWidth / videoProportion);
+                } else {
+                    lp.width = (int) (videoProportion * (float) screenHeight);
+                    lp.height = screenHeight;
+                }
+
+                videoView.setLayoutParams(lp);
+            }
+        });
+
         videoView.start();
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
