@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".startPortion.StartingLoadingScreen">
+    tools:context=".startPortion.StartingLoadingScreen"
+    android:background="@drawable/starting_screen_snapshot">
 
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Starting Loading Screen"
-    android:layout_centerInParent="true"
-    android:layout_marginBottom="28dp"
-    android:textSize="28dp"/>
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/videoView"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
