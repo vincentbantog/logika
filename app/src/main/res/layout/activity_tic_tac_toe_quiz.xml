@@ -4,57 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tf_bg4"
     tools:context=".gameActivities.TorF.twoPlayers.TicTacToeQuiz">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Exit game" />
+    <RelativeLayout
+        android:id="@+id/relLayoutBackButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/tf_001" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/txtTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:text="Topic: "
         android:textSize="25dp" />
 
 
     <RelativeLayout
         android:id="@+id/relLayoutTimer"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_width="310dp"
+        android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp">
+        android:layout_marginTop="140dp">
 
         <ProgressBar
             android:id="@+id/timerBar"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
-            android:layout_height="18dp"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:progressDrawable="@drawable/timer_bar_design" />
+            android:progressDrawable="@drawable/timer_bar_design_torf2" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutQuestion"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="310dp"
+        android:layout_height="240dp"
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@color/lightBlue">
+        android:background="@drawable/tc_003">
 
         <TextView
             android:id="@+id/txtQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
+            android:gravity="center"
             android:text="Here lies the question"
             android:textSize="25dp" />
 
@@ -62,48 +77,54 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutChoices"
-        android:layout_width="350dp"
-        android:layout_height="140dp"
+        android:layout_width="260dp"
+        android:layout_height="100dp"
         android:layout_below="@id/relLayoutQuestion"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:padding="15dp">
+        android:layout_marginTop="30dp">
 
         <ImageView
             android:id="@+id/TTT_imageViewTrue"
-            android:layout_width="100dp"
-            android:layout_height="110dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="25dp"
-            android:background="@color/paleYellow" />
+            android:src="@drawable/tc_004" />
 
         <ImageView
             android:id="@+id/TTT_imageViewFalse"
-            android:layout_width="100dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="185dp"
-            android:background="@color/paleYellow" />
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/tc_005" />
 
         <RadioGroup
             android:id="@+id/TTT_radioGroupChoices"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_width="260dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp">
 
             <RadioButton
                 android:id="@+id/TTT_radioButtonTrue"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="25dp"
-                android:text="T"
-                android:textAlignment="center" />
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radio_selector_basiquiz"/>
 
             <RadioButton
                 android:id="@+id/TTT_radioButtonFalse"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="50dp"
-                android:text="F"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:background="@drawable/radio_selector_basiquiz"
+                android:button="@android:color/transparent"/>
 
         </RadioGroup>
 
@@ -117,14 +138,19 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/lightBlue">
+        android:layout_marginEnd="40dp">
+
+        <ImageView
+            android:id="@+id/imageViewConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_010" />
 
         <Button
             android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Confirm" />
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 
