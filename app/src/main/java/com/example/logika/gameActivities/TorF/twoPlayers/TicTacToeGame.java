@@ -29,15 +29,12 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private int player2Points;
 
     private Button btnBack;
-    private TextView txtScorePlayer1;
-    private TextView txtScorePlayer2;
     private TextView txtPlayerTurnDisplay;
     private ImageView imageViewPlayerTurnDisplay;
 
 
 
     private boolean isCorrect;
-    private TextView txtLastAnswerChecker;
 
     private View clickedView;
 
@@ -47,9 +44,6 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_tic_tac_toe_game);
 
         btnBack = findViewById(R.id.btnBack);
-        txtScorePlayer1 = findViewById(R.id.TTT_txtScorePlayer1);
-        txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
-        txtLastAnswerChecker = findViewById(R.id.txtLastAnswerChecker);
         txtPlayerTurnDisplay = findViewById(R.id.TTT_txtPlayerTurnDisplay);
         imageViewPlayerTurnDisplay = findViewById(R.id.imageViewPlayerTurnIndicator);
 
@@ -73,7 +67,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               resetGame();
+               resetBoard();
             }
         });
 
@@ -115,11 +109,6 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         if (requestCode == REQUEST_CODE_TTT) {
             if (resultCode == RESULT_OK) {
                 isCorrect = data.getBooleanExtra(KEY_CHECKER, false);
-                if (isCorrect) {
-                    txtLastAnswerChecker.setText("Last Answer: Correct Answer!");
-                } else {
-                   txtLastAnswerChecker.setText("Last Answer: Wrong Answer!");
-                }
 
                 if (player1Turn) {
                     if (isCorrect) {
@@ -149,9 +138,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
 
             }
-            if (resultCode == RESULT_CANCELED) {
-                txtLastAnswerChecker.setText("Nothing Received");
-            }
+
         }
     }
 
@@ -198,26 +185,18 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
 
     private void player1Wins(){
-        player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
-        updatePointsText();
-        resetBoard();
+        finishGame();
     }
     private void player2Wins(){
-        player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
-        updatePointsText();
-        resetBoard();
+        finishGame();
     }
     private void draw(){
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        resetBoard();
+        finishGame();
     }
 
-    private void updatePointsText() {
-        txtScorePlayer1.setText("Player 1: " + player1Points);
-        txtScorePlayer2.setText("Player 2: " + player2Points);
-    }
 
     private void resetBoard() {
         for (int i = 0; i < 3; i++) {
@@ -234,7 +213,6 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private void resetGame() {
         player1Points = 0;
         player2Points = 0;
-        updatePointsText();
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -248,6 +226,16 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         txtPlayerTurnDisplay.setText("Player 1's Turn!");
         imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_007);
     }
+
+    private void finishGame(){
+        Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
