@@ -39,7 +39,6 @@ public class StartingLoadingScreen extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mediaPlayer.setLooping(false); // Set looping true/false as per your requirement
-                mediaPlayer.setVolume(0, 0); // Mute video (optional)
 
                 // Adjust the size of the video view to cover the entire screen
                 int videoWidth = mediaPlayer.getVideoWidth();
