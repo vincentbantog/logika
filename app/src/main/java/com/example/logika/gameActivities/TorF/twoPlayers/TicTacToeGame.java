@@ -65,7 +65,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showLeaveGameDialog();
+
             }
         });
 
@@ -73,7 +73,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showResetDialog();
+               resetGame();
             }
         });
 
@@ -101,8 +101,10 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         if (!player1Turn) {
             txtPlayerTurnDisplay.setText("Player 1's Turn!");
+            imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_007);
         } else {
             txtPlayerTurnDisplay.setText("Player 2's Turn!");
+            imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_008);
         }
     }
 
@@ -199,19 +201,16 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
-        showPlayer1WinnerDialog();
         resetBoard();
     }
     private void player2Wins(){
         player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
-        showPlayer2WinnerDialog();
         resetBoard();
     }
     private void draw(){
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        showDrawDialog();
         resetBoard();
     }
 
@@ -247,6 +246,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         player1Turn = true;
         txtPlayerTurnDisplay.setText("Player 1's Turn!");
+        imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_007);
     }
 
     @Override
