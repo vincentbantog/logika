@@ -9,11 +9,14 @@ import android.widget.Button;
 
 import com.example.logika.MainMenu;
 import com.example.logika.R;
+import com.example.logika.gameActivities.basiQuiz.InstructionsActivities.BasiQuizInstructions1;
 
 public class MultipleChoice extends AppCompatActivity {
 
     private Button btnBack;
     private Button btnGeneralStart;
+    private Button btnInstructions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class MultipleChoice extends AppCompatActivity {
 
         configureBackButton();
         configureGeneralStartButton();
+        configureInstructionsButton();
 
 
     }
@@ -43,6 +47,18 @@ public class MultipleChoice extends AppCompatActivity {
             public void onClick(View view) {
                 Intent mainIntent = new Intent(MultipleChoice.this, MainMenu.class);
                 startActivity(mainIntent);
+                finish();
+            }
+        });
+    }
+
+    private void configureInstructionsButton(){
+        btnInstructions = findViewById(R.id.btnInstructions);
+        btnInstructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MultipleChoice.this, BasiQuizInstructions1.class);
+                startActivity(intent);
                 finish();
             }
         });
