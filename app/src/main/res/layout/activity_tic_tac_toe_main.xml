@@ -4,30 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeMain">
+    tools:context=".gameActivities.TorF.singlePlayer.TrueOrFalse"
+    android:background="@drawable/tf_bg2">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Back" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/relLayoutBackButton">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/tf_001"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="115dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="TIC TAC TOE"
-        android:textSize="30dp" />
+        android:layout_marginTop="470dp">
 
-    <Button
-        android:id="@+id/btnBegin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
-        android:text="Begin" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tf_004"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tf_005"
+            android:layout_below="@+id/btnBegin"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btnBegin"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btnBeginInstructions"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnBegin"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+
+
 
 </RelativeLayout>
