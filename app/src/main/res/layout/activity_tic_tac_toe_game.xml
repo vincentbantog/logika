@@ -5,15 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeGame">
+    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeGame"
+    android:background="@drawable/tf_bg4">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Exit game" />
+    <RelativeLayout
+        android:id="@+id/relLayoutBackButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/tf_001" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,17 +50,6 @@
             android:text="Player 2: 0"
             android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/TTT_txtPlayerTurnDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TTT_txtScorePlayer2"
-            android:freezesText="true"
-            android:text="Player 1's Turn"
-            android:textSize="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"/>
-
 
         <Button
             android:id="@+id/TTT_btnReset"
@@ -65,95 +68,219 @@
             android:visibility="gone"/>
 
     </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/relLayoutPlayerTurn"
+        android:layout_marginTop="35dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tc_007"
+            android:id="@+id/imageViewPlayerTurnIndicator"/>
+
+        <TextView
+            android:id="@+id/TTT_txtPlayerTurnDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:text="Player 1's Turn"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp">
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_00"
+            android:layout_alignParentBottom="true"
+
+            />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_01"
+            android:layout_toRightOf="@+id/imageView_btn_00"
+            />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_02"
+            android:layout_toRightOf="@+id/imageView_btn_01"
+            />
 
         <Button
             android:id="@+id/TTT_btn_00"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"
+            />
 
         <Button
             android:id="@+id/TTT_btn_01"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:layout_toRightOf="@+id/TTT_btn_00"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"
+            />
 
         <Button
             android:id="@+id/TTT_btn_02"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
-    </LinearLayout>
+            android:textSize="60sp"
+            android:layout_toRightOf="@+id/TTT_btn_01"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"
+            />
+    </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_10"
+            />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_11"
+            android:layout_toRightOf="@+id/imageView_btn_10"
+           />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_12"
+            android:layout_toRightOf="@+id/imageView_btn_11"
+            />
 
         <Button
             android:id="@+id/TTT_btn_10"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
 
         <Button
             android:id="@+id/TTT_btn_11"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:layout_toRightOf="@id/TTT_btn_10"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
 
         <Button
             android:id="@+id/TTT_btn_12"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
-    </LinearLayout>
+            android:textSize="60sp"
+            android:layout_toRightOf="@+id/TTT_btn_11"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
+    </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="80dp">
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_20"
+           />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_21"
+            android:layout_toRightOf="@+id/imageView_btn_20"
+          />
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tf_027"
+            android:id="@+id/imageView_btn_22"
+            android:layout_toRightOf="@+id/imageView_btn_21"
+           />
 
         <Button
             android:id="@+id/TTT_btn_20"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
 
         <Button
             android:id="@+id/TTT_btn_21"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:layout_toRightOf="@+id/TTT_btn_20"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
 
         <Button
             android:id="@+id/TTT_btn_22"
-            android:layout_width="0dp"
+            android:layout_width="116dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            android:textSize="60sp" />
-    </LinearLayout>
+            android:textSize="60sp"
+            android:layout_toRightOf="@+id/TTT_btn_21"
+            android:background="@android:color/transparent"
+            android:textColor="@color/brown"/>
+    </RelativeLayout>
+
 
 </LinearLayout>

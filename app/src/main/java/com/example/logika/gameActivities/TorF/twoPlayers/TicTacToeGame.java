@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private TextView txtScorePlayer1;
     private TextView txtScorePlayer2;
     private TextView txtPlayerTurnDisplay;
+    private ImageView imageViewPlayerTurnDisplay;
 
 
 
@@ -49,6 +51,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         txtScorePlayer2 = findViewById(R.id.TTT_txtScorePlayer2);
         txtLastAnswerChecker = findViewById(R.id.txtLastAnswerChecker);
         txtPlayerTurnDisplay = findViewById(R.id.TTT_txtPlayerTurnDisplay);
+        imageViewPlayerTurnDisplay = findViewById(R.id.imageViewPlayerTurnIndicator);
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
