@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="370dp"
+    android:layout_height="250dp"
+    android:background="@drawable/tc_011">
+
+    <RelativeLayout
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="155dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tc_013" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/btnReset"
+            android:src="@drawable/tc_012" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/btnReset"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.logika.R;
+import com.example.logika.gameActivities.logiQuiz.LogicGate;
+import com.example.logika.gameActivities.logiQuiz.QuizActivity;
 
 public class TicTacToeGame extends AppCompatActivity implements View.OnClickListener {
     public static final String KEY_CHECKER = "extraChecker";
@@ -31,6 +36,13 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
     private Button btnBack;
     private TextView txtPlayerTurnDisplay;
     private ImageView imageViewPlayerTurnDisplay;
+
+    private Dialog player1WinDialog;
+    private Dialog player2WinDialog;
+    private Dialog drawDialog;
+    private Dialog resetDialog;
+    private Dialog leaveDialog;
+
 
 
 
@@ -59,7 +71,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showLeaveGameDialog();
             }
         });
 
@@ -67,7 +79,7 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               resetBoard();
+               showResetDialog();
             }
         });
 
@@ -186,15 +198,15 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
     private void player1Wins(){
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
-        finishGame();
+        showPlayer1WinDialog();
     }
     private void player2Wins(){
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
-        finishGame();
+        showPlayer2WinDialog();
     }
     private void draw(){
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        finishGame();
+        showDrawDialog();
     }
 
 
@@ -207,7 +219,9 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
 
         roundCount = 0;
 
-        player1Turn = !player1Turn;
+        player1Turn = true;
+        txtPlayerTurnDisplay.setText("Player 1's Turn!");
+        imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_007);
     }
 
     private void resetGame() {
@@ -227,12 +241,203 @@ public class TicTacToeGame extends AppCompatActivity implements View.OnClickList
         imageViewPlayerTurnDisplay.setImageResource(R.drawable.tc_007);
     }
 
-    private void finishGame(){
-        Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
-        startActivity(intent);
-        finish();
+
+
+    private void showPlayer1WinDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tc_014);
+
+        int newWidth = 350;
+        int newHeight = 350;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        player1WinDialog = new Dialog(this);
+        player1WinDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        player1WinDialog.setContentView(R.layout.player_1_win_dialog_torf2);
+
+
+        Button btnRematch = player1WinDialog.findViewById(R.id.btnRematch);
+        Button btnHome = player1WinDialog.findViewById(R.id.btnHome);
+
+        btnRematch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
+                player1WinDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        player1WinDialog.show();
     }
 
+    private void showPlayer2WinDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tc_016);
+
+        int newWidth = 350;
+        int newHeight = 350;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        player2WinDialog = new Dialog(this);
+        player2WinDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        player2WinDialog.setContentView(R.layout.player_1_win_dialog_torf2);
+
+
+        Button btnRematch = player2WinDialog.findViewById(R.id.btnRematch);
+        Button btnHome = player2WinDialog.findViewById(R.id.btnHome);
+
+        btnRematch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
+                player2WinDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        player2WinDialog.show();
+    }
+
+    private void showDrawDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tc_026);
+
+        int newWidth = 350;
+        int newHeight = 350;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        drawDialog = new Dialog(this);
+        drawDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        drawDialog.setContentView(R.layout.player_1_win_dialog_torf2);
+
+
+        Button btnRematch = drawDialog.findViewById(R.id.btnRematch);
+        Button btnHome = drawDialog.findViewById(R.id.btnHome);
+
+        btnRematch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
+                drawDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        drawDialog.show();
+    }
+
+    private void showResetDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tc_011);
+
+        int newWidth = 350;
+        int newHeight = 350;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        resetDialog = new Dialog(this);
+        resetDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        resetDialog.setContentView(R.layout.reset_game_dialog_torf2);
+
+
+        Button btnReset = resetDialog.findViewById(R.id.btnReset);
+        Button btnBack = resetDialog.findViewById(R.id.btnBack);
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetBoard();
+                resetDialog.dismiss();
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetDialog.dismiss();
+            }
+        });
+
+        resetDialog.show();
+    }
+
+    private void showLeaveGameDialog(){
+
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
+
+        int newWidth = 360;
+        int newHeight = 360;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        leaveDialog = new Dialog(this);
+        leaveDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        leaveDialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+
+        Button btnResume = leaveDialog.findViewById(R.id.btnContinue);
+        Button btnExit = leaveDialog.findViewById(R.id.btnExit);
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leaveDialog.dismiss();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeMain.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        leaveDialog.show();
+    }
 
 
 

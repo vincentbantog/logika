@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="350dp">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="105dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tc_027"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tc_028"
+            android:layout_below="@+id/btnRematch" />
+
+        <Button
+            android:id="@+id/btnRematch"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnRematch"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

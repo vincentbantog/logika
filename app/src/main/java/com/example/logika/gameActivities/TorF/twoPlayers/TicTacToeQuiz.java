@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -51,6 +54,8 @@ public class TicTacToeQuiz extends AppCompatActivity {
     private boolean answered;
 
     private boolean isCorrect;
+
+    private Dialog leaveDialog;
 
 
 
@@ -107,7 +112,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showLeaveGameDialog();
             }
         });
     }
@@ -203,17 +208,28 @@ public class TicTacToeQuiz extends AppCompatActivity {
     }
 
     private void showLeaveGameDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.activity_main);
 
-        TextView messageText = dialog.findViewById(R.id.txtTitle);
-        Button btnResume = dialog.findViewById(R.id.btnContinue);
-        Button btnExit = dialog.findViewById(R.id.btnExit);
+        Bitmap customBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lq_022);
+
+        int newWidth = 360;
+        int newHeight = 360;
+
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(customBackgroundBitmap, newWidth, newHeight, true);
+
+        BitmapDrawable customBackgroundDrawable = new BitmapDrawable(getResources(), resizedBitmap);
+
+        leaveDialog = new Dialog(this);
+        leaveDialog.getWindow().setBackgroundDrawable(customBackgroundDrawable);
+        leaveDialog.setContentView(R.layout.leave_game_dialog_logiquiz);
+
+
+        Button btnResume = leaveDialog.findViewById(R.id.btnContinue);
+        Button btnExit = leaveDialog.findViewById(R.id.btnExit);
 
         btnResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                leaveDialog.dismiss();
             }
         });
 
@@ -227,7 +243,7 @@ public class TicTacToeQuiz extends AppCompatActivity {
             }
         });
 
-        dialog.show();
+        leaveDialog.show();
     }
 
     @Override

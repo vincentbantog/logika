@@ -51,7 +51,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/relLayoutPlayerTurn"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="50dp">
 
         <ImageView
             android:layout_width="match_parent"
