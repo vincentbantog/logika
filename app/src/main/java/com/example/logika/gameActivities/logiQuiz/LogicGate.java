@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.logika.MainMenu;
 import com.example.logika.R;
+import com.example.logika.gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions1;
 
 public class LogicGate extends AppCompatActivity {
     public static final String EXTRA_DIFFICULTY = "extraDifficulty";
@@ -19,6 +20,7 @@ public class LogicGate extends AppCompatActivity {
     private Button btnBack;
     private Button btnBeginNormal;
     private Button btnBeginHard;
+    private Button btnBeginInstructions;
 
     private String difficulty;
 
@@ -69,12 +71,22 @@ public class LogicGate extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnBeginInstructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogicGate.this, LogiquizInstructions1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void initializeViewElements(){
         btnBack = findViewById(R.id.btnBack);
         btnBeginNormal = findViewById(R.id.btnBeginNormal);
         btnBeginHard = findViewById(R.id.btnBeginHard);
+        btnBeginInstructions = findViewById(R.id.btnBeginInstructions);
     }
 
 

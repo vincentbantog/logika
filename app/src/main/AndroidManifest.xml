@@ -4,16 +4,22 @@
 
     <application
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
+        <activity
+            android:name=".gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions2"
+            android:exported="false" />
+        <activity
+            android:name=".gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions1"
+            android:exported="false" />
         <activity
             android:name=".gameActivities.TorF.singlePlayer.TorFEndActivity"
             android:exported="false" />

@@ -6,9 +6,10 @@ public class TFQuestion {
     public static final String DIFFICULTY_MEDIUM = "Medium";
     public static final String DIFFICULTY_HARD = "Hard";
 
-    public static final String TOPIC_A = "Topic A";
-    public static final String TOPIC_B = "Topic B";
-    public static final String TOPIC_C = "Topic C";
+    public static final String TOPIC_A = "General Digital Electronics";
+    public static final String TOPIC_B = "Digital Arithmetic";
+    public static final String TOPIC_C = "Boolean Algebra";
+    public static final String TOPIC_D = "Logic Gates";
 
     private String Question;
     private String option1;

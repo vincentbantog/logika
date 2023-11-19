@@ -146,22 +146,7 @@ public class TFQuizDbHelper extends SQLiteOpenHelper {
 
         TFQuestion q31 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
         addQuestion(q31);
-        TFQuestion q32 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
-        addQuestion(q32);
-        TFQuestion q33 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_A, 0);
-        addQuestion(q33);
-        TFQuestion q34 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
-        addQuestion(q34);
-        TFQuestion q35 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
-        addQuestion(q35);
-        TFQuestion q36 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_B, 0);
-        addQuestion(q36);
-        TFQuestion q37 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
-        addQuestion(q37);
-        TFQuestion q38 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
-        addQuestion(q38);
-        TFQuestion q39 = new TFQuestion("Hard: T is Correct", "T", "F", 1, 0, null, TFQuestion.TOPIC_C, 0);
-        addQuestion(q39);
+
 
     }
 
