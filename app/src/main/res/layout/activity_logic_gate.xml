@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/lq_bg1b"
-    tools:context=".gameActivities.logiQuiz.LogicGate">
+    tools:context=".HomeFragment.gameActivities.logiQuiz.LogicGate">
 
     <RelativeLayout
         android:id="@+id/relLayoutBackButton"

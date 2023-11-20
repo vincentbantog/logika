@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bq_bg4"
-    tools:context=".gameActivities.basiQuiz.MultipleChoice">
+    tools:context=".HomeFragment.gameActivities.basiQuiz.MultipleChoice">
 
     <TextView
         android:id="@+id/txtTitle"

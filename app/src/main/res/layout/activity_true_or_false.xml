@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.singlePlayer.TrueOrFalse"
+    tools:context=".HomeFragment.gameActivities.TorF.singlePlayer.TrueOrFalse"
     android:background="@drawable/tf_bg2">
 
 

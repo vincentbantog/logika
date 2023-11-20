@@ -15,63 +15,75 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
-            android:name=".gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions2"
+            android:name=".ReviewerFragment.reviewerActivities.BooleanAlgebraReviewer1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions1"
+            android:name=".ReviewerFragment.reviewerActivities.LogicGatesReviewer1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.singlePlayer.InstructionsActivities.TorFInstructions1"
+            android:name=".ReviewerFragment.reviewerActivities.DigitalArithmeticReviewer1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.basiQuiz.InstructionsActivities.BasiQuizInstructions1"
+            android:name=".ReviewerFragment.reviewerActivities.IntroReviewer1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions2"
+            android:name=".HomeFragment.gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions2"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions1"
+            android:name=".HomeFragment.gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.singlePlayer.TorFEndActivity"
+            android:name=".HomeFragment.gameActivities.TorF.singlePlayer.InstructionsActivities.TorFInstructions1"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.basiQuiz.BQEndActivity"
+            android:name=".HomeFragment.gameActivities.basiQuiz.InstructionsActivities.BasiQuizInstructions1"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment.gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions2"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment.gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions1"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment.gameActivities.TorF.singlePlayer.TorFEndActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment.gameActivities.basiQuiz.BQEndActivity"
             android:exported="false"
-            android:parentActivityName=".gameActivities.basiQuiz.BQQuizActivity" />
+            android:parentActivityName=".HomeFragment.gameActivities.basiQuiz.BQQuizActivity" />
         <activity
-            android:name=".gameActivities.TorF.twoPlayers.TicTacToeQuiz"
+            android:name=".HomeFragment.gameActivities.TorF.twoPlayers.TicTacToeQuiz"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.twoPlayers.TicTacToeGame"
+            android:name=".HomeFragment.gameActivities.TorF.twoPlayers.TicTacToeGame"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.twoPlayers.TicTacToeMain"
+            android:name=".HomeFragment.gameActivities.TorF.twoPlayers.TicTacToeMain"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.TFHomePage"
+            android:name=".HomeFragment.gameActivities.TorF.TFHomePage"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.singlePlayer.TorFQuizActivity"
+            android:name=".HomeFragment.gameActivities.TorF.singlePlayer.TorFQuizActivity"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.logiQuiz.EndActivity"
+            android:name=".HomeFragment.gameActivities.logiQuiz.EndActivity"
             android:exported="false"
-            android:parentActivityName=".gameActivities.logiQuiz.QuizActivity" />
+            android:parentActivityName=".HomeFragment.gameActivities.logiQuiz.QuizActivity" />
         <activity
-            android:name=".gameActivities.basiQuiz.BQQuizActivity"
+            android:name=".HomeFragment.gameActivities.basiQuiz.BQQuizActivity"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.logiQuiz.QuizActivity"
+            android:name=".HomeFragment.gameActivities.logiQuiz.QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.logiQuiz.LogicGate"
+            android:name=".HomeFragment.gameActivities.logiQuiz.LogicGate"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.TorF.singlePlayer.TrueOrFalse"
+            android:name=".HomeFragment.gameActivities.TorF.singlePlayer.TrueOrFalse"
             android:exported="false" />
         <activity
-            android:name=".gameActivities.basiQuiz.MultipleChoice"
+            android:name=".HomeFragment.gameActivities.basiQuiz.MultipleChoice"
             android:exported="false" />
         <activity
             android:name=".MainMenu"

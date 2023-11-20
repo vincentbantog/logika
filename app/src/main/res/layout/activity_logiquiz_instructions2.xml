@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions2"
+    tools:context=".HomeFragment.gameActivities.logiQuiz.InstructionsActivities.LogiquizInstructions2"
     android:background="@drawable/lq_htp2">
 
     <RelativeLayout

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.TorF.TFHomePage"
+    tools:context=".HomeFragment.gameActivities.TorF.TFHomePage"
     android:background="@drawable/tf_bg1">
 
     <RelativeLayout

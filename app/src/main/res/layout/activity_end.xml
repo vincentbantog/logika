@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/lq_bg3"
-    tools:context=".gameActivities.logiQuiz.EndActivity">
+    tools:context=".HomeFragment.gameActivities.logiQuiz.EndActivity">
 
     <TextView
         android:id="@+id/txtTitle"

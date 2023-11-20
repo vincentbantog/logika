@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tf_bg4"
-    tools:context=".gameActivities.TorF.twoPlayers.TicTacToeQuiz">
+    tools:context=".HomeFragment.gameActivities.TorF.twoPlayers.TicTacToeQuiz">
 
     <RelativeLayout
         android:id="@+id/relLayoutBackButton"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.basiQuiz.InstructionsActivities.BasiQuizInstructions1"
+    tools:context=".HomeFragment.gameActivities.basiQuiz.InstructionsActivities.BasiQuizInstructions1"
     android:background="@drawable/bq_htp">
 
     <RelativeLayout

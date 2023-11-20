@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.logika.mainMenuFragments.HomeFragment;
-import com.example.logika.mainMenuFragments.SettingsFragment;
-import com.example.logika.mainMenuFragments.StatsFragment;
+import com.example.logika.startPortion.mainMenuFragments.HomeFragment;
+import com.example.logika.startPortion.mainMenuFragments.SettingsFragment;
+import com.example.logika.startPortion.mainMenuFragments.StatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

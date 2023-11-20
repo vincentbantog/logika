@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainMenuFragments.StatsFragment">
+    tools:context=".startPortion.mainMenuFragments.StatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Stats"
-        android:textSize="26dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REVIEWERS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textSize="26dp"
+        android:textColor="@color/black"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnIntro"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230dp"
+        android:text="Introduction to Digital Electronics" />
+
+    <Button
+        android:id="@+id/btnDigitalArithmetic"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnIntro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Digital Arithmetic" />
+
+    <Button
+        android:id="@+id/btnLogicGates"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDigitalArithmetic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Logic Gates" />
+
+    <Button
+        android:id="@+id/btnBooleanAlgebra"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogicGates"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Boolean Algebra" />
+
+
+
+</RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logiquiz_background_main"
-    tools:context=".gameActivities.logiQuiz.QuizActivity">
+    tools:context=".HomeFragment.gameActivities.logiQuiz.QuizActivity">
 
     <TextView
         android:id="@+id/txtScore"
@@ -149,7 +149,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/questionFragmentContainer"
-                android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
+                android:name="com.example.logika.HomeFragment.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

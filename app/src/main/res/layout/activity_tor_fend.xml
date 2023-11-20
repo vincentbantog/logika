@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tf_bg6"
-    tools:context=".gameActivities.basiQuiz.BQEndActivity">
+    android:background="@drawable/tf_bg8"
+    tools:context=".HomeFragment.gameActivities.basiQuiz.BQEndActivity">
 
 
     <RelativeLayout
