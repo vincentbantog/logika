@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.CircuitFragments.QuestionFragment6">
+    android:layout_width="300dp"
+    android:layout_height="220dp"
+    tools:context=".gameActivities.logiQuiz.CircuitFragments.SimulationFragment7">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Simulation 7 fragment " />
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/relLayoutInputA">
+
+        <ImageView
+            android:id="@+id/imageViewA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/relLayoutInputA">
+
+        <ImageView
+            android:id="@+id/imageViewB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageViewOutput"
+        android:src="@drawable/logiquiz_simulation_output_display_off"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

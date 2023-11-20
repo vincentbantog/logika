@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.CircuitFragments.QuestionFragment6">
+    android:layout_width="300dp"
+    android:layout_height="220dp"
+    tools:context=".gameActivities.logiQuiz.CircuitFragments.SimulationFragment10">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Simulation 10 fragment " />
+    <RelativeLayout
+        android:id="@+id/relLayoutInputA"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/imageViewA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutInputB"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/relLayoutInputA">
+
+        <ImageView
+            android:id="@+id/imageViewB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutInputC"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/relLayoutInputB">
+
+        <ImageView
+            android:id="@+id/imageViewC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutInputD"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/relLayoutInputC">
+
+        <ImageView
+            android:id="@+id/imageViewD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logiquiz_input_button_unclicked" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageViewOutput"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/logiquiz_simulation_output_display_off" />
 
 </RelativeLayout>
