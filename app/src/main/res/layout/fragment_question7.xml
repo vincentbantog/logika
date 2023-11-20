@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.CircuitFragments.QuestionFragment6">
+    android:layout_width="300dp"
+    android:layout_height="220dp"
+    tools:context=".gameActivities.logiQuiz.CircuitFragments.QuestionFragment2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Question 7 fragment " />
+        android:src="@drawable/h_q2"/>
 
-</RelativeLayout>
+
+
+</FrameLayout>

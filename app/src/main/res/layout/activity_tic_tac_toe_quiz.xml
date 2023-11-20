@@ -62,7 +62,8 @@
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/tc_003">
+        android:background="@drawable/tc_003"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/txtQuestion"
@@ -71,7 +72,8 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="Here lies the question"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            />
 
     </RelativeLayout>
 

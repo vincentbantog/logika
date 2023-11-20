@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameActivities.logiQuiz.QuizActivity"
-    android:background="@drawable/logiquiz_background_main">
+    android:background="@drawable/logiquiz_background_main"
+    tools:context=".gameActivities.logiQuiz.QuizActivity">
 
     <TextView
         android:id="@+id/txtScore"
@@ -23,10 +23,10 @@
         android:visibility="gone" />
 
     <TextView
+        android:id="@+id/txtDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Difficulty: "
-        android:id="@+id/txtDifficulty"
         android:visibility="gone" />
 
 
@@ -131,22 +131,30 @@
 
     </RelativeLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/questionFrameContainer"
         android:layout_width="360dp"
         android:layout_height="300dp"
         android:layout_below="@+id/relLayoutTimer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
-        android:background="@drawable/lq_007">
+        android:background="@drawable/lq_007"
+        android:padding="10dp"
+        android:gravity="center">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/questionFragmentContainer"
-            android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="220dp">
 
-    </FrameLayout>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/questionFragmentContainer"
+                android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relLayoutRadioGroupChoiceLogiquiz"
@@ -225,16 +233,16 @@
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
         android:layout_below="@id/relLayoutRadioGroupChoiceLogiquiz"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="48dp">
 
         <ImageView
+            android:id="@+id/imageViewConfirmButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:src="@drawable/lq_025"
-            android:id="@+id/imageViewConfirmButton"/>
+            android:src="@drawable/lq_025" />
 
         <Button
             android:id="@+id/btnConfirmAnswer"

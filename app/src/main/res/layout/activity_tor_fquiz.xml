@@ -139,22 +139,21 @@
             android:text="Here lies the question"
             android:textSize="17dp" />
 
+        <FrameLayout
+            android:layout_width="290dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/questionFragmentContainer"
+                android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
     </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="290dp"
-        android:layout_height="210dp"
-        android:layout_below="@+id/relLayoutLives"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/questionFragmentContainer"
-            android:name="com.example.logika.gameActivities.logiQuiz.CircuitFragments.PlaceHolderFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </FrameLayout>
 
 
     <RelativeLayout

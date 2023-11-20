@@ -193,10 +193,10 @@ public class TicTacToeQuiz extends AppCompatActivity {
         int answerNr = radioGroupChoices.indexOfChild(rbSelected) + 1;
 
         if (answerNr == currentQuestion.getAnswerNr()) {
-            txtQuestion.setText("You gain this turn!");
+            txtQuestion.setText("You gain this turn!\n\nClick Next!");
             isCorrect = true;
         }  else {
-            txtQuestion.setText("You lose this turn");
+            txtQuestion.setText("You lose this turn\n\nClick Next!");
             isCorrect = false;
         }
 
