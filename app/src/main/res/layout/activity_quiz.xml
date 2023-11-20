@@ -144,7 +144,8 @@
 
         <FrameLayout
             android:layout_width="300dp"
-            android:layout_height="220dp">
+            android:layout_height="220dp"
+            android:layout_centerInParent="true">
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/questionFragmentContainer"
