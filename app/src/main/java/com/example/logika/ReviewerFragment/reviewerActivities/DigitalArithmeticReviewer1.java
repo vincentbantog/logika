@@ -32,6 +32,7 @@ public class DigitalArithmeticReviewer1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DigitalArithmeticReviewer1.this, MainMenu.class);
+                intent.putExtra("RETURN_TO_FRAGMENT", "SecondFragment"); // Add identifier for the second fragment
                 startActivity(intent);
                 finish();
             }

@@ -1,7 +1,10 @@
 package com.example.logika;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,6 +22,8 @@ public class MainMenu extends AppCompatActivity {
     StatsFragment statsFragment = new StatsFragment();
     SettingsFragment settingsFragment = new SettingsFragment();
 
+    FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,8 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         showBottomNavigationDrawer();
+
+        captureIdentifier();
     }
 
     public void showBottomNavigationDrawer() {
@@ -50,6 +57,25 @@ public class MainMenu extends AppCompatActivity {
                 return false;
             }
         });
-
     }
+
+    private void captureIdentifier(){
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("RETURN_TO_FRAGMENT")) {
+            String returnToFragment = intent.getStringExtra("RETURN_TO_FRAGMENT");
+            if ("SecondFragment".equals(returnToFragment)) {
+                // Navigate to the second fragment within your BottomNavigationView
+                // Use FragmentTransaction or navigation components to navigate
+                fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                StatsFragment secondFragment = new StatsFragment();
+                transaction.replace(R.id.mainMenuContainer, secondFragment); // Replace with your fragment container ID
+                transaction.commit();
+
+                bottomNavigationView.setSelectedItemId(R.id.stats);
+            }
+        }
+    }
+
 }

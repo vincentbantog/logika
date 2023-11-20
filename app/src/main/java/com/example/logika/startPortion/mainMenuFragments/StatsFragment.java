@@ -35,6 +35,7 @@ public class StatsFragment extends Fragment {
 
         configureButtons(view);
 
+
         return view;
     }
 
@@ -50,7 +51,7 @@ public class StatsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), IntroReviewer1.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
                 getActivity().finish();
             }
         });
@@ -81,8 +82,8 @@ public class StatsFragment extends Fragment {
                 getActivity().finish();
             }
         });
-
-
     }
+
+
 }
 
