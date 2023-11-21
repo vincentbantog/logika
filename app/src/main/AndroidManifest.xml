@@ -21,7 +21,7 @@
             android:name=".ReviewerFragment.reviewerActivities.LogicGatesReviewer1"
             android:exported="false" />
         <activity
-            android:name=".ReviewerFragment.reviewerActivities.DigitalArithmeticReviewer1"
+            android:name=".ReviewerFragment.reviewerActivities.DigitalArithmeticFragments.ReviewerArithmeticActivity"
             android:exported="false" />
         <activity
             android:name=".ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity"
