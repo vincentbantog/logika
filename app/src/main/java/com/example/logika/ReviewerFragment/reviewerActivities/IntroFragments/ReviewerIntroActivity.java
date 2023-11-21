@@ -67,7 +67,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pageNumber > 0 && pageNumber < 2){
+                if (pageNumber == 1){
                     pageNumber++;
                 }
                 switchPages();
@@ -77,7 +77,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
         btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pageNumber > 1 && pageNumber < 3) {
+                if (pageNumber == 2) {
                     pageNumber--;
                 }
                 switchPages();
