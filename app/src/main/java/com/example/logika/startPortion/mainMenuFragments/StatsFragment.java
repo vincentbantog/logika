@@ -14,7 +14,7 @@ import com.example.logika.R;
 import com.example.logika.ReviewerFragment.reviewerActivities.BooleanAlgebraReviewer1;
 import com.example.logika.ReviewerFragment.reviewerActivities.DigitalArithmeticFragments.ReviewerArithmeticActivity;
 import com.example.logika.ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity;
-import com.example.logika.ReviewerFragment.reviewerActivities.LogicGatesReviewer1;
+import com.example.logika.ReviewerFragment.reviewerActivities.LogicGates.ReviewerLogicGatesActivity;
 
 
 public class StatsFragment extends Fragment {
@@ -68,7 +68,7 @@ public class StatsFragment extends Fragment {
         btnLogicGates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LogicGatesReviewer1.class);
+                Intent intent = new Intent(getActivity(), ReviewerLogicGatesActivity.class);
                 startActivity(intent);
                 getActivity().finish();
             }
