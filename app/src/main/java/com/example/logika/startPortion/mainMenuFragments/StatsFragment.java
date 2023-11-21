@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.example.logika.R;
 import com.example.logika.ReviewerFragment.reviewerActivities.BooleanAlgebraReviewer1;
 import com.example.logika.ReviewerFragment.reviewerActivities.DigitalArithmeticReviewer1;
-import com.example.logika.ReviewerFragment.reviewerActivities.IntroReviewer1;
+import com.example.logika.ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity;
 import com.example.logika.ReviewerFragment.reviewerActivities.LogicGatesReviewer1;
 
 
@@ -50,7 +50,7 @@ public class StatsFragment extends Fragment {
         btnIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), IntroReviewer1.class);
+                Intent intent = new Intent(getActivity(), ReviewerIntroActivity.class);
                 startActivityForResult(intent, 1);
                 getActivity().finish();
             }

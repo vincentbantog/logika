@@ -24,7 +24,7 @@
             android:name=".ReviewerFragment.reviewerActivities.DigitalArithmeticReviewer1"
             android:exported="false" />
         <activity
-            android:name=".ReviewerFragment.reviewerActivities.IntroReviewer1"
+            android:name=".ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity"
             android:exported="false" />
         <activity
             android:name=".HomeFragment.gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions2"
