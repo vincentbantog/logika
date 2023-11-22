@@ -3,51 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".startPortion.mainMenuFragments.StatsFragment">
+    tools:context=".startPortion.mainMenuFragments.StatsFragment"
+    android:background="@drawable/home_bg">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="590dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/home_rev">
+
+        <RelativeLayout
+            android:layout_width="310dp"
+            android:layout_height="330dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_013"
+                android:id="@+id/imageViewLogiquiz"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_014"
+                android:id="@+id/imageViewBasiquiz"
+                android:layout_below="@+id/imageViewLogiquiz"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_015"
+                android:id="@+id/imageViewTTT"
+                android:layout_below="@+id/imageViewBasiquiz"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_016"
+                android:id="@+id/imageViewTorF"
+                android:layout_below="@+id/imageViewTTT"/>
+
+            <Button
+                android:id="@+id/btnIntro"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnDigitalArithmetic"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnIntro"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnLogicGates"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnDigitalArithmetic"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnBooleanAlgebra"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnLogicGates"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REVIEWERS"
+        android:text="With great power, \ncomes great responsibility"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="48dp"
         android:textSize="26dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/btnIntro"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
-        android:text="Introduction to Digital Electronics" />
-
-    <Button
-        android:id="@+id/btnDigitalArithmetic"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnIntro"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Digital Arithmetic" />
-
-    <Button
-        android:id="@+id/btnLogicGates"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnDigitalArithmetic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Logic Gates" />
-
-    <Button
-        android:id="@+id/btnBooleanAlgebra"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnLogicGates"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Boolean Algebra" />
 
 
 
