@@ -18,7 +18,7 @@ import com.example.logika.R;
 
 public class ReviewerIntroActivity extends AppCompatActivity {
 
-    private TextView txtPageNumber;
+    private ImageView imageViewPage;
     private Button btnBack;
     private Button btnNext;
     private Button btnPrevious;
@@ -42,7 +42,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
-        txtPageNumber = findViewById(R.id.txtPageNumber);
+        imageViewPage = findViewById(R.id.imageViewPage);
         btnBack = findViewById(R.id.btnBack);
         btnNext = findViewById(R.id.btnNext);
         btnPrevious = findViewById(R.id.btnPrevious);
@@ -66,6 +66,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
     private void switchPages(){
 
         contentFragment = createFragmentPage(pageNumber);
+        createImagePerPage(pageNumber);
 
         fragmentManager.beginTransaction()
                         .replace(R.id.contentFragmentContainer, contentFragment.getClass(), null)
@@ -73,12 +74,14 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                                         . addToBackStack("name")
                                                 .commit();
 
+
+
         btnNext.setOnTouchListener((v, event) -> {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_030);
-                    if (pageNumber == 1){
+                    if (pageNumber == 1 || pageNumber == 2 || pageNumber == 3){
                         pageNumber++;
                     }
                     switchPages();
@@ -103,7 +106,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_034);
-                    if (pageNumber == 2) {
+                    if (pageNumber == 2 || pageNumber == 3 || pageNumber == 4) {
                         pageNumber--;
                     }
                     switchPages();
@@ -119,11 +122,24 @@ public class ReviewerIntroActivity extends AppCompatActivity {
             }
         });
 
-        updatePageNumberText();
     }
 
-    private void updatePageNumberText(){
-        txtPageNumber.setText(pageNumber + "");
+    private void createImagePerPage(int pageNumber){
+        switch (pageNumber){
+            case 1:
+                imageViewPage.setImageResource(R.drawable.l1_p1);
+                break;
+            case 2:
+                imageViewPage.setImageResource(R.drawable.l1_p2);
+                break;
+            case 3:
+                imageViewPage.setImageResource(R.drawable.l1_p3);
+                break;
+            case 4:
+                imageViewPage.setImageResource(R.drawable.l1_p4);
+                break;
+
+        }
     }
 
     public Fragment createFragmentPage (int pageNumber){
@@ -135,6 +151,12 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new ReviewerIntroFragment2();
+                break;
+            case 3:
+                fragment = new ReviewerIntroFragment3();
+                break;
+            case 4:
+                fragment = new ReviewerIntroFragment4();
                 break;
             default:
                 break;
