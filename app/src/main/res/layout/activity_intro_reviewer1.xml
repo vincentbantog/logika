@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity"
-    android:background="@drawable/home_bg">
+    android:background="@drawable/home_bg"
+    tools:context=".ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroActivity">
 
     <RelativeLayout
         android:id="@+id/relLayoutBackButton"
@@ -30,21 +30,21 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relLayoutPageNumber"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/relLayoutPageNumber"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:background="@color/lightBlue">
 
         <TextView
+            android:id="@+id/txtPageNumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="1"
-            android:textSize="30dp"
-            android:id="@+id/txtPageNumber"
             android:layout_centerInParent="true"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="1"
+            android:textSize="30dp" />
 
     </RelativeLayout>
 
@@ -61,9 +61,9 @@
             android:id="@+id/relLayoutTitle"
             android:layout_width="330dp"
             android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@drawable/l1_1"
-            android:layout_centerHorizontal="true">
+            android:background="@drawable/l1_1">
 
         </RelativeLayout>
 
@@ -101,16 +101,17 @@
         android:layout_marginEnd="25dp">
 
         <ImageView
+            android:id="@+id/imageViewNext"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_022"
-            android:id="@+id/imageViewNext"/>
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/home_022" />
 
         <Button
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 
@@ -123,16 +124,16 @@
         android:layout_marginTop="15dp">
 
         <ImageView
+            android:id="@+id/imageViewPrevious"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/home_026"
-            android:id="@+id/imageViewPrevious"/>
+            android:src="@drawable/home_026" />
 
         <Button
             android:id="@+id/btnPrevious"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
 
 
     </RelativeLayout>

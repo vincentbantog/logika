@@ -101,10 +101,11 @@
         android:layout_marginEnd="25dp">
 
         <ImageView
+            android:id="@+id/imageViewNext"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_022"
-            android:id="@+id/imageViewNext"/>
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/home_024" />
 
         <Button
             android:id="@+id/btnNext"
@@ -125,7 +126,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/home_026"
+            android:src="@drawable/home_028"
             android:id="@+id/imageViewPrevious"/>
 
         <Button
