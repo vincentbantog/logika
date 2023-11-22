@@ -5,10 +5,18 @@
     android:layout_height="220dp"
     tools:context=".HomeFragment.gameActivities.logiQuiz.CircuitFragments.SimulationFragment8">
 
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="210dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/h_s3" />
+
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/relLayoutInputA">
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:id="@+id/relLayoutInputA"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="25dp">
 
         <ImageView
             android:id="@+id/imageViewA"
@@ -27,10 +35,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
         android:layout_below="@+id/relLayoutInputA"
-        android:id="@+id/relLayoutInputB">
+        android:id="@+id/relLayoutInputB"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp">
 
         <ImageView
             android:id="@+id/imageViewB"
@@ -49,9 +59,11 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/relLayoutInputB">
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/relLayoutInputB"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp">
 
         <ImageView
             android:id="@+id/imageViewC"
@@ -70,10 +82,12 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:id="@+id/imageViewOutput"
         android:src="@drawable/logiquiz_simulation_output_display_on"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-2dp"/>
 
 </RelativeLayout>

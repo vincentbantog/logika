@@ -5,10 +5,20 @@
     android:layout_height="220dp"
     tools:context=".HomeFragment.gameActivities.logiQuiz.CircuitFragments.SimulationFragment10">
 
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="210dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/h_s5" />
+
+
+
     <RelativeLayout
         android:id="@+id/relLayoutInputA"
-        android:layout_width="50dp"
-        android:layout_height="50dp">
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="1dp">
 
         <ImageView
             android:id="@+id/imageViewA"
@@ -28,9 +38,11 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutInputB"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/relLayoutInputA">
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_below="@+id/relLayoutInputA"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="2dp">
 
         <ImageView
             android:id="@+id/imageViewB"
@@ -50,9 +62,11 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutInputC"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/relLayoutInputB">
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_below="@+id/relLayoutInputB"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="1dp">
 
         <ImageView
             android:id="@+id/imageViewC"
@@ -72,9 +86,11 @@
 
     <RelativeLayout
         android:id="@+id/relLayoutInputD"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/relLayoutInputC">
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_below="@+id/relLayoutInputC"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="1dp">
 
         <ImageView
             android:id="@+id/imageViewD"
@@ -94,9 +110,11 @@
 
     <ImageView
         android:id="@+id/imageViewOutput"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/logiquiz_simulation_output_display_off" />
+        android:src="@drawable/logiquiz_simulation_output_display_off"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="49dp"/>
 
 </RelativeLayout>

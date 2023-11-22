@@ -5,10 +5,27 @@
     android:layout_height="220dp"
     tools:context=".HomeFragment.gameActivities.logiQuiz.CircuitFragments.SimulationFragment1">
 
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="210dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/e_s1" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Interact with the buttons!"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"/>
+
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/relLayoutInputA">
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:id="@+id/relLayoutInputA"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="3dp">
 
         <ImageView
             android:id="@+id/imageViewA"
@@ -27,9 +44,11 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/relLayoutInputA">
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@+id/relLayoutInputA"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="43dp">
 
         <ImageView
             android:id="@+id/imageViewB"
@@ -48,10 +67,12 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="93dp"
+        android:layout_height="90dp"
         android:id="@+id/imageViewOutput"
         android:src="@drawable/logiquiz_simulation_output_display_off"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginTop="8dp"/>
 
 </RelativeLayout>
