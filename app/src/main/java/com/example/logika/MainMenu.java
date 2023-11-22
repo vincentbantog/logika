@@ -1,10 +1,13 @@
 package com.example.logika;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -33,6 +36,7 @@ public class MainMenu extends AppCompatActivity {
         showBottomNavigationDrawer();
 
         captureIdentifier();
+
     }
 
     public void showBottomNavigationDrawer() {

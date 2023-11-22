@@ -25,7 +25,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:background="@drawable/curved_bottom_nav_background"
-        app:menu="@menu/menu" />
+        app:itemIconTint="@color/midnightBlue"
+        app:menu="@menu/menu"
+        app:itemTextColor="@color/midnightBlue" />
 
 
 </RelativeLayout>
