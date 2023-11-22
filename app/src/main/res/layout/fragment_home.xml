@@ -4,44 +4,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startPortion.mainMenuFragments.HomeFragment"
-    android:background="@drawable/spiderman">
+    android:background="@drawable/home_bg">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:id="@+id/btnQuickStart"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="590dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
-        android:text="Quick Start" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/home_main">
 
-    <Button
-        android:id="@+id/btnMultipleChoice"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnQuickStart"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Multiple Choice" />
+        <RelativeLayout
+            android:layout_width="310dp"
+            android:layout_height="330dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="25dp">
 
-    <Button
-        android:id="@+id/btnTrueOrFalse"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnMultipleChoice"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Tic - Tac - Toe" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_009"
+                android:id="@+id/imageViewLogiquiz"/>
 
-    <Button
-        android:id="@+id/btnLogicSim"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnTrueOrFalse"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Logic Gate" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_010"
+                android:id="@+id/imageViewBasiquiz"
+                android:layout_below="@+id/imageViewLogiquiz"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_011"
+                android:id="@+id/imageViewTTT"
+                android:layout_below="@+id/imageViewBasiquiz"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/home_012"
+                android:id="@+id/imageViewTorF"
+                android:layout_below="@+id/imageViewTTT"/>
+
+            <Button
+                android:id="@+id/btnQuickStart"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnMultipleChoice"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnQuickStart"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnTrueOrFalse"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnMultipleChoice"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnLogicSim"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_below="@+id/btnTrueOrFalse"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +94,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:textSize="26dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:visibility="gone"/>
 
 
 

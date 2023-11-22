@@ -33,13 +33,26 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        configureBtnMultipleChoice(view);
-        configureBtnTrueOrFalse(view);
         configureBtnLogicGate(view);
-        configureBtnQuickStart(view);
+        configureBtnMultipleChoice(view);
+        configureBtnTicTacToe(view);
+        configureBtnTrueOrFalse(view);
 
 
         return view;
+    }
+
+
+    public void configureBtnLogicGate(View view){
+        btnLogicGate = view.findViewById(R.id.btnLogicSim);
+        btnLogicGate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
+                startActivity(intentTrueOrFalse);
+                getActivity().finish();
+            }
+        });
     }
 
     public void configureBtnMultipleChoice(View view){
@@ -49,32 +62,6 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentMultipleChoice = new Intent(getActivity(), MultipleChoice.class);
                 startActivity(intentMultipleChoice);
-                getActivity().finish();
-            }
-        });
-    }
-
-    public void configureBtnTrueOrFalse(View view){
-        btnTrueOrFalse = view.findViewById(R.id.btnTrueOrFalse);
-        btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentTrueOrFalse = new Intent(getActivity(), TFHomePage.class);
-                startActivity(intentTrueOrFalse);
-                getActivity().finish();
-
-            }
-
-        });
-    }
-
-    public void configureBtnLogicGate(View view){
-        btnLogicGate = view.findViewById(R.id.btnLogicSim);
-        btnLogicGate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
-                startActivity(intentTrueOrFalse);
                 getActivity().finish();
             }
         });
@@ -92,6 +79,20 @@ public class HomeFragment extends Fragment {
                 startActivity(intentQuickStart);
                 getActivity().finish();
             }
+        });
+    }
+
+    public void configureBtnTrueOrFalse(View view){
+        btnTrueOrFalse = view.findViewById(R.id.btnTrueOrFalse);
+        btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentTrueOrFalse = new Intent(getActivity(), TFHomePage.class);
+                startActivity(intentTrueOrFalse);
+                getActivity().finish();
+
+            }
+
         });
     }
 
