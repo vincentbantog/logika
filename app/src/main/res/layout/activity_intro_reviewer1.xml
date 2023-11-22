@@ -40,7 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/l1_p1"
-            android:id="@+id/imageViewPage"/>
+            android:id="@+id/imageViewPage"
+            android:layout_centerInParent="true"/>
 
     </RelativeLayout>
 

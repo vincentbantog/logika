@@ -20,7 +20,7 @@ import com.example.logika.ReviewerFragment.reviewerActivities.IntroFragments.Rev
 
 public class ReviewerArithmeticActivity extends AppCompatActivity {
 
-    private TextView txtPageNumber;
+    private ImageView imageViewPage;
     private Button btnBack;
     private Button btnNext;
     private Button btnPrevious;
@@ -43,7 +43,7 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
-        txtPageNumber = findViewById(R.id.txtPageNumber);
+        imageViewPage = findViewById(R.id.imageViewPage);
         btnBack = findViewById(R.id.btnBack);
         btnNext = findViewById(R.id.btnNext);
         btnPrevious = findViewById(R.id.btnPrevious);
@@ -67,6 +67,7 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
     private void switchPages(){
 
         contentFragment = createFragmentPage(pageNumber);
+        createImagePerPage(pageNumber);
 
         fragmentManager.beginTransaction()
                 .replace(R.id.contentFragmentContainer, contentFragment.getClass(), null)
@@ -79,7 +80,7 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_031);
-                    if (pageNumber == 1){
+                    if (pageNumber > 0 && pageNumber < 9){
                         pageNumber++;
                     }
                     switchPages();
@@ -100,7 +101,7 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_035);
-                    if (pageNumber == 2) {
+                    if (pageNumber > 1 && pageNumber < 10) {
                         pageNumber--;
                     }
                     switchPages();
@@ -116,12 +117,43 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
             }
         });
 
-        updatePageNumberText();
+
     }
 
-    private void updatePageNumberText(){
-        txtPageNumber.setText(pageNumber + "");
+    private void createImagePerPage(int pageNumber){
+        switch (pageNumber){
+            case 1:
+                imageViewPage.setImageResource(R.drawable.l2_p1);
+                break;
+            case 2:
+                imageViewPage.setImageResource(R.drawable.l2_p2);
+                break;
+            case 3:
+                imageViewPage.setImageResource(R.drawable.l2_p3);
+                break;
+            case 4:
+                imageViewPage.setImageResource(R.drawable.l2_p4);
+                break;
+            case 5:
+                imageViewPage.setImageResource(R.drawable.l2_p5);
+                break;
+            case 6:
+                imageViewPage.setImageResource(R.drawable.l2_p6);
+                break;
+            case 7:
+                imageViewPage.setImageResource(R.drawable.l2_p7);
+                break;
+            case 8:
+                imageViewPage.setImageResource(R.drawable.l2_p8);
+                break;
+            case 9:
+                imageViewPage.setImageResource(R.drawable.l2_p9);
+                break;
+
+        }
     }
+
+
 
     public Fragment createFragmentPage (int pageNumber){
         Fragment fragment = null;
@@ -133,7 +165,29 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
             case 2:
                 fragment = new ReviewerArithmeticFragment2();
                 break;
+            case 3:
+                fragment = new ReviewerArithmeticFragment3();
+                break;
+            case 4:
+                fragment = new ReviewerArithmeticFragment4();
+                break;
+            case 5:
+                fragment = new ReviewerArithmeticFragment5();
+                break;
+            case 6:
+                fragment = new ReviewerArithmeticFragment6();
+                break;
+            case 7:
+                fragment = new ReviewerArithmeticFragment7();
+                break;
+            case 8:
+                fragment = new ReviewerArithmeticFragment8();
+                break;
+            case 9:
+                fragment = new ReviewerArithmeticFragment9();
+                break;
             default:
+                fragment = new ReviewerArithmeticFragment1();
                 break;
         }
 

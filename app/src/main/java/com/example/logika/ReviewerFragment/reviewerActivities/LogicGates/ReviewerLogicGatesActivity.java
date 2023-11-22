@@ -20,7 +20,7 @@ import com.example.logika.ReviewerFragment.reviewerActivities.DigitalArithmeticF
 
 public class ReviewerLogicGatesActivity extends AppCompatActivity {
 
-    private TextView txtPageNumber;
+    private ImageView imageViewPage;
     private Button btnBack;
     private Button btnNext;
     private Button btnPrevious;
@@ -43,7 +43,7 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
     }
 
     private void initializeViewElements(){
-        txtPageNumber = findViewById(R.id.txtPageNumber);
+        imageViewPage = findViewById(R.id.imageViewPage);
         btnBack = findViewById(R.id.btnBack);
         btnNext = findViewById(R.id.btnNext);
         btnPrevious = findViewById(R.id.btnPrevious);
@@ -71,6 +71,7 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
     private void switchPages(){
 
         contentFragment = createFragmentPage(pageNumber);
+        createImagePerPage(pageNumber);
 
         fragmentManager.beginTransaction()
                 .replace(R.id.contentFragmentContainer, contentFragment.getClass(), null)
@@ -83,7 +84,7 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_032);
-                    if (pageNumber == 1){
+                    if (pageNumber > 0 && pageNumber < 6){
                         pageNumber++;
                     }
                     switchPages();
@@ -104,7 +105,7 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_036);
-                    if (pageNumber == 2) {
+                    if (pageNumber > 1 && pageNumber < 7) {
                         pageNumber--;
                     }
                     switchPages();
@@ -120,12 +121,36 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
             }
         });
 
-        updatePageNumberText();
+
     }
 
-    private void updatePageNumberText(){
-        txtPageNumber.setText(pageNumber + "");
+    private void createImagePerPage(int pageNumber){
+        switch (pageNumber){
+            case 1:
+                imageViewPage.setImageResource(R.drawable.l3_p1);
+                break;
+            case 2:
+                imageViewPage.setImageResource(R.drawable.l3_p2);
+                break;
+            case 3:
+                imageViewPage.setImageResource(R.drawable.l3_p3);
+                break;
+            case 4:
+                imageViewPage.setImageResource(R.drawable.l3_p4);
+                break;
+            case 5:
+                imageViewPage.setImageResource(R.drawable.l3_p5);
+                break;
+            case 6:
+                imageViewPage.setImageResource(R.drawable.l3_p6);
+                break;
+            default:
+                break;
+
+        }
     }
+
+
 
     public Fragment createFragmentPage (int pageNumber){
         Fragment fragment = null;
@@ -136,6 +161,18 @@ public class ReviewerLogicGatesActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new ReviewerLogicGatesFragment2();
+                break;
+            case 3:
+                fragment = new ReviewerLogicGatesFragment3();
+                break;
+            case 4:
+                fragment = new ReviewerLogicGatesFragment4();
+                break;
+            case 5:
+                fragment = new ReviewerLogicGatesFragment5();
+                break;
+            case 6:
+                fragment = new ReviewerLogicGatesFragment6();
                 break;
             default:
                 break;

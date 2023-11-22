@@ -159,6 +159,7 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                 fragment = new ReviewerIntroFragment4();
                 break;
             default:
+                fragment = new ReviewerIntroFragment1();
                 break;
         }
 
