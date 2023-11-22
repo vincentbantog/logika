@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.logika.HomeFragment.gameActivities.TorF.twoPlayers.TicTacToeMain;
 import com.example.logika.R;
 import com.example.logika.HomeFragment.gameActivities.TorF.TFHomePage;
 import com.example.logika.HomeFragment.gameActivities.logiQuiz.LogicGate;
@@ -48,8 +49,8 @@ public class HomeFragment extends Fragment {
         btnLogicGate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentTrueOrFalse = new Intent(getActivity(), LogicGate.class);
-                startActivity(intentTrueOrFalse);
+                Intent intent = new Intent(getActivity(), LogicGate.class);
+                startActivity(intent);
                 getActivity().finish();
             }
         });
@@ -60,23 +61,21 @@ public class HomeFragment extends Fragment {
         btnMultipleChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentMultipleChoice = new Intent(getActivity(), MultipleChoice.class);
-                startActivity(intentMultipleChoice);
+                Intent intent = new Intent(getActivity(), MultipleChoice.class);
+                startActivity(intent);
                 getActivity().finish();
             }
         });
     }
 
-    public void configureBtnQuickStart(View view){
-        Class<?>[] gameActivities = {MultipleChoice.class, TrueOrFalse.class, LogicGate.class};
-        int randomIndex = new Random().nextInt(gameActivities.length);
+    public void configureBtnTicTacToe(View view){
 
-        btnQuickStart = view.findViewById(R.id.btnQuickStart);
+        btnQuickStart = view.findViewById(R.id.btnTicTacToe);
         btnQuickStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentQuickStart = new Intent(getActivity(), gameActivities[randomIndex]);
-                startActivity(intentQuickStart);
+                Intent intent = new Intent(getActivity(), TicTacToeMain.class);
+                startActivity(intent);
                 getActivity().finish();
             }
         });
@@ -87,8 +86,8 @@ public class HomeFragment extends Fragment {
         btnTrueOrFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentTrueOrFalse = new Intent(getActivity(), TFHomePage.class);
-                startActivity(intentTrueOrFalse);
+                Intent intent = new Intent(getActivity(), TrueOrFalse.class);
+                startActivity(intent);
                 getActivity().finish();
 
             }

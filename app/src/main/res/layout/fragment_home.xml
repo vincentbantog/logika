@@ -50,7 +50,7 @@
                 android:layout_below="@+id/imageViewTTT"/>
 
             <Button
-                android:id="@+id/btnQuickStart"
+                android:id="@+id/btnLogicSim"
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_centerHorizontal="true"
@@ -60,12 +60,12 @@
                 android:id="@+id/btnMultipleChoice"
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
-                android:layout_below="@+id/btnQuickStart"
+                android:layout_below="@+id/btnLogicSim"
                 android:layout_centerHorizontal="true"
                 android:background="@android:color/transparent"/>
 
             <Button
-                android:id="@+id/btnTrueOrFalse"
+                android:id="@+id/btnTicTacToe"
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_below="@+id/btnMultipleChoice"
@@ -73,10 +73,10 @@
                 android:background="@android:color/transparent"/>
 
             <Button
-                android:id="@+id/btnLogicSim"
+                android:id="@+id/btnTrueOrFalse"
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
-                android:layout_below="@+id/btnTrueOrFalse"
+                android:layout_below="@+id/btnTicTacToe"
                 android:layout_centerHorizontal="true"
                 android:background="@android:color/transparent"/>
 

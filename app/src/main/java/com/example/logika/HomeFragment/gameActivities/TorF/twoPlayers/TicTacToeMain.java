@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.logika.HomeFragment.gameActivities.TorF.twoPlayers.InstructionsActivities.TTTInstructions1;
+import com.example.logika.MainMenu;
 import com.example.logika.R;
 import com.example.logika.HomeFragment.gameActivities.TorF.TFHomePage;
 
@@ -37,7 +38,7 @@ public class TicTacToeMain extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TicTacToeMain.this, TFHomePage.class);
+                Intent intent = new Intent(TicTacToeMain.this, MainMenu.class);
                 startActivity(intent);
                 finish();
             }

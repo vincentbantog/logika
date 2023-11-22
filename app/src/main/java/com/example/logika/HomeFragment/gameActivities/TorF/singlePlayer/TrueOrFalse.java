@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.logika.MainMenu;
 import com.example.logika.R;
 import com.example.logika.HomeFragment.gameActivities.TorF.TFHomePage;
 import com.example.logika.HomeFragment.gameActivities.TorF.singlePlayer.InstructionsActivities.TorFInstructions1;
@@ -32,7 +33,7 @@ public class TrueOrFalse extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(TrueOrFalse.this, TFHomePage.class);
+                Intent mainIntent = new Intent(TrueOrFalse.this, MainMenu.class);
                 startActivity(mainIntent);
                 finish();
             }
