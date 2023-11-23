@@ -3,12 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="330dp"
     android:layout_height="410dp"
+    android:background="@drawable/lesson1_2"
     tools:context=".ReviewerFragment.reviewerActivities.IntroFragments.ReviewerIntroFragment2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PAGE 2" />
 
 </FrameLayout>

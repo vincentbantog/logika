@@ -70,7 +70,7 @@
             android:layout_below="@+id/relLayoutTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:background="@drawable/test_bg"
+            android:background="@drawable/l1_2"
             >
 
 
