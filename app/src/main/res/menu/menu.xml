@@ -5,7 +5,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Play"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/settings_icon"
         android:id="@+id/home" />
     <item
         android:layout_width="wrap_content"
@@ -17,6 +17,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Settings"
-        android:icon="@drawable/settings_icon"
+        android:icon="@drawable/baseline_smart_toy_24"
         android:id="@+id/settings"/>
 </menu>

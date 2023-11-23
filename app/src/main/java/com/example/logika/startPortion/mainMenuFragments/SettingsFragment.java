@@ -79,5 +79,12 @@ public class SettingsFragment extends Fragment {
     }
 
     private void configureExitButton(){
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestExit();
+            }
+        });
     }
 }
