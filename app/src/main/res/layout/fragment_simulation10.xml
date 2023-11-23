@@ -110,11 +110,11 @@
 
     <ImageView
         android:id="@+id/imageViewOutput"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentEnd="true"
         android:src="@drawable/logiquiz_simulation_output_display_off"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="49dp"/>
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="55dp"/>
 
 </RelativeLayout>

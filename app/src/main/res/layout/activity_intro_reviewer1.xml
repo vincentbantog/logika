@@ -70,7 +70,8 @@
             android:layout_below="@+id/relLayoutTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:background="@drawable/l1_2">
+            android:background="@drawable/test_bg"
+            >
 
 
             <FrameLayout
