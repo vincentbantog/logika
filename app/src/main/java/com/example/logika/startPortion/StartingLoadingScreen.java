@@ -61,8 +61,8 @@ public class StartingLoadingScreen extends AppCompatActivity {
                     lp.width = screenWidth;
                     lp.height = (int) ((float) screenWidth / videoProportion);
                 } else {
-                    lp.width = (int) (videoProportion * (float) screenHeight);
                     lp.height = screenHeight;
+                    lp.width = (int) ((float) screenHeight * videoProportion);
                 }
 
                 videoView.setLayoutParams(lp);
