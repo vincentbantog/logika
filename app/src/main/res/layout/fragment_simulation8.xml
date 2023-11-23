@@ -16,7 +16,7 @@
         android:layout_height="43dp"
         android:id="@+id/relLayoutInputA"
         android:layout_marginTop="3dp"
-        android:layout_marginStart="25dp">
+        android:layout_marginStart="24dp">
 
         <ImageView
             android:id="@+id/imageViewA"
@@ -39,7 +39,7 @@
         android:layout_height="43dp"
         android:layout_below="@+id/relLayoutInputA"
         android:id="@+id/relLayoutInputB"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="43dp">
 
         <ImageView
@@ -62,7 +62,7 @@
         android:layout_width="43dp"
         android:layout_height="43dp"
         android:layout_below="@+id/relLayoutInputB"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="43dp">
 
         <ImageView

@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:id="@+id/relLayoutInputA"
         android:layout_marginTop="69dp"
-        android:layout_marginStart="11dp">
+        android:layout_marginStart="8dp">
 
         <ImageView
             android:id="@+id/imageViewA"
@@ -39,7 +39,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/relLayoutInputA"
         android:layout_marginTop="37dp"
-        android:layout_marginStart="11dp">
+        android:layout_marginStart="7dp">
 
         <ImageView
             android:id="@+id/imageViewB"
