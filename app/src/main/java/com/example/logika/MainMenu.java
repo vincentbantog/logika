@@ -17,7 +17,7 @@ import com.example.logika.startPortion.mainMenuFragments.StatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity implements SettingsFragment.OnExitListener {
 
     BottomNavigationView bottomNavigationView;
 
@@ -36,6 +36,8 @@ public class MainMenu extends AppCompatActivity {
         showBottomNavigationDrawer();
 
         captureIdentifier();
+
+
 
     }
 
@@ -80,6 +82,12 @@ public class MainMenu extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(R.id.stats);
             }
         }
+    }
+
+    @Override
+    public void onExitRequested() {
+        // Close the application by finishing the activity stack
+        finishAffinity();
     }
 
 }
