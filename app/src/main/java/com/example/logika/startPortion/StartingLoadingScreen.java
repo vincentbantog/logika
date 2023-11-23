@@ -9,9 +9,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 import com.example.logika.R;
@@ -20,6 +22,8 @@ public class StartingLoadingScreen extends AppCompatActivity {
 
 
     private VideoView videoView;
+    private ImageView imageView;
+    private Button btnStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class StartingLoadingScreen extends AppCompatActivity {
         setContentView(R.layout.activity_starting_loading_screen);
 
         videoView = findViewById(R.id.videoView);
+        imageView = findViewById(R.id.imageView);
+        btnStart = findViewById(R.id.btnStart);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.l_load1;
 
@@ -63,30 +69,81 @@ public class StartingLoadingScreen extends AppCompatActivity {
             }
         });
 
+
+
         videoView.start();
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                Intent intent = new Intent(StartingLoadingScreen.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                showImageView();
+                showButton();
+                configureStartButton();
             }
         });
+
+    }
+
+    public void showImageView(){
+        // Hide the VideoView
+
+        // Show the final frame as ImageView
+        imageView.setVisibility(ImageView.VISIBLE);
+
+        adjustImageViewSize(imageView);
 
 
     }
 
+    private void adjustImageViewSize(ImageView imageView) {
+        imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                int screenWidth = getResources().getDisplayMetrics().widthPixels;
+                int screenHeight = getResources().getDisplayMetrics().heightPixels;
+
+                int imageWidth = imageView.getDrawable().getIntrinsicWidth();
+                int imageHeight = imageView.getDrawable().getIntrinsicHeight();
+
+                float widthRatio = (float) screenWidth / imageWidth;
+                float heightRatio = (float) screenHeight / imageHeight;
+
+                float scaleFactor = Math.min(widthRatio, heightRatio);
+
+                int finalWidth = (int) (imageWidth * scaleFactor);
+                int finalHeight = (int) (imageHeight * scaleFactor);
+
+                imageView.getLayoutParams().width = finalWidth;
+                imageView.getLayoutParams().height = finalHeight;
+                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                imageView.requestLayout();
+            }
+        });
+    }
+
+    private void showButton(){
+        RelativeLayout wholeLayout = findViewById(R.id.relLayoutStart);
 
 
-    public void showStartingLoadingScreen(){
+        long delayMillis = 1000; // 2 seconds delay as an example
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(StartingLoadingScreen.this, MainActivity.class);
+                wholeLayout.setVisibility(View.VISIBLE);
+            }
+        }, delayMillis);
+    }
+
+    public void configureStartButton() {
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(StartingLoadingScreen.this, SecondLoadingScreen.class);
                 startActivity(mainIntent);
                 finish();
             }
-        }, 3000);
+        });
     }
 }
