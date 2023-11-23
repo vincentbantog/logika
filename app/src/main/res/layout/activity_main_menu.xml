@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigationView">
 
         <FrameLayout
             android:id="@+id/mainMenuContainer"
@@ -19,12 +20,11 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/curved_bottom_nav_background"
+        android:background="#EFB722"
         app:itemIconTint="@color/midnightBlue"
         app:menu="@menu/menu"
         app:itemTextColor="@color/midnightBlue" />
