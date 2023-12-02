@@ -41,33 +41,33 @@ public class StartingLoadingScreen extends AppCompatActivity {
         videoView.setVideoURI(videoUri);
 
         // Adjust the video view to cover the entire screen
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setLooping(false); // Set looping true/false as per your requirement
-
-                // Adjust the size of the video view to cover the entire screen
-                int videoWidth = mediaPlayer.getVideoWidth();
-                int videoHeight = mediaPlayer.getVideoHeight();
-
-                float videoProportion = (float) videoWidth / (float) videoHeight;
-                int screenWidth = getWindowManager().getDefaultDisplay().getWidth();
-                int screenHeight = getWindowManager().getDefaultDisplay().getHeight();
-                float screenProportion = (float) screenWidth / (float) screenHeight;
-
-                android.view.ViewGroup.LayoutParams lp = videoView.getLayoutParams();
-
-                if (videoProportion > screenProportion) {
-                    lp.width = screenWidth;
-                    lp.height = (int) ((float) screenWidth / videoProportion);
-                } else {
-                    lp.height = screenHeight;
-                    lp.width = (int) ((float) screenHeight * videoProportion);
-                }
-
-                videoView.setLayoutParams(lp);
-            }
-        });
+//        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                mediaPlayer.setLooping(false); // Set looping true/false as per your requirement
+//
+//                // Adjust the size of the video view to cover the entire screen
+//                int videoWidth = mediaPlayer.getVideoWidth();
+//                int videoHeight = mediaPlayer.getVideoHeight();
+//
+//                float videoProportion = (float) videoWidth / (float) videoHeight;
+//                int screenWidth = getWindowManager().getDefaultDisplay().getWidth();
+//                int screenHeight = getWindowManager().getDefaultDisplay().getHeight();
+//                float screenProportion = (float) screenWidth / (float) screenHeight;
+//
+//                android.view.ViewGroup.LayoutParams lp = videoView.getLayoutParams();
+//
+//                if (videoProportion > screenProportion) {
+//                    lp.width = screenWidth;
+//                    lp.height = (int) ((float) screenWidth / videoProportion);
+//                } else {
+//                    lp.height = screenHeight;
+//                    lp.width = (int) ((float) screenHeight * videoProportion);
+//                }
+//
+//                videoView.setLayoutParams(lp);
+//            }
+//        });
 
 
 
@@ -85,14 +85,9 @@ public class StartingLoadingScreen extends AppCompatActivity {
     }
 
     public void showImageView(){
-        // Hide the VideoView
-
-        // Show the final frame as ImageView
-        imageView.setVisibility(ImageView.VISIBLE);
-
-        adjustImageViewSize(imageView);
-
-
+//        adjustImageViewSize(imageView);
+        RelativeLayout relLayoutImage = findViewById(R.id.relLayoutImage);
+        relLayoutImage.setVisibility(View.VISIBLE);
     }
 
     private void adjustImageViewSize(ImageView imageView) {
@@ -121,19 +116,10 @@ public class StartingLoadingScreen extends AppCompatActivity {
         });
     }
 
-    private void showButton(){
+    private void showButton() {
         RelativeLayout wholeLayout = findViewById(R.id.relLayoutStart);
 
-
-        long delayMillis = 1000; // 2 seconds delay as an example
-
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                wholeLayout.setVisibility(View.VISIBLE);
-            }
-        }, delayMillis);
+        wholeLayout.setVisibility(View.VISIBLE);
     }
 
     public void configureStartButton() {

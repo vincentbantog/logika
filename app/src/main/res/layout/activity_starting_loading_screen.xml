@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,26 +7,36 @@
     tools:context=".startPortion.StartingLoadingScreen"
     >
 
-
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/videoView" />
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/l_load2"
-        android:id="@+id/imageView"
-        android:visibility="invisible"/>
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:id="@+id/relLayoutImage">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/l_load2"
+            android:id="@+id/imageView" />
+
+    </RelativeLayout>
+
+
 
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
         android:visibility="invisible"
         android:id="@+id/relLayoutStart">
+
         
         <ImageView
             android:layout_width="match_parent"
@@ -44,4 +54,4 @@
 
 
 
-</FrameLayout>
+</RelativeLayout>
