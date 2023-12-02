@@ -5,53 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startPortion.StartingLoadingScreen"
+    android:background="@drawable/black"
     >
 
     <VideoView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/videoView" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:visibility="invisible"
-        android:id="@+id/relLayoutImage">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/l_load2"
-            android:id="@+id/imageView" />
-
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:visibility="invisible"
-        android:id="@+id/relLayoutStart">
-
-        
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/l_load2start" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btnStart"
-            android:background="@android:color/transparent"/>
-
-    </RelativeLayout>
-
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoView"
+        android:layout_centerInParent="true"
+        />
 
 </RelativeLayout>
