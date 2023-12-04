@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startPortion.SecondLoadingScreen"
-    android:background="@drawable/l_load4">
+    android:background="@drawable/l_load3bg">
 
 
     <pl.droidsonroids.gif.GifImageView
