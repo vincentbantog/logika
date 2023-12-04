@@ -39,7 +39,7 @@ public class StartingLoadingScreen extends AppCompatActivity {
 
 
         videoView.setVisibility(View.VISIBLE);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.l_load2;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.l_load1;
         Uri videoUri = Uri.parse(videoPath);
         videoView.setVideoURI(videoUri);
 

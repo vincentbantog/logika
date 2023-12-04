@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startPortion.StartingLoadingScreen"
-    android:background="@drawable/black"
+    android:background="@drawable/l_load4"
     >
 
 

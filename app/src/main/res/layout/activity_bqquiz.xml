@@ -169,7 +169,8 @@
             android:gravity="center"
             android:padding="30dp"
             android:text="Question will be displayed here"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textColor="@color/black"/>
 
     </RelativeLayout>
 
