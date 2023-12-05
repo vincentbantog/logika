@@ -1,5 +1,6 @@
 package com.example.logika;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
@@ -10,6 +11,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.logika.startPortion.mainMenuFragments.HomeFragment;
 import com.example.logika.startPortion.mainMenuFragments.SettingsFragment;
@@ -31,6 +34,12 @@ public class MainMenu extends AppCompatActivity implements SettingsFragment.OnEx
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
         setContentView(R.layout.activity_main_menu);
 
         showBottomNavigationDrawer();
