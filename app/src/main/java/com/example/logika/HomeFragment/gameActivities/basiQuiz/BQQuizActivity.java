@@ -153,7 +153,7 @@ public class BQQuizActivity extends AppCompatActivity {
         imageViewChoice3 = findViewById(R.id.imageViewChoice3);
         radioBtnChoice4 = findViewById(R.id.radioBtnOption4);
         imageViewChoice4 = findViewById(R.id.imageViewChoice4);
-
+//35024
         btnConfirm = findViewById(R.id.btnConfirm);
         imageViewButtonConfirm = findViewById(R.id.imageViewButtonConfirm);
     }

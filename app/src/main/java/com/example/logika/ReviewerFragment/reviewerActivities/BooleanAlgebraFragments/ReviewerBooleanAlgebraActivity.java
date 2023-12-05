@@ -91,15 +91,15 @@ public class ReviewerBooleanAlgebraActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_033);
-                    if (pageNumber > 0 && pageNumber < 5){
-                        pageNumber++;
-                    }
-                    switchPages();
                     return true;
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewNext.setImageResource(R.drawable.home_025);
+                    if (pageNumber > 0 && pageNumber < 5){
+                        pageNumber++;
+                    }
+                    switchPages();
                     return true;
 
                 default:
@@ -112,15 +112,15 @@ public class ReviewerBooleanAlgebraActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_037);
-                    if (pageNumber > 1 && pageNumber < 6) {
-                        pageNumber--;
-                    }
-                    switchPages();
                     return true;
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewPrevious.setImageResource(R.drawable.home_029);
+                    if (pageNumber > 1 && pageNumber < 6) {
+                        pageNumber--;
+                    }
+                    switchPages();
                     return true;
 
 

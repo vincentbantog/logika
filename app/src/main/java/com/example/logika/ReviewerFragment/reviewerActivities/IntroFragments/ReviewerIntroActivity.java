@@ -90,17 +90,15 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_030);
-                    if (pageNumber == 1 || pageNumber == 2 || pageNumber == 3){
-                        pageNumber++;
-                    }
-                    switchPages();
-
-
                     return true; // Indicate that the event was handled
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewNext.setImageResource(R.drawable.home_022);
+
+                    if (pageNumber == 1 || pageNumber == 2 || pageNumber == 3){
+                        pageNumber++;
+                    }
                     switchPages();
                     return true; // Indicate that the event was handled
 
@@ -115,15 +113,15 @@ public class ReviewerIntroActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_034);
-                    if (pageNumber == 2 || pageNumber == 3 || pageNumber == 4) {
-                        pageNumber--;
-                    }
-                    switchPages();
                     return true; // Indicate that the event was handled
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewPrevious.setImageResource(R.drawable.home_026);
+                    if (pageNumber == 2 || pageNumber == 3 || pageNumber == 4) {
+                        pageNumber--;
+                    }
+                    switchPages();
                     return true; // Indicate that the event was handled
 
                 default:

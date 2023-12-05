@@ -74,7 +74,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "1", "0", "2", 1,  Question.DIFFICULTY_HARD);
         addQuestion(q8);
         Question q9 = new Question(9,
-                "1", "0", "2", 3, Question.DIFFICULTY_HARD);
+                "1", "0", "2", 2, Question.DIFFICULTY_HARD);
         addQuestion(q9);
         Question q10 = new Question(10,
                 "A and B", "A,B and C", "B, C, and D", 3, Question.DIFFICULTY_HARD);

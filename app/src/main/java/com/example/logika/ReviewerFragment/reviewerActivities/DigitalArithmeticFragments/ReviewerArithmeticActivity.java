@@ -89,15 +89,15 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewNext.setImageResource(R.drawable.home_031);
-                    if (pageNumber > 0 && pageNumber < 9){
-                        pageNumber++;
-                    }
-                    switchPages();
                     return true; // Indicate that the event was handled
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewNext.setImageResource(R.drawable.home_023);
+                    if (pageNumber > 0 && pageNumber < 9){
+                        pageNumber++;
+                    }
+                    switchPages();
                     return true; // Indicate that the event was handled
 
                 default:
@@ -110,15 +110,15 @@ public class ReviewerArithmeticActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_DOWN:
                     // Change the image when the button is pressed
                     imageViewPrevious.setImageResource(R.drawable.home_035);
-                    if (pageNumber > 1 && pageNumber < 10) {
-                        pageNumber--;
-                    }
-                    switchPages();
                     return true; // Indicate that the event was handled
 
                 case MotionEvent.ACTION_UP:
                     // Change the image back when the button is released
                     imageViewPrevious.setImageResource(R.drawable.home_027);
+                    if (pageNumber > 1 && pageNumber < 10) {
+                        pageNumber--;
+                    }
+                    switchPages();
                     return true; // Indicate that the event was handled
 
                 default:
