@@ -49,25 +49,35 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question(1,  "A", "B (correct)", "C", 2, Question.DIFFICULTY_MEDIUM);
+        Question q1 = new Question(1,
+                "A", "B", "Both A and B", 3, Question.DIFFICULTY_MEDIUM);
         addQuestion(q1);
-        Question q2 = new Question(2,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_MEDIUM);
+        Question q2 = new Question(2,
+                "AND Gate", "OR Gate", "NOR Gate", 1, Question.DIFFICULTY_MEDIUM);
         addQuestion(q2);
-        Question q3 = new Question(3,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_MEDIUM);
+        Question q3 = new Question(3,
+                "AND Gate", "OR Gate", "NOR Gate", 2, Question.DIFFICULTY_MEDIUM);
         addQuestion(q3);
-        Question q4 = new Question(4,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_MEDIUM);
+        Question q4 = new Question(4,
+                "AND Gate", "OR Gate", "NOR Gate", 2, Question.DIFFICULTY_MEDIUM);
         addQuestion(q4);
-        Question q5 = new Question(5,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_MEDIUM);
+        Question q5 = new Question(5,
+                "1", "0", "2", 2, Question.DIFFICULTY_MEDIUM);
         addQuestion(q5);
-        Question q6 = new Question(6,  "A", "B", "C (correct)", 3, Question.DIFFICULTY_HARD);
+        Question q6 = new Question(6,
+                "A", "B", "Both A and B", 3, Question.DIFFICULTY_HARD);
         addQuestion(q6);
-        Question q7 = new Question(7,  "A", "B (correct)", "C", 2, Question.DIFFICULTY_HARD);
+        Question q7 = new Question(7,
+                "AND Gate", "OR Gate", "NOR Gate", 2, Question.DIFFICULTY_HARD);
         addQuestion(q7);
-        Question q8 = new Question(8,  "A (correct)", "B", "C", 1,  Question.DIFFICULTY_HARD);
+        Question q8 = new Question(8,
+                "1", "0", "2", 1,  Question.DIFFICULTY_HARD);
         addQuestion(q8);
-        Question q9 = new Question(9,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_HARD);
+        Question q9 = new Question(9,
+                "1", "0", "2", 3, Question.DIFFICULTY_HARD);
         addQuestion(q9);
-        Question q10 = new Question(10,  "A (correct)", "B", "C", 1, Question.DIFFICULTY_HARD);
+        Question q10 = new Question(10,
+                "A and B", "A,B and C", "B, C, and D", 3, Question.DIFFICULTY_HARD);
         addQuestion(q10);
 
     }
