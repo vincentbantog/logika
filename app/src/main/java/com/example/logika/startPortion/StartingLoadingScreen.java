@@ -2,6 +2,7 @@ package com.example.logika.startPortion;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,6 +29,7 @@ public class StartingLoadingScreen extends AppCompatActivity {
 
     private VideoView videoView;
     private ImageView backgroundImage;
+    private RelativeLayout relLayoutMain;
 
 
 
@@ -45,9 +47,9 @@ public class StartingLoadingScreen extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
         backgroundImage = findViewById(R.id.background_image);
+        relLayoutMain = findViewById(R.id.mainRelLayout);
+        relLayoutMain.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black));
 
-
-        videoView.setVisibility(View.VISIBLE);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.l_load1;
         Uri videoUri = Uri.parse(videoPath);
         videoView.setVideoURI(videoUri);
@@ -62,7 +64,20 @@ public class StartingLoadingScreen extends AppCompatActivity {
             }
         });
 
-        videoView.start();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                videoView.start();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        relLayoutMain.setBackgroundResource(R.drawable.l_load4); // Change the background here after a delay
+                    }
+                }, 300);
+            }
+        });
+
+
 
 
 
@@ -71,7 +86,7 @@ public class StartingLoadingScreen extends AppCompatActivity {
     private void startFadeInAnimation(ImageView imageView) {
         imageView.setVisibility(View.VISIBLE);
         AlphaAnimation fadeIn = new AlphaAnimation(0.0f, 1.0f);
-        fadeIn.setDuration(3000); // Set your desired duration here
+        fadeIn.setDuration(2000); // Set your desired duration here
         imageView.startAnimation(fadeIn);
 
         fadeIn.setAnimationListener(new Animation.AnimationListener() {

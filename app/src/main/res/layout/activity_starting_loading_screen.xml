@@ -5,16 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startPortion.StartingLoadingScreen"
-    android:background="@drawable/l_load4"
+    android:id="@+id/mainRelLayout"
     >
-
 
     <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/videoView"
-        android:layout_centerInParent="true"
-        android:visibility="invisible"/>
+        android:layout_centerInParent="true" />
 
     <ImageView
         android:id="@+id/background_image"

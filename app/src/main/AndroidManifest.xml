@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LOGIKA"
         tools:targetApi="31">
         <activity
+            android:name=".startPortion.StartBlankBgActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReviewerFragment.reviewerActivities.BooleanAlgebraFragments.ReviewerBooleanAlgebraActivity"
             android:exported="false" />
         <activity
@@ -93,19 +96,17 @@
             android:exported="false" />
         <activity
             android:name=".startPortion.MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".startPortion.StartingLoadingScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
     </application>
 
 </manifest>
